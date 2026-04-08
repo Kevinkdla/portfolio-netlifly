@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations pro — Kevin Granday</title>
+    <meta name="description" content="Fiches de missions et réalisations professionnelles de Kevin Granday, BTS SIO SISR.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Réalisations pro — Kevin Granday">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== LIGHTBOX TOOLKIT ===================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        <img src="" alt="Aperçu" class="lightbox__img" id="lightboxImg">
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== RÉALISATIONS ===================== -->
+    <section class="section" id="realisations">
+        <div class="container">
+            <h2 class="section__title">Réalisations pro</h2>
+            <p class="section__subtitle">Missions classées par compétence et contexte.</p>
+
+            <!-- Filtres contexte -->
+            <div class="filters reveal">
+                <div class="filters__group">
+                    <button class="filter-btn active" data-filter="all">tous</button>
+                    <button class="filter-btn" data-filter="pro">pro</button>
+                    <button class="filter-btn" data-filter="ecole">école</button>
+                    <button class="filter-btn" data-filter="e6">e6</button>
+                    <button class="filter-btn" data-filter="perso">perso</button>
+                </div>
+            </div>
+
+            <!-- Filtres catégories -->
+            <div class="categories reveal">
+                <div class="categories__header">
+                    <span class="categories__label">Catégorie</span>
+                    <button class="categories__clear" id="clearCategories">Effacer</button>
+                </div>
+                <div class="categories__list">
+                    <label class="cat-check">
+                        <input type="checkbox" value="patrimoine">
+                        <span class="cat-check__box"></span>
+                        Patrimoine
+                    </label>
+                    <label class="cat-check">
+                        <input type="checkbox" value="incidents">
+                        <span class="cat-check__box"></span>
+                        Incidents
+                    </label>
+                    <label class="cat-check">
+                        <input type="checkbox" value="presence">
+                        <span class="cat-check__box"></span>
+                        Présence en ligne
+                    </label>
+                    <label class="cat-check">
+                        <input type="checkbox" value="projet">
+                        <span class="cat-check__box"></span>
+                        Mode projet
+                    </label>
+                    <label class="cat-check">
+                        <input type="checkbox" value="service">
+                        <span class="cat-check__box"></span>
+                        Services
+                    </label>
+                </div>
+            </div>
+
+            <!-- Missions -->
+            <div class="missions-grid" id="missionsGrid">
+                <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
+            </div>
+
+            <!-- Projets personnels -->
+            <div class="perso-projects" id="persoProjects">
+<div class="mission-card project-card">
+                    <div class="mission-card__head">
+                        <h4 class="mission-card__title">SRV-AD-DNS-DHCP Toolkit</h4>
+                        <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                    </div>
+                    <p class="mission-card__desc">
+                        Toolkit PowerShell modulaire automatisant le déploiement complet d'une infrastructure
+                        Windows Server : Active Directory, DNS, DHCP, GPO, diagnostic réseau, sauvegarde
+                        et outils d'administration — le tout piloté depuis un menu interactif.
+                    </p>
+                    <div class="project-card__modules">
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Installation AD DS / DNS / DHCP</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Gestion OU, utilisateurs &amp; groupes</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Réservations DHCP</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Déploiement GPO</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Audit &amp; diagnostic réseau</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Sauvegarde &amp; maintenance</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Outils rapides (recherche, MDP, unlock)</span>
+                    </div>
+                    <div class="lab__screenshot" data-img="images/dashboard-AD.png" style="max-width:33%;cursor:pointer;">
+                        <img src="images/dashboard-AD.png" alt="Aperçu du menu Toolkit AD" class="lab__img" style="width:100%;display:block;">
+                        <div class="cv-card__overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Cliquez pour agrandir</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card__footer">
+                        <p class="mission-card__meta">Mettre à disposition un service informatique — Personnel</p>
+                        <div class="project-card__actions">
+                            <div class="project-card__stack">
+                                <span class="fp-tag">PowerShell</span>
+                                <span class="fp-tag">Windows Server</span>
+                                <span class="fp-tag">Active Directory</span>
+                                <span class="fp-tag">DHCP / DNS</span>
+                                <span class="fp-tag">GPO</span>
+                            </div>
+                            <a href="https://github.com/Kevinkdla/srv-ad-dns-dhcp-toolkit" target="_blank" rel="noopener" class="featured-project__github">
+                                <i class="fab fa-github"></i> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-card project-card">
+                    <div class="mission-card__head">
+                        <h4 class="mission-card__title">PentestFR — Framework de pentest</h4>
+                        <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                    </div>
+                    <p class="mission-card__desc">
+                        Framework Python modulaire pilotant un pentest complet en environnement
+                        VirtualBox : reconnaissance réseau, exploitation par brute-force,
+                        post-exploitation KeePass, phishing MITM avec certificats HTTPS,
+                        dashboard de logs et nettoyage automatique des artefacts.
+                    </p>
+
+                    <div class="lab__screenshot" data-img="images/projet-pentest.png" style="max-width:33%;cursor:pointer;">
+                        <img src="images/projet-pentest.png" alt="Aperçu du framework pentest" class="lab__img" style="width:100%;display:block;">
+                        <div class="cv-card__overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Cliquez pour agrandir</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card__modules">
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Reconnaissance nmap / Shodan / ARP</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Brute-force SSH/FTP/HTTP (hydra + cupp)</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Post-exploitation KeePass (keepass2john + hashcat)</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> MITM &amp; phishing (bettercap + zphisher)</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> PKI OpenSSL + Apache HTTPS</span>
+                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Dashboard logs PHP + cleanup automatique</span>
+                    </div>
+                    <div class="project-card__footer">
+                        <p class="mission-card__meta">Mettre à disposition un service informatique — Personnel</p>
+                        <div class="project-card__actions">
+                            <div class="project-card__stack">
+                                <span class="fp-tag">Python</span>
+                                <span class="fp-tag">Kali Linux</span>
+                                <span class="fp-tag">nmap / hydra</span>
+                                <span class="fp-tag">bettercap</span>
+                                <span class="fp-tag">hashcat</span>
+                            </div>
+                            <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" class="featured-project__github">
+                                <i class="fab fa-github"></i> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

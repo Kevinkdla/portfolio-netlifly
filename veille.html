@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille &amp; Lab — Kevin Granday</title>
+    <meta name="description" content="Veille technologique et laboratoire personnel de Kevin Granday, BTS SIO SISR.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Veille &amp; Lab — Kevin Granday">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== LIGHTBOX LAB ===================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        <img src="images/lab.png" alt="Laboratoire VirtualBox" class="lightbox__img" id="lightboxImg">
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== VEILLE ===================== -->
+    <section class="section" id="veille">
+        <div class="container">
+            <h2 class="section__title">Veille technologique</h2>
+            <p class="section__subtitle">Sujet : Microsoft PowerToys</p>
+
+            <div class="veille-card reveal">
+                <div class="veille-card__header">
+                    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                        <img src="images/logo-powertoys.png" alt="Logo Microsoft PowerToys" style="width:56px;height:56px;object-fit:contain;border-radius:12px;">
+                        <div>
+                            <h3 class="veille-card__title" style="margin:0;">Microsoft PowerToys</h3>
+                            <span class="veille-card__badge">Suite d'utilitaires open source pour Windows</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="veille-card__desc">
+                    PowerToys est un ensemble d'utilitaires gratuits développé par Microsoft
+                    pour les utilisateurs avancés de Windows. Le projet, open source et
+                    hébergé sur GitHub, propose des outils de productivité qui étendent
+                    les fonctionnalités natives du système.
+                </p>
+
+                <div class="powertoys-grid">
+                    <div class="pt-item">
+                        <i class="fas fa-table-columns"></i>
+                        <h4>FancyZones</h4>
+                        <p>Gestionnaire de fenêtres avec zones personnalisées.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>PowerToys Run</h4>
+                        <p>Lanceur rapide - Alt+Espace.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-eye-dropper"></i>
+                        <h4>Color Picker</h4>
+                        <p>Pipette pour identifier toute couleur.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-lock"></i>
+                        <h4>File Locksmith</h4>
+                        <p>Identifie les processus verrouillant un fichier.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-keyboard"></i>
+                        <h4>Keyboard Manager</h4>
+                        <p>Remappage de touches et raccourcis.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-image"></i>
+                        <h4>Image Resizer</h4>
+                        <p>Redimensionnement par lot.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-font"></i>
+                        <h4>Text Extractor</h4>
+                        <p>OCR intégré pour extraire du texte.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-eye"></i>
+                        <h4>Peek</h4>
+                        <p>Prévisualisation rapide - Ctrl+Espace.</p>
+                    </div>
+                </div>
+
+                <div class="veille-card__notes">
+                    <p><strong>Intérêt SISR :</strong> gestion de multiples fenêtres pour le monitoring, extraction de texte depuis des captures, remappage de raccourcis pour SSH, et identification de processus bloquants.</p>
+                    <p><strong>Installation :</strong> Microsoft Store, GitHub Releases, ou <code>winget install Microsoft.PowerToys</code></p>
+                </div>
+            </div>
+
+            <!-- Sources -->
+            <div class="sources reveal">
+                <h3 class="sources__title">Sources</h3>
+                <div class="sources__grid">
+                    <a href="https://www.youtube.com/@techsama" target="_blank" rel="noopener" class="source-link">
+                        <i class="fab fa-youtube"></i>
+                        <div>
+                            <strong>TechSama</strong>
+                            <span>YouTube - Actualité tech et outils IT</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <strong>CERT-FR</strong>
+                            <span>Alertes de sécurité et vulnérabilités CVE</span>
+                        </div>
+                    </a>
+                    <a href="https://www.it-connect.fr/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>IT-Connect</strong>
+                            <span>Tutoriels systèmes, réseaux et cybersécurité</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener" class="source-link">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub - PowerToys</strong>
+                            <span>Dépôt officiel et documentation</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lab -->
+            <div class="lab reveal">
+                <h3 class="lab__title">Laboratoire personnel</h3>
+                <p class="lab__desc">
+                    Mon environnement d'apprentissage : VMs VirtualBox, services
+                    déployés en auto-formation, tests d'architectures réseau et
+                    expérimentations système.
+                </p>
+                <div class="lab__screenshot" id="labPreview">
+                    <img src="images/lab.png" alt="Screenshot du laboratoire personnel VirtualBox" class="lab__img">
+                    <div class="cv-card__overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Cliquez pour agrandir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

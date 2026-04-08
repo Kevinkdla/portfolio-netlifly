@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Granday - Portfolio BTS SIO SISR</title>
+    <meta name="description" content="Portfolio de Kevin Granday, étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Kevin Granday — Portfolio BTS SIO SISR">
+    <meta property="og:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kgranday-portfolio.netlify.app/">
+    <meta property="og:image" content="images/cv.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kevin Granday — Portfolio BTS SIO SISR">
+    <meta name="twitter:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="accueil">
+        <div class="hero__bg"></div>
+        <div class="container hero__content">
+            <div class="hero__text-side">
+                <h1 class="hero__title">Kevin Granday</h1>
+                <p class="hero__text">
+                    Étudiant en BTS SIO option SISR, passionné par les
+                    infrastructures réseaux et l'administration systèmes.<br>
+                    Je construis mes compétences au croisement de la rigueur
+                    technique et de la curiosité, avec l'ambition de devenir
+                    un professionnel fiable et polyvalent.
+                </p>
+                <div class="hero__actions">
+                    <span class="hero__badge"><i class="fas fa-circle-check"></i> Disponible en stage et alternance</span>
+                    <a href="parcours.html" class="hero__cta">Découvrir mon parcours</a>
+                </div>
+            </div>
+            <div class="hero__photo-side">
+                <div class="hero__photo">
+                    <img src="images/photo-kevin.jpg" alt="Kevin Granday">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== COMPÉTENCES (temporaire) ===================== -->
+    <section class="section skills-section" id="competences">
+        <div class="container">
+            <h2 class="section__title reveal">Compétences & Outils</h2>
+
+            <div class="skills-group reveal">
+                <h3 class="skills-group__label">Systèmes & Administration</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-windows"></i><span>Windows Server</span></div>
+                    <div class="skill-card"><i class="fab fa-linux"></i><span>Linux / Debian</span></div>
+                    <div class="skill-card"><i class="fas fa-sitemap"></i><span>Active Directory</span></div>
+                    <div class="skill-card"><i class="fas fa-sliders"></i><span>GPO</span></div>
+                    <div class="skill-card"><i class="fas fa-terminal"></i><span>PowerShell</span></div>
+                </div>
+            </div>
+
+            <div class="skills-group reveal">
+                <h3 class="skills-group__label">Réseau & Sécurité</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fas fa-shield-halved"></i><span>pfSense</span></div>
+                    <div class="skill-card"><i class="fas fa-network-wired"></i><span>Cisco / VLAN</span></div>
+                    <div class="skill-card"><i class="fas fa-server"></i><span>DHCP / DNS</span></div>
+                    <div class="skill-card"><i class="fas fa-magnifying-glass-chart"></i><span>Wireshark</span></div>
+                </div>
+            </div>
+
+            <div class="skills-group reveal">
+                <h3 class="skills-group__label">Supervision & Outils</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fas fa-chart-line"></i><span>Centreon</span></div>
+                    <div class="skill-card"><i class="fas fa-ticket"></i><span>GLPI</span></div>
+                    <div class="skill-card"><i class="fas fa-cube"></i><span>VirtualBox</span></div>
+                    <div class="skill-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours — Kevin Granday</title>
+    <meta name="description" content="Parcours et CV de Kevin Granday, étudiant BTS SIO SISR à l'IPSSI SQY.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Parcours — Kevin Granday">
+    <meta property="og:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/cv.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== LIGHTBOX CV ===================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">&times;</button>
+        <iframe class="lightbox__pdf" id="lightboxPdf" src="" title="CV Kevin Granday"></iframe>
+        <a href="docs/cv.pdf" download class="lightbox__download"><i class="fas fa-download"></i> Télécharger</a>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== PARCOURS ===================== -->
+    <section class="section" id="parcours">
+        <div class="container">
+            <h2 class="section__title">Parcours</h2>
+
+            <div class="parcours__intro reveal">
+                <p>Je m'appelle Kevin Granday, j'ai 27 ans et je suis actuellement en première année de <strong>BTS SIO option SISR</strong> à l'<strong>IPSSI de Saint-Quentin-en-Yvelines</strong>.</p>
+                <p>Passionné par l'informatique, je suis curieux de comprendre comment fonctionnent les systèmes et les réseaux qui nous entourent au quotidien.</p>
+                <p>Après un Diplôme d'Accès aux Études Universitaires, j'ai choisi de me spécialiser dans l'infrastructure et l'administration systèmes. Mon objectif est de développer une expertise solide pour évoluer vers des postes d'administrateur systèmes et réseaux, tout en restant ouvert aux opportunités dans la cybersécurité.</p>
+            </div>
+
+            <div class="parcours__grid">
+                <!-- CV -->
+                <div class="cv-card reveal">
+                    <h3 class="cv-card__title">Curriculum Vitae</h3>
+                    <div class="cv-card__preview" id="cvPreview">
+                        <iframe src="docs/cv.pdf" class="cv-card__iframe" title="Aperçu CV Kevin Granday" scrolling="no" tabindex="-1"></iframe>
+                        <div class="cv-card__overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Cliquez pour agrandir</span>
+                        </div>
+                    </div>
+                    <p class="cv-card__hint">Cliquez sur l'aperçu pour consulter et zoomer.</p>
+                    <a href="docs/cv.pdf" download class="btn btn--outline"><i class="fas fa-download"></i> Télécharger le CV</a>
+                </div>
+
+                <!-- Expériences -->
+                <div class="timeline reveal">
+                    <h3 class="timeline__heading">Expériences</h3>
+
+                    <div class="timeline__item">
+                        <span class="timeline__date">2025 - Présent</span>
+                        <h4 class="timeline__title">BTS SIO option SISR</h4>
+                        <span class="timeline__company">IPSSI SQY</span>
+                        <p class="timeline__desc">Formation en Services Informatiques aux Organisations, spécialité Infrastructure, Systèmes et Réseaux.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <span class="timeline__date">2025</span>
+                        <h4 class="timeline__title">Opérateur polyvalent en métallurgie</h4>
+                        <span class="timeline__company">Fleury GF</span>
+                    </div>
+
+                    <div class="timeline__item">
+                        <span class="timeline__date">2024</span>
+                        <h4 class="timeline__title">Adjoint magasinier principal</h4>
+                        <span class="timeline__company">Approcap</span>
+                    </div>
+
+                    <div class="timeline__item">
+                        <span class="timeline__date">2021 - 2022</span>
+                        <h4 class="timeline__title">Responsable de zone</h4>
+                        <span class="timeline__company">McDonald's</span>
+                    </div>
+
+                    <div class="timeline__item">
+                        <span class="timeline__date">2020 - 2024</span>
+                        <h4 class="timeline__title">Manager d'établissement</h4>
+                        <span class="timeline__company">B&amp;B Barber</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

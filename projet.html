@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet pro — Kevin Granday</title>
+    <meta name="description" content="Projet professionnel et objectifs de Kevin Granday, BTS SIO SISR.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Projet pro — Kevin Granday">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== PROJET PRO ===================== -->
+    <section class="section" id="projet">
+        <div class="container">
+            <h2 class="section__title">Projet professionnel</h2>
+            <p class="section__subtitle">Mon parcours visé et les étapes pour y parvenir.</p>
+
+            <!-- Objectifs -->
+            <div class="objectifs reveal">
+                <h3 class="objectifs__heading">Objectifs</h3>
+                <div class="objectifs__grid">
+                    <div class="obj-card">
+                        <div class="obj-card__icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="obj-card__label">Poursuite d'études</span>
+                        <div class="obj-card__ipssi">
+                            <img src="images/logo-ipssi.png" alt="Logo IPSSI" class="ipssi-logo">
+                        </div>
+                        <h4>Master à l'IPSSI</h4>
+                        <p>Poursuite en Master Expert en Systèmes d'Information à l'IPSSI SQY, spécialisation en cybersécurité et administration d'infrastructures.</p>
+                    </div>
+                    <div class="obj-card">
+                        <div class="obj-card__icon"><i class="fas fa-bullseye"></i></div>
+                        <span class="obj-card__label">Objectif métier</span>
+                        <h4>Cybersécurité / Infrastructure</h4>
+                        <p>Administration et sécurité des systèmes d'information.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compétences visées -->
+            <div class="competences reveal">
+                <h3 class="competences__heading">Compétences visées</h3>
+                <div class="competences__grid">
+                    <div class="comp-card">
+                        <div class="comp-card__icon"><i class="fas fa-server"></i></div>
+                        <h4>Administration système</h4>
+                        <span class="comp-card__tags">Active Directory, GPO, scripting</span>
+                        <p>Gestion d'annuaire, déploiement de politiques de groupe et automatisation par scripts PowerShell.</p>
+                    </div>
+                    <div class="comp-card">
+                        <div class="comp-card__icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>Infrastructure réseau</h4>
+                        <span class="comp-card__tags">VLAN, routage, pare-feu</span>
+                        <p>Configuration d'équipements réseau, segmentation et sécurisation des flux avec pfSense.</p>
+                    </div>
+                    <div class="comp-card">
+                        <div class="comp-card__icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Supervision &amp; monitoring</h4>
+                        <span class="comp-card__tags">Centreon, Zabbix, SNMP</span>
+                        <p>Mise en place de solutions de supervision pour assurer la disponibilité des services.</p>
+                    </div>
+                    <div class="comp-card">
+                        <div class="comp-card__icon"><i class="fas fa-shield-halved"></i></div>
+                        <h4>Sécurité informatique</h4>
+                        <span class="comp-card__tags">Durcissement, veille CVE, SIEM</span>
+                        <p>Application des bonnes pratiques de sécurité, analyse des vulnérabilités et gestion des incidents.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan d'action -->
+            <div class="plan reveal">
+                <h3 class="plan__heading">Plan d'action</h3>
+                <div class="plan__timeline">
+                    <div class="plan__step">
+                        <div class="plan__marker"></div>
+                        <div class="plan__content">
+                            <h4>Stage en entreprise</h4>
+                            <span class="plan__date">avril - juin 2026</span>
+                            <p>Recherche d'un stage non rémunéré de 2 mois pour mettre en pratique les compétences acquises en formation sur une infrastructure réelle.</p>
+                        </div>
+                    </div>
+                    <div class="plan__step">
+                        <div class="plan__marker"></div>
+                        <div class="plan__content">
+                            <h4>Alternance</h4>
+                            <span class="plan__date">septembre 2026</span>
+                            <p>Intégration en alternance (1 semaine entreprise / 1 semaine école) pour la deuxième année de BTS SIO SISR.</p>
+                        </div>
+                    </div>
+                    <div class="plan__step">
+                        <div class="plan__marker"></div>
+                        <div class="plan__content">
+                            <h4>Certification professionnelle</h4>
+                            <span class="plan__date">2026 - 2027</span>
+                            <p>Préparation de certifications reconnues (CCNA, CompTIA Network+ ou Security+) pour valider les compétences techniques.</p>
+                        </div>
+                    </div>
+                    <div class="plan__step">
+                        <div class="plan__marker"></div>
+                        <div class="plan__content">
+                            <h4>Master Expert en Systèmes d'Information - IPSSI</h4>
+                            <span class="plan__date">2027 - 2029</span>
+                            <p>Poursuite en Master à l'IPSSI SQY, spécialisation cybersécurité et infrastructure. Formation en alternance pour combiner expertise terrain et connaissances avancées.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
