@@ -1684,6 +1684,11 @@ code {
         overflow: visible;
     }
 
+    /* Espace autour de la photo pour que l'ombre ne soit pas coupée */
+    .hero__photo-side {
+        padding: 12px;
+    }
+
     .hero__actions {
         align-items: center;
     }
