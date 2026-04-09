@@ -597,6 +597,11 @@ code {
     transition: opacity 0.2s, filter 0.2s;
 }
 
+.ipssi-logo.timeline__logo {
+    filter: none;
+    opacity: 1;
+}
+
 /* ---------- BUTTONS ---------- */
 .btn {
     display: inline-flex;
