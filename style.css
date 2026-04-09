@@ -578,12 +578,21 @@ code {
     color: var(--text-secondary);
 }
 
+.timeline__company-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.timeline__company-row .timeline__company {
+    margin-bottom: 0;
+}
+
 .timeline__logo {
-    display: block;
-    height: 28px;
+    height: 24px;
     width: auto;
-    margin-top: 8px;
-    opacity: 0.75;
+    opacity: 0.72;
     filter: grayscale(100%);
     transition: opacity 0.2s, filter 0.2s;
 }
