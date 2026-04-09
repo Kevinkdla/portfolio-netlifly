@@ -5,10 +5,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- NAVBAR ---------- */
-    const nav      = document.getElementById('nav');
-    const navLinks = document.querySelectorAll('.nav__link');
+    const nav       = document.getElementById('nav');
+    const navLinks  = document.querySelectorAll('.nav__link');
     const navToggle = document.getElementById('navToggle');
-    const navMenu   = document.getElementById('navMenu');
+    const navDialog = document.getElementById('navDialog');
 
     // Classe scrolled
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -22,19 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
         if (linkPage === currentPage) link.classList.add('active');
     });
 
-    // Menu mobile
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('open');
-        document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
-    });
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('open');
-            document.body.style.overflow = '';
+    // Menu mobile via <dialog> (top layer natif — aucun problème de z-index)
+    if (navDialog) {
+        navToggle.addEventListener('click', () => {
+            if (navDialog.open) {
+                navDialog.close();
+                navToggle.classList.remove('active');
+            } else {
+                navDialog.showModal();
+                navToggle.classList.add('active');
+            }
         });
-    });
+
+        // Ferme au clic sur un lien
+        navDialog.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', () => {
+                navDialog.close();
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Ferme sur la touche Escape (natif dialog)
+        navDialog.addEventListener('cancel', () => {
+            navToggle.classList.remove('active');
+        });
+    }
 
     /* ---------- BACK TO TOP ---------- */
     const backToTop = document.createElement('button');
