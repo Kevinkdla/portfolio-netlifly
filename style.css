@@ -591,8 +591,8 @@ code {
 
 .timeline__logo {
     height: 28px;
-    width: 28px;
-    object-fit: cover;
+    width: auto;
+    max-width: 80px;
     border-radius: 4px;
     opacity: 0.72;
     filter: grayscale(100%);
