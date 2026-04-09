@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Lien actif selon la page courante
+    // Lien actif selon la page courante (nav desktop + dialog mobile)
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    navLinks.forEach(link => {
+    document.querySelectorAll('.nav__link').forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
         if (linkPage === currentPage) link.classList.add('active');
     });
