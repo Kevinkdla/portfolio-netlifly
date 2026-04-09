@@ -1681,6 +1681,7 @@ code {
         min-height: auto;
         padding-top: calc(var(--nav-height) + 24px);
         padding-bottom: 48px;
+        overflow: visible;
     }
 
     .hero__actions {
@@ -1718,3 +1719,24 @@ code {
         font-size: 0.8rem;
     }
 }
+
+/* ---------- SWIPE NAVIGATION (mobile) ---------- */
+@keyframes swipeOutLeft {
+    to { transform: translateX(-40px); opacity: 0; }
+}
+@keyframes swipeOutRight {
+    to { transform: translateX(40px); opacity: 0; }
+}
+@keyframes swipeInFromRight {
+    from { transform: translateX(40px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes swipeInFromLeft {
+    from { transform: translateX(-40px); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
+}
+
+body.swipe-out-left  { animation: swipeOutLeft  0.2s var(--ease) forwards; }
+body.swipe-out-right { animation: swipeOutRight 0.2s var(--ease) forwards; }
+body.swipe-in-right  { animation: swipeInFromRight 0.25s var(--ease) both; }
+body.swipe-in-left   { animation: swipeInFromLeft  0.25s var(--ease) both; }

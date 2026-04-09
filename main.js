@@ -143,6 +143,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ---------- SWIPE NAVIGATION (mobile) ---------- */
+    const PAGES = ['index.html', 'parcours.html', 'realisations.html', 'veille.html', 'projet.html', 'contact.html'];
+
+    // Slide-in : on récupère la direction mémorisée avant la navigation
+    const swipeDir = sessionStorage.getItem('swipeDir');
+    if (swipeDir) {
+        sessionStorage.removeItem('swipeDir');
+        document.body.classList.add(swipeDir === 'next' ? 'swipe-in-right' : 'swipe-in-left');
+    }
+
+    let _txStart = 0, _tyStart = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        _txStart = e.touches[0].clientX;
+        _tyStart = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - _txStart;
+        const dy = e.changedTouches[0].clientY - _tyStart;
+
+        // Seulement si swipe clairement horizontal (> 70px et plus horizontal que vertical)
+        if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+
+        // Ne pas déclencher si la lightbox est ouverte
+        const lb = document.getElementById('lightbox');
+        if (lb && lb.classList.contains('active')) return;
+
+        const filename = window.location.pathname.split('/').pop() || 'index.html';
+        const idx = PAGES.indexOf(filename);
+        if (idx === -1) return;
+
+        if (dx < 0 && idx < PAGES.length - 1) {
+            // Swipe gauche → page suivante
+            sessionStorage.setItem('swipeDir', 'next');
+            document.body.classList.add('swipe-out-left');
+            setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 210);
+        } else if (dx > 0 && idx > 0) {
+            // Swipe droite → page précédente
+            sessionStorage.setItem('swipeDir', 'prev');
+            document.body.classList.add('swipe-out-right');
+            setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 210);
+        }
+    }, { passive: true });
+
     /* ---------- MISSIONS FILTERING (realisations.html uniquement) ---------- */
     const missionsGrid = document.getElementById('missionsGrid');
     const filterCount  = document.getElementById('filterCount');
