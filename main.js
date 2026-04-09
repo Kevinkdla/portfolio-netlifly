@@ -22,29 +22,43 @@ document.addEventListener('DOMContentLoaded', () => {
         if (linkPage === currentPage) link.classList.add('active');
     });
 
-    // Menu mobile via <dialog> (top layer natif — aucun problème de z-index)
-    if (navDialog) {
-        navToggle.addEventListener('click', () => {
-            if (navDialog.open) {
-                navDialog.close();
-                navToggle.classList.remove('active');
-            } else {
-                navDialog.showModal();
-                navToggle.classList.add('active');
+    // Menu mobile — slide-down avec push du contenu
+    const hero = document.querySelector('.hero');
+
+    function openMenu() {
+        navDialog.showModal();
+        navToggle.classList.add('active');
+        // Pousse le hero vers le bas après que le dialog soit rendu
+        requestAnimationFrame(() => {
+            if (hero) {
+                const menuH = navDialog.offsetHeight;
+                hero.style.paddingTop = `calc(var(--nav-height) + ${menuH}px)`;
             }
         });
+    }
 
-        // Ferme au clic sur un lien
-        navDialog.querySelectorAll('.nav__link').forEach(link => {
-            link.addEventListener('click', () => {
-                navDialog.close();
-                navToggle.classList.remove('active');
-            });
+    function closeMenu() {
+        navDialog.classList.add('closing');
+        navToggle.classList.remove('active');
+        if (hero) hero.style.paddingTop = '';
+        navDialog.addEventListener('animationend', () => {
+            navDialog.classList.remove('closing');
+            navDialog.close();
+        }, { once: true });
+    }
+
+    if (navDialog) {
+        navToggle.addEventListener('click', () => {
+            navDialog.open ? closeMenu() : openMenu();
         });
 
-        // Ferme sur la touche Escape (natif dialog)
-        navDialog.addEventListener('cancel', () => {
-            navToggle.classList.remove('active');
+        navDialog.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        navDialog.addEventListener('cancel', (e) => {
+            e.preventDefault();
+            closeMenu();
         });
     }
 

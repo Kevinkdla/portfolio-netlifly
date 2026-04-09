@@ -1550,27 +1550,43 @@ code {
     }
 }
 
-/* ---- Dialog menu mobile — dropdown compact ---- */
+/* ---- Menu mobile slide-down ---- */
 .nav__dialog {
     position: fixed;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    bottom: auto;
     margin: 0;
     padding: 0;
     width: 100vw;
     max-width: 100vw;
     height: auto;
     border: none;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
     background: #ffffff;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    transform: translateY(-8px);
+    opacity: 0;
+    animation: menuSlideIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.nav__dialog.closing {
+    animation: menuSlideOut 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes menuSlideIn {
+    from { transform: translateY(-8px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes menuSlideOut {
+    from { transform: translateY(0);    opacity: 1; }
+    to   { transform: translateY(-8px); opacity: 0; }
 }
 
 .nav__dialog::backdrop {
-    background: rgba(0, 0, 0, 0.18);
+    background: transparent;
 }
 
 .nav__dialog-menu {
@@ -1578,31 +1594,38 @@ code {
     flex-direction: column;
     list-style: none;
     gap: 0;
-    padding: 8px 0;
+    padding: 4px 0;
     margin: 0;
 }
 
 .nav__dialog-menu .nav__link {
-    font-size: 1rem;
-    padding: 15px 28px;
+    font-size: 0.95rem;
+    padding: 14px 24px;
     width: 100%;
     text-align: left;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     font-weight: 500;
-    color: var(--text-primary);
-    transition: background var(--dur), color var(--dur);
+    color: var(--text-secondary);
+    transition: background var(--dur), color var(--dur), padding-left var(--dur);
 }
 
 .nav__dialog-menu .nav__link:hover,
 .nav__dialog-menu .nav__link.active {
     background: var(--accent-soft);
     color: var(--text-primary);
+    padding-left: 32px;
+    font-weight: 600;
 }
 
 .nav__dialog-menu li:last-child .nav__link {
     border-bottom: none;
+}
+
+/* Hero se décale vers le bas quand le menu est ouvert */
+.hero {
+    transition: padding-top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
