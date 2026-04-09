@@ -1638,9 +1638,8 @@ code {
         align-items: center;
     }
 
-    .hero__photo {
-        width: 140px;
-        height: 140px;
+    .hero__photo-side {
+        display: none;
     }
 
     .hero__title {
