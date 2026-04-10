@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dir = targetIdx > currentIdx ? 'next' : 'prev';
             sessionStorage.setItem('swipeDir', dir);
             document.body.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
-            setTimeout(() => { window.location.href = link.getAttribute('href'); }, 210);
+            setTimeout(() => { window.location.href = link.getAttribute('href'); }, 120);
         });
     });
 
@@ -287,12 +287,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Swipe gauche → page suivante
             sessionStorage.setItem('swipeDir', 'next');
             document.body.classList.add('swipe-out-left');
-            setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 210);
+            setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 120);
         } else if (dx > 0 && idx > 0) {
             // Swipe droite → page précédente
             sessionStorage.setItem('swipeDir', 'prev');
             document.body.classList.add('swipe-out-right');
-            setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 210);
+            setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 120);
         }
     }, { passive: true });
 
