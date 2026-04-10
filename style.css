@@ -519,7 +519,7 @@ code {
 
 .cv-card__iframe {
     width: 100%;
-    height: clamp(260px, 50vh, 380px);
+    height: clamp(400px, 70vh, 600px);
     border: none;
     border-radius: var(--radius);
     pointer-events: none;
