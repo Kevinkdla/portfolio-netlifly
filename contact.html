@@ -2,13 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact — Kevin Granday</title>
     <meta name="description" content="Contactez Kevin Granday, étudiant BTS SIO SISR disponible en stage et alternance.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:title" content="Contact — Kevin Granday">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css?v=14">
+    <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/contact.html">
+    <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +22,7 @@
     <!-- ===================== NAVBAR ===================== -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -30,6 +34,7 @@
         <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
         <li><a href="projet.html" class="nav__link">Projet pro</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
     </ul>
     <dialog class="nav__dialog" id="navDialog">
         <ul class="nav__dialog-menu">
@@ -61,13 +66,23 @@
                 <p class="contact-card__info">Stage non rémunéré : avril - juin 2026 | Alternance : à partir de septembre 2026</p>
 
                 <div class="contact-links">
-                    <a href="mailto:kgranday45@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
+                    <a href="tel:+33695088274" class="contact-link">
+                        <i class="fas fa-phone"></i>
                         <div>
-                            <strong>Mail</strong>
-                            <span>kgranday45@gmail.com</span>
+                            <strong>Téléphone</strong>
+                            <span>06 95 08 82 74</span>
                         </div>
                     </a>
+                    <div class="contact-link-wrap">
+                        <a href="mailto:kgranday45@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Mail</strong>
+                                <span>kgranday45@gmail.com</span>
+                            </div>
+                        </a>
+                        <button class="copy-btn" data-copy="kgranday45@gmail.com" aria-label="Copier l'email"><i class="fas fa-copy"></i></button>
+                    </div>
                     <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" class="contact-link">
                         <i class="fab fa-linkedin"></i>
                         <div>
@@ -87,7 +102,7 @@
 
             <p class="contact-note reveal">
                 <i class="fas fa-file-arrow-down"></i>
-                Vous pouvez également <a href="docs/cv.pdf" download>télécharger mon CV</a> directement.
+                Vous pouvez également <a href="docs/kevin-kindiela-cv.pdf" download>télécharger mon CV</a> directement.
             </p>
         </div>
     </section>
@@ -102,6 +117,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=14"></script>
+    <script src="main.js?v=15"></script>
 </body>
 </html>

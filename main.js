@@ -2,11 +2,49 @@
    KEVIN GRANDAY PORTFOLIO — JS
    ================================================================ */
 
+/* ---------- DARK MODE (anti-FOUC) ---------- */
+(function () {
+    var saved = localStorage.getItem('theme');
+    var preferred = (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : saved;
+    if (preferred === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    /* ---------- DARK MODE TOGGLE ---------- */
+    const themeToggle    = document.getElementById('themeToggle');
+    const themeToggleTop = document.getElementById('themeToggleTop');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        [themeToggle, themeToggleTop].forEach(btn => {
+            if (!btn) return;
+            const icon = btn.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+                btn.setAttribute('aria-label', 'Thème clair');
+            } else {
+                icon.className = 'fas fa-moon';
+                btn.setAttribute('aria-label', 'Thème sombre');
+            }
+        });
+    }
+
+    const currentTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(currentTheme);
+
+    [themeToggle, themeToggleTop].forEach(btn => {
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+            const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+        });
+    });
 
     /* ---------- NAVBAR ---------- */
     const nav       = document.getElementById('nav');
-    const navLinks  = document.querySelectorAll('.nav__link');
     const navToggle = document.getElementById('navToggle');
     const navDialog = document.getElementById('navDialog');
 
@@ -62,6 +100,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ---------- SCROLL PROGRESS BAR ---------- */
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.prepend(progressBar);
+    window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
+
+    /* ---------- TYPING ANIMATION ---------- */
+    const typingEl = document.getElementById('heroTyping');
+    if (typingEl) {
+        const words = ['Infrastructure & Réseaux', 'Administration Systèmes', 'Cybersécurité'];
+        let wordIndex = 0, charIndex = 0, deleting = false;
+
+        function type() {
+            const current = words[wordIndex];
+            typingEl.textContent = current.slice(0, charIndex);
+            if (!deleting) {
+                charIndex++;
+                if (charIndex > current.length) {
+                    deleting = true;
+                    setTimeout(type, 2000);
+                    return;
+                }
+            } else {
+                charIndex--;
+                if (charIndex < 0) {
+                    deleting = false;
+                    charIndex = 0;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            setTimeout(type, deleting ? 35 : 75);
+        }
+        setTimeout(type, 1400);
+    }
+
+    /* ---------- COPY EMAIL ---------- */
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copié';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i>';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+
     /* ---------- BACK TO TOP ---------- */
     const backToTop = document.createElement('button');
     backToTop.id = 'backToTop';
@@ -108,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightboxPdf = document.getElementById('lightboxPdf');
         if (cvPreview && lightboxPdf) {
             cvPreview.addEventListener('click', () => {
-                lightboxPdf.src = 'docs/cv.pdf';
+                lightboxPdf.src = 'docs/kevin-kindiela-cv.pdf';
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });

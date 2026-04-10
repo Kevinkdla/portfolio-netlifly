@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcours — Kevin Granday</title>
     <meta name="description" content="Parcours et CV de Kevin Granday, étudiant BTS SIO SISR à l'IPSSI SQY.">
@@ -9,8 +10,9 @@
     <meta property="og:title" content="Parcours — Kevin Granday">
     <meta property="og:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/cv.jpg">
-    <link rel="stylesheet" href="style.css?v=14">
+    <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/parcours.html">
+    <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,12 +24,13 @@
     <div class="lightbox" id="lightbox">
         <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">&times;</button>
         <iframe class="lightbox__pdf" id="lightboxPdf" src="" title="CV Kevin Granday"></iframe>
-        <a href="docs/cv.pdf" download class="lightbox__download"><i class="fas fa-download"></i> Télécharger</a>
+        <a href="docs/kevin-kindiela-cv.pdf" download class="lightbox__download"><i class="fas fa-download"></i> Télécharger</a>
     </div>
 
     <!-- ===================== NAVBAR ===================== -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -39,6 +42,7 @@
         <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
         <li><a href="projet.html" class="nav__link">Projet pro</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
     </ul>
     <dialog class="nav__dialog" id="navDialog">
         <ul class="nav__dialog-menu">
@@ -67,14 +71,17 @@
                 <div class="cv-card reveal">
                     <h3 class="cv-card__title">Curriculum Vitae</h3>
                     <div class="cv-card__preview" id="cvPreview">
-                        <iframe src="docs/cv.pdf" class="cv-card__iframe" title="Aperçu CV Kevin Granday" scrolling="no" tabindex="-1"></iframe>
+                        <iframe src="docs/kevin-kindiela-cv.pdf" class="cv-card__iframe" title="Aperçu CV Kevin Granday" scrolling="no" tabindex="-1"></iframe>
                         <div class="cv-card__overlay">
                             <i class="fas fa-search-plus"></i>
                             <span>Cliquez pour agrandir</span>
                         </div>
                     </div>
                     <p class="cv-card__hint">Cliquez sur l'aperçu pour consulter et zoomer.</p>
-                    <a href="docs/cv.pdf" download class="btn btn--outline"><i class="fas fa-download"></i> Télécharger le CV</a>
+                    <div class="cv-card__actions">
+                        <a href="docs/kevin-kindiela-cv.pdf" download class="btn btn--outline"><i class="fas fa-download"></i> Télécharger</a>
+                        <a href="docs/kevin-kindiela-cv.pdf" target="_blank" rel="noopener" class="btn btn--outline"><i class="fas fa-print"></i> Imprimer</a>
+                    </div>
                 </div>
 
                 <!-- Expériences -->
@@ -86,7 +93,7 @@
                         <h4 class="timeline__title">BTS SIO option SISR</h4>
                         <div class="timeline__company-row">
                             <span class="timeline__company">IPSSI SQY</span>
-                            <img src="images/logo-ipssi.png" alt="IPSSI" class="ipssi-logo timeline__logo">
+                            <img src="images/logo-ipssi.png" alt="IPSSI" class="ipssi-logo timeline__logo" loading="lazy">
                         </div>
                         <p class="timeline__desc">Formation en Services Informatiques aux Organisations, spécialité Infrastructure, Systèmes et Réseaux.</p>
                     </div>
@@ -96,26 +103,30 @@
                         <h4 class="timeline__title">Opérateur polyvalent en métallurgie</h4>
                         <div class="timeline__company-row">
                             <span class="timeline__company">Fleury GF</span>
-                            <img src="images/logo-fleury GF.png" alt="Fleury GF" class="timeline__logo">
+                            <img src="images/logo-fleury GF.png" alt="Fleury GF" class="timeline__logo" loading="lazy">
                         </div>
+                        <p class="timeline__desc">Travail en environnement industriel exigeant — rigueur, respect des procédures et capacité d'adaptation rapide.</p>
                     </div>
 
                     <div class="timeline__item">
                         <span class="timeline__date">2024</span>
                         <h4 class="timeline__title">Adjoint magasinier principal</h4>
                         <span class="timeline__company">Approcap</span>
+                        <p class="timeline__desc">Gestion des stocks, suivi des commandes et coordination logistique — organisation et sens des priorités.</p>
                     </div>
 
                     <div class="timeline__item">
                         <span class="timeline__date">2021 - 2022</span>
                         <h4 class="timeline__title">Responsable de zone</h4>
                         <span class="timeline__company">McDonald's</span>
+                        <p class="timeline__desc">Supervision d'équipe en environnement haute cadence — gestion du stress, communication et prise de décision rapide.</p>
                     </div>
 
                     <div class="timeline__item">
                         <span class="timeline__date">2020 - 2024</span>
                         <h4 class="timeline__title">Manager d'établissement</h4>
                         <span class="timeline__company">B&amp;B Barber</span>
+                        <p class="timeline__desc">Gestion complète d'un établissement : management d'équipe, planning, relation client et suivi financier — autonomie et sens des responsabilités.</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +137,7 @@
                 <div class="certs__grid">
 
                     <div class="cert-card">
-                        <div class="cert-card__icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="cert-card__icon"><img src="images/logo-cnil.png" alt="Logo CNIL" style="width:36px;height:36px;object-fit:contain;" loading="lazy"></div>
                         <div class="cert-card__body">
                             <span class="cert-card__org">CNIL</span>
                             <h4 class="cert-card__title">MOOC — Règlement général sur la protection des données</h4>
@@ -135,7 +146,7 @@
                     </div>
 
                     <div class="cert-card">
-                        <div class="cert-card__icon"><i class="fas fa-lock"></i></div>
+                        <div class="cert-card__icon"><img src="images/logo-anssi.png" alt="Logo ANSSI" style="width:36px;height:36px;object-fit:contain;" loading="lazy"></div>
                         <div class="cert-card__body">
                             <span class="cert-card__org">ANSSI</span>
                             <h4 class="cert-card__title">SecNumacadémie — Cybersécurité</h4>
@@ -159,6 +170,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=14"></script>
+    <script src="main.js?v=15"></script>
 </body>
 </html>

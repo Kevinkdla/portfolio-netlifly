@@ -2,13 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet pro — Kevin Granday</title>
     <meta name="description" content="Projet professionnel et objectifs de Kevin Granday, BTS SIO SISR.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:title" content="Projet pro — Kevin Granday">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css?v=14">
+    <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/projet.html">
+    <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +22,7 @@
     <!-- ===================== NAVBAR ===================== -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -30,6 +34,7 @@
         <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
         <li><a href="projet.html" class="nav__link">Projet pro</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
     </ul>
     <dialog class="nav__dialog" id="navDialog">
         <ul class="nav__dialog-menu">
@@ -56,7 +61,7 @@
                         <div class="obj-card__icon"><i class="fas fa-graduation-cap"></i></div>
                         <span class="obj-card__label">Poursuite d'études</span>
                         <div class="obj-card__ipssi">
-                            <img src="images/logo-ipssi.png" alt="Logo IPSSI" class="ipssi-logo">
+                            <img src="images/logo-ipssi.png" alt="Logo IPSSI" class="ipssi-logo" loading="lazy">
                         </div>
                         <h4>Master à l'IPSSI</h4>
                         <p>Poursuite en Master Expert en Systèmes d'Information à l'IPSSI SQY, spécialisation en cybersécurité et administration d'infrastructures.</p>
@@ -152,6 +157,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=14"></script>
+    <script src="main.js?v=15"></script>
 </body>
 </html>

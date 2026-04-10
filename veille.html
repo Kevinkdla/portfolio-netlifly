@@ -2,13 +2,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille &amp; Lab — Kevin Granday</title>
     <meta name="description" content="Veille technologique et laboratoire personnel de Kevin Granday, BTS SIO SISR.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:title" content="Veille &amp; Lab — Kevin Granday">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css?v=14">
+    <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
+    <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +28,7 @@
     <!-- ===================== NAVBAR ===================== -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -36,6 +40,7 @@
         <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
         <li><a href="projet.html" class="nav__link">Projet pro</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
     </ul>
     <dialog class="nav__dialog" id="navDialog">
         <ul class="nav__dialog-menu">
@@ -57,7 +62,7 @@
             <div class="veille-card reveal">
                 <div class="veille-card__header">
                     <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
-                        <img src="images/logo-powertoys.png" alt="Logo Microsoft PowerToys" style="width:56px;height:56px;object-fit:contain;border-radius:12px;">
+                        <img src="images/logo-powertoys.png" alt="Logo Microsoft PowerToys" style="width:56px;height:56px;object-fit:contain;border-radius:12px;" loading="lazy">
                         <div>
                             <h3 class="veille-card__title" style="margin:0;">Microsoft PowerToys</h3>
                             <span class="veille-card__badge">Suite d'utilitaires open source pour Windows</span>
@@ -118,6 +123,60 @@
                     <p><strong>Intérêt SISR :</strong> gestion de multiples fenêtres pour le monitoring, extraction de texte depuis des captures, remappage de raccourcis pour SSH, et identification de processus bloquants.</p>
                     <p><strong>Installation :</strong> Microsoft Store, GitHub Releases, ou <code>winget install Microsoft.PowerToys</code></p>
                 </div>
+
+                <!-- Contexte de la veille -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-search"></i> Pourquoi cette veille ?</h4>
+                    <p>J'ai découvert PowerToys en cherchant des outils pour optimiser mon environnement de travail lors de mes TPs réseau. Gérer plusieurs fenêtres simultanément (terminal, documentation, Wireshark) devenait vite fastidieux avec les fonctions natives de Windows. J'effectue ma veille principalement via le dépôt GitHub officiel (releases notes), la chaîne YouTube TechSama et IT-Connect, que je consulte régulièrement.</p>
+                </div>
+
+                <!-- Utilisation personnelle -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-user-check"></i> Ce que j'utilise au quotidien</h4>
+                    <div class="veille-usage-grid">
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">FancyZones</span>
+                            <p>Je l'utilise pour diviser mon écran en zones fixes lors des TPs : terminal SSH à gauche, documentation au centre, monitoring à droite. Gain de temps considérable par rapport au snap Windows natif.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">File Locksmith</span>
+                            <p>Indispensable quand Windows refuse de supprimer ou déplacer un fichier sans préciser pourquoi. Permet d'identifier en un clic quel processus verrouille le fichier et de le terminer proprement.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">Text Extractor</span>
+                            <p>Utilisé pour extraire du texte depuis des captures d'écran de logs ou messages d'erreur — évite de retaper manuellement des chemins ou codes d'erreur longs.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">PowerToys Run</span>
+                            <p>Remplacement du menu Démarrer pour lancer rapidement des applications, rechercher des fichiers ou calculer sans quitter le clavier. Alt+Espace devient un réflexe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Évolutions récentes -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-code-branch"></i> Évolutions récentes</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">v0.89 — 2025</span>
+                            <p>Ajout de <strong>New+</strong>, un gestionnaire de modèles de fichiers permettant de créer rapidement des fichiers préconfigurés depuis l'explorateur Windows.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">v0.86 — 2024</span>
+                            <p>Amélioration de <strong>Workspaces</strong> : sauvegarde et restauration de configurations complètes de fenêtres, utile pour retrouver son environnement de travail en un clic.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">v0.83 — 2024</span>
+                            <p>Introduction de <strong>Environment Variables</strong>, une interface graphique pour gérer les variables d'environnement Windows sans passer par les paramètres système avancés.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparatif -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-scale-balanced"></i> Alternatives et positionnement</h4>
+                    <p>Face à des outils comme <strong>AutoHotkey</strong> (scripts de remappage très puissants mais complexes à configurer) ou <strong>Wox</strong> (lanceur alternatif), PowerToys se distingue par son intégration native à Windows, sa maintenance active par Microsoft et sa prise en main immédiate sans scripting. Pour un usage professionnel en environnement d'entreprise, l'absence de dépendances tierces et le support officiel Microsoft sont des atouts décisifs.</p>
+                </div>
             </div>
 
             <!-- Sources -->
@@ -164,7 +223,7 @@
                     expérimentations système.
                 </p>
                 <div class="lab__screenshot" id="labPreview">
-                    <img src="images/lab.png" alt="Screenshot du laboratoire personnel VirtualBox" class="lab__img">
+                    <img src="images/lab.png" alt="Screenshot du laboratoire personnel VirtualBox" class="lab__img" loading="lazy">
                     <div class="cv-card__overlay">
                         <i class="fas fa-search-plus"></i>
                         <span>Cliquez pour agrandir</span>
@@ -184,6 +243,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=14"></script>
+    <script src="main.js?v=15"></script>
 </body>
 </html>

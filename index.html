@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Granday - Portfolio BTS SIO SISR</title>
     <meta name="description" content="Portfolio de Kevin Granday, étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
@@ -9,12 +10,12 @@
     <meta property="og:title" content="Kevin Granday — Portfolio BTS SIO SISR">
     <meta property="og:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kgranday-portfolio.netlify.app/">
-    <meta property="og:image" content="images/cv.jpg">
+    <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/">
+    <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kevin Granday — Portfolio BTS SIO SISR">
     <meta name="twitter:description" content="Étudiant en BTS SIO option SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.">
-    <link rel="stylesheet" href="style.css?v=14">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
     <!-- ===================== NAVBAR ===================== -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -36,6 +38,7 @@
         <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
         <li><a href="projet.html" class="nav__link">Projet pro</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
     </ul>
     <dialog class="nav__dialog" id="navDialog">
         <ul class="nav__dialog-menu">
@@ -54,6 +57,7 @@
         <div class="container hero__content">
             <div class="hero__text-side">
                 <h1 class="hero__title">Kevin Granday</h1>
+                <p class="hero__typing-line"><span id="heroTyping"></span><span class="hero__cursor"></span></p>
                 <p class="hero__text">
                     Étudiant en BTS SIO option SISR, passionné par les
                     infrastructures réseaux et l'administration systèmes.<br>
@@ -63,7 +67,8 @@
                 </p>
                 <div class="hero__actions">
                     <span class="hero__badge"><i class="fas fa-circle-check"></i> Disponible en stage et alternance</span>
-                    <a href="parcours.html" class="hero__cta">Découvrir mon parcours</a>
+                    <a href="parcours.html" class="hero__cta">Découvrir mon parcours <i class="fas fa-arrow-right"></i></a>
+                    <a href="docs/kevin-kindiela-cv.pdf" download class="btn btn--outline"><i class="fas fa-download"></i> Télécharger le CV</a>
                 </div>
             </div>
             <div class="hero__photo-side">
@@ -72,6 +77,9 @@
                 </div>
             </div>
         </div>
+        <a href="#competences" class="hero__scroll" aria-label="Défiler vers le bas">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- ===================== COMPÉTENCES (temporaire) ===================== -->
@@ -122,6 +130,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=14"></script>
+    <script src="main.js?v=19"></script>
 </body>
 </html>
