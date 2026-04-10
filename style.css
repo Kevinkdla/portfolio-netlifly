@@ -81,6 +81,11 @@ code {
     font-size: 0.875em;
 }
 
+[data-theme="dark"] code {
+    background: #242424;
+    color: #e0e0e0;
+}
+
 .container {
     max-width: var(--container);
     margin: 0 auto;
