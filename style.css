@@ -2340,6 +2340,15 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     color: #aaa;
 }
 
+[data-theme="dark"] .back-to-top {
+    background: #fff;
+    color: #111;
+}
+
+[data-theme="dark"] .back-to-top:hover {
+    background: #e8e8e8;
+}
+
 [data-theme="dark"] .hero__cta {
     background: #fff;
     color: #111;
