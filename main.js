@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ---------- SWIPE NAVIGATION (mobile) ---------- */
+    /* ---------- TRANSITIONS AU CLIC (nav links) ---------- */
     const PAGES = ['index.html', 'parcours.html', 'realisations.html', 'veille.html', 'projet.html', 'contact.html'];
 
     // Slide-in : on récupère la direction mémorisée avant la navigation
@@ -242,6 +242,24 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.removeItem('swipeDir');
         document.body.classList.add(swipeDir === 'next' ? 'swipe-in-right' : 'swipe-in-left');
     }
+
+    // Transition fade-slide au clic sur les liens de nav
+    const activePage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentIdx = PAGES.indexOf(activePage);
+
+    document.querySelectorAll('.nav__link[href]').forEach(link => {
+        const target = link.getAttribute('href').split('/').pop();
+        if (!PAGES.includes(target) || target === activePage) return;
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetIdx = PAGES.indexOf(target);
+            const dir = targetIdx > currentIdx ? 'next' : 'prev';
+            sessionStorage.setItem('swipeDir', dir);
+            document.body.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
+            setTimeout(() => { window.location.href = link.getAttribute('href'); }, 210);
+        });
+    });
 
     let _txStart = 0, _tyStart = 0;
 
