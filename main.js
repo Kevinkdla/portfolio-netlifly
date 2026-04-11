@@ -236,6 +236,29 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- TRANSITIONS AU CLIC (nav links) ---------- */
     const PAGES = ['index.html', 'parcours.html', 'realisations.html', 'veille.html', 'projet.html', 'contact.html'];
 
+    /* ---------- INDICATEUR DE PAGE MOBILE (points) ---------- */
+    const PAGE_LABELS = ['Accueil', 'Parcours', 'Réalisations', 'Veille', 'Projet', 'Contact'];
+    const dotsNav = document.createElement('div');
+    dotsNav.className = 'page-dots';
+    const currentFilename = window.location.pathname.split('/').pop() || 'index.html';
+    const currentDotIdx = PAGES.indexOf(currentFilename);
+
+    PAGES.forEach((page, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'page-dot' + (i === currentDotIdx ? ' page-dot--active' : '');
+        dot.setAttribute('aria-label', PAGE_LABELS[i]);
+        dot.title = PAGE_LABELS[i];
+        dot.addEventListener('click', () => {
+            if (i === currentDotIdx) return;
+            const dir = i > currentDotIdx ? 'next' : 'prev';
+            sessionStorage.setItem('swipeDir', dir);
+            document.body.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
+            setTimeout(() => { window.location.href = page; }, 120);
+        });
+        dotsNav.appendChild(dot);
+    });
+    document.body.appendChild(dotsNav);
+
     // Slide-in : on récupère la direction mémorisée avant la navigation
     const swipeDir = sessionStorage.getItem('swipeDir');
     if (swipeDir) {

@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/contact.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="stylesheet" href="style.css?v=25">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -120,6 +120,33 @@
                 <i class="fas fa-file-arrow-down"></i>
                 Vous pouvez également <a href="docs/kevin-kindiela-cv.pdf" download>télécharger mon CV</a> directement.
             </p>
+
+            <div class="contact-form-block reveal">
+                <h3 class="contact-form-block__title">Envoyer un message</h3>
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="contact-form__honey" aria-hidden="true">
+                        <label>Ne pas remplir : <input name="bot-field"></label>
+                    </p>
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label for="cf-name" class="contact-form__label">Nom</label>
+                            <input type="text" id="cf-name" name="name" required placeholder="Votre nom" class="contact-form__input">
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="cf-email" class="contact-form__label">Email</label>
+                            <input type="email" id="cf-email" name="email" required placeholder="votre@email.com" class="contact-form__input">
+                        </div>
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="cf-msg" class="contact-form__label">Message</label>
+                        <textarea id="cf-msg" name="message" required rows="5" placeholder="Votre message..." class="contact-form__input contact-form__textarea"></textarea>
+                    </div>
+                    <button type="submit" class="contact-form__submit">
+                        <i class="fas fa-paper-plane"></i> Envoyer
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -133,6 +160,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=24"></script>
+    <script src="main.js?v=25"></script>
 </body>
 </html>
