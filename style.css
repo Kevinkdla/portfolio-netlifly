@@ -2228,10 +2228,13 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     animation: flipIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.flip-btn-wrap {
+.section-header-row {
     display: flex;
-    justify-content: center;
-    margin-top: 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
 }
 
 .flip-btn {

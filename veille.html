@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=28">
+    <link rel="stylesheet" href="style.css?v=29">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -65,8 +65,16 @@
     <!-- ===================== VEILLE + LAB (flip card) ===================== -->
     <section class="section flip-face flip-face--front" id="veille">
         <div class="container">
-            <h2 class="section__title">Veille technologique</h2>
-            <p class="section__subtitle">3 sujets de veille — cliquez pour naviguer</p>
+            <div class="section-header-row">
+                <div>
+                    <h2 class="section__title">Veille technologique</h2>
+                    <p class="section__subtitle">3 sujets de veille — cliquez pour naviguer</p>
+                </div>
+                <button class="flip-btn flip-to-lab">
+                    <i class="fas fa-flask"></i> Laboratoire
+                    <i class="fas fa-rotate"></i>
+                </button>
+            </div>
 
             <!-- Onglets -->
             <div class="veille-tabs">
@@ -532,13 +540,6 @@
 
             </div><!-- /veille-panel vehicules -->
 
-            <!-- Bouton flip vers le lab -->
-            <div class="flip-btn-wrap">
-                <button class="flip-btn flip-to-lab">
-                    <i class="fas fa-flask"></i> Voir le Laboratoire
-                    <i class="fas fa-rotate"></i>
-                </button>
-            </div>
 
         </div>
     </section>
@@ -546,8 +547,15 @@
     <!-- ===================== LABORATOIRE ===================== -->
     <section class="section section--alt flip-face flip-face--back" id="lab">
         <div class="container">
-            <h2 class="section__title reveal">Laboratoire personnel</h2>
-            <p class="section__subtitle">Mon environnement d'apprentissage et d'expérimentation.</p>
+            <div class="section-header-row">
+                <div>
+                    <h2 class="section__title">Laboratoire personnel</h2>
+                    <p class="section__subtitle">Mon environnement d'apprentissage et d'expérimentation.</p>
+                </div>
+                <button class="flip-btn flip-to-veille">
+                    <i class="fas fa-rotate"></i> Veille techno
+                </button>
+            </div>
             <div class="lab reveal">
                 <p class="lab__desc">
                     VMs VirtualBox, services déployés en auto-formation, tests d'architectures réseau et
@@ -562,12 +570,6 @@
                 </div>
             </div>
 
-            <!-- Bouton flip retour vers la veille -->
-            <div class="flip-btn-wrap">
-                <button class="flip-btn flip-to-veille">
-                    <i class="fas fa-rotate"></i> Retour à la Veille
-                </button>
-            </div>
 
         </div>
     </section>
@@ -582,6 +584,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=28"></script>
+    <script src="main.js?v=29"></script>
 </body>
 </html>
