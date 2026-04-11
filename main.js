@@ -467,27 +467,5 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMissions();
     }
 
-    /* ---------- CONTACT FORM — AJAX SUBMIT ---------- */
-    const formSuccess = document.getElementById('formSuccess');
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const data = new URLSearchParams(new FormData(contactForm)).toString();
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: data
-            })
-            .then(() => {
-                contactForm.style.display = 'none';
-                if (formSuccess) formSuccess.style.display = 'flex';
-            })
-            .catch(() => {
-                alert('Une erreur est survenue. Merci de me contacter directement par email.');
-            });
-        });
-    }
 
 });

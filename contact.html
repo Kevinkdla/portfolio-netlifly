@@ -121,36 +121,6 @@
                 Vous pouvez également <a href="docs/kevin-kindiela-cv.pdf" download>télécharger mon CV</a> directement.
             </p>
 
-            <div class="contact-form-block reveal">
-                <h3 class="contact-form-block__title">Envoyer un message</h3>
-                <div class="contact-form__success" id="formSuccess" style="display:none">
-                    <i class="fas fa-circle-check"></i>
-                    <p>Message envoyé ! Je vous réponds sous 24 h.</p>
-                </div>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contactForm">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="contact-form__honey" aria-hidden="true">
-                        <label>Ne pas remplir : <input name="bot-field"></label>
-                    </p>
-                    <div class="contact-form__row">
-                        <div class="contact-form__group">
-                            <label for="cf-name" class="contact-form__label">Nom</label>
-                            <input type="text" id="cf-name" name="name" required placeholder="Votre nom" class="contact-form__input">
-                        </div>
-                        <div class="contact-form__group">
-                            <label for="cf-email" class="contact-form__label">Email</label>
-                            <input type="email" id="cf-email" name="email" required placeholder="votre@email.com" class="contact-form__input">
-                        </div>
-                    </div>
-                    <div class="contact-form__group">
-                        <label for="cf-msg" class="contact-form__label">Message</label>
-                        <textarea id="cf-msg" name="message" required rows="5" placeholder="Votre message..." class="contact-form__input contact-form__textarea"></textarea>
-                    </div>
-                    <button type="submit" class="contact-form__submit">
-                        <i class="fas fa-paper-plane"></i> Envoyer
-                    </button>
-                </form>
-            </div>
         </div>
     </section>
 
