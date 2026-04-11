@@ -1640,6 +1640,11 @@ code {
 .contact-link[href*="linkedin"]:hover i { color: #0A66C2; }
 .contact-link[href*="github"]:hover i   { color: #24292e; }
 
+.contact-link--location {
+    cursor: default;
+    pointer-events: none;
+}
+
 .contact-link strong {
     display: block;
     font-size: 0.9rem;

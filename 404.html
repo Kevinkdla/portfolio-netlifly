@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable — Kevin Granday</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: calc(100vh - var(--nav-height) - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 24px;
+        }
+        .error-page__code {
+            font-family: var(--font-mono);
+            font-size: clamp(5rem, 20vw, 9rem);
+            font-weight: 600;
+            color: var(--border-light);
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -4px;
+        }
+        .error-page__title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .error-page__text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 36px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .error-page__actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Accueil</a></li>
+        <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+        <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+        <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+        <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
+    </ul>
+    <dialog class="nav__dialog" id="navDialog">
+        <ul class="nav__dialog-menu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </dialog>
+
+    <!-- ===================== 404 ===================== -->
+    <div class="error-page">
+        <div>
+            <p class="error-page__code">404</p>
+            <h1 class="error-page__title">Page introuvable</h1>
+            <p class="error-page__text">Cette page n'existe pas ou a été déplacée. Revenez à l'accueil pour continuer.</p>
+            <div class="error-page__actions">
+                <a href="index.html" class="hero__cta">
+                    <i class="fas fa-house"></i> Accueil
+                </a>
+                <a href="contact.html" class="btn btn--outline">
+                    <i class="fas fa-envelope"></i> Me contacter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js?v=24"></script>
+</body>
+</html>
