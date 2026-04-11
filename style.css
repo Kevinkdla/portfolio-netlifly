@@ -2205,6 +2205,57 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     50%       { transform: translateX(-50%) translateY(8px); }
 }
 
+/* ---------- FLIP CARD (veille ↔ lab) ---------- */
+.flip-face--back {
+    display: none;
+}
+
+@keyframes flipOut {
+    0%   { transform: perspective(1200px) rotateY(0deg);   opacity: 1; }
+    100% { transform: perspective(1200px) rotateY(90deg);  opacity: 0; }
+}
+
+@keyframes flipIn {
+    0%   { transform: perspective(1200px) rotateY(-90deg); opacity: 0; }
+    100% { transform: perspective(1200px) rotateY(0deg);   opacity: 1; }
+}
+
+.flip-face.flipping-out {
+    animation: flipOut 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flip-face.flipping-in {
+    animation: flipIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flip-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.flip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border: 1px solid var(--border-light);
+    border-radius: 50px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--dur);
+}
+
+.flip-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+}
+
 /* ---------- VEILLE TABS ---------- */
 .veille-tabs {
     display: flex;

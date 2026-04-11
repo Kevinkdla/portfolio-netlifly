@@ -236,6 +236,33 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- TRANSITIONS AU CLIC (nav links) ---------- */
     const PAGES = ['index.html', 'parcours.html', 'realisations.html', 'veille.html', 'projet.html', 'contact.html'];
 
+    /* ---------- FLIP CARD (veille ↔ lab) ---------- */
+    const flipFront = document.querySelector('.flip-face--front');
+    const flipBack  = document.querySelector('.flip-face--back');
+
+    function doFlip(outEl, inEl) {
+        if (!outEl || !inEl) return;
+        outEl.classList.add('flipping-out');
+        setTimeout(() => {
+            outEl.style.display = 'none';
+            outEl.classList.remove('flipping-out');
+            inEl.style.display = 'block';
+            inEl.classList.add('flipping-in');
+            setTimeout(() => {
+                inEl.classList.remove('flipping-in');
+                inEl.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 280);
+        }, 280);
+    }
+
+    document.querySelectorAll('.flip-to-lab').forEach(btn => {
+        btn.addEventListener('click', () => doFlip(flipFront, flipBack));
+    });
+    document.querySelectorAll('.flip-to-veille').forEach(btn => {
+        btn.addEventListener('click', () => doFlip(flipBack, flipFront));
+    });
+
     /* ---------- VEILLE TABS ---------- */
     const veilleTabBtns = document.querySelectorAll('.veille-tab');
     if (veilleTabBtns.length) {
