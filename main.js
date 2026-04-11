@@ -236,6 +236,26 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- TRANSITIONS AU CLIC (nav links) ---------- */
     const PAGES = ['index.html', 'parcours.html', 'realisations.html', 'veille.html', 'projet.html', 'contact.html'];
 
+    /* ---------- VEILLE TABS ---------- */
+    const veilleTabBtns = document.querySelectorAll('.veille-tab');
+    if (veilleTabBtns.length) {
+        veilleTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                veilleTabBtns.forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.veille-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                const panel = document.getElementById('tab-' + btn.dataset.tab);
+                if (panel) {
+                    panel.classList.add('active');
+                    // Déclenche les animations reveal sur les éléments du panel
+                    panel.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+                        el.classList.add('visible');
+                    });
+                }
+            });
+        });
+    }
+
     /* ---------- INDICATEUR DE PAGE MOBILE (points) ---------- */
     const PAGE_LABELS = ['Accueil', 'Parcours', 'Réalisations', 'Veille', 'Projet', 'Contact'];
     const dotsNav = document.createElement('div');

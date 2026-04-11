@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=26">
+    <link rel="stylesheet" href="style.css?v=27">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,8 +66,26 @@
     <section class="section" id="veille">
         <div class="container">
             <h2 class="section__title">Veille technologique</h2>
-            <p class="section__subtitle">3 sujets : Microsoft PowerToys · Ledger &amp; Hardware Wallets · Cybersécurité des véhicules connectés</p>
+            <p class="section__subtitle">3 sujets de veille — cliquez pour naviguer</p>
 
+            <!-- Onglets -->
+            <div class="veille-tabs">
+                <button class="veille-tab active" data-tab="powertoys">
+                    <img src="images/logo-powertoys.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    PowerToys
+                </button>
+                <button class="veille-tab" data-tab="ledger">
+                    <img src="images/logo-ledger.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    Ledger
+                </button>
+                <button class="veille-tab" data-tab="vehicules">
+                    <img src="images/logo-bmw-motorrad.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    Véhicules connectés
+                </button>
+            </div>
+
+            <!-- Panel 1 : PowerToys -->
+            <div class="veille-panel active" id="tab-powertoys">
             <div class="veille-card reveal">
                 <div class="veille-card__header">
                     <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
@@ -223,6 +241,10 @@
                 </div>
             </div>
 
+            </div><!-- /veille-panel powertoys -->
+
+            <!-- Panel 2 : Ledger -->
+            <div class="veille-panel" id="tab-ledger">
             <!-- ===================== VEILLE 2 : LEDGER ===================== -->
             <div class="veille-card reveal" style="margin-top:56px;">
                 <div class="veille-card__header">
@@ -363,6 +385,10 @@
                 </div>
             </div>
 
+            </div><!-- /veille-panel ledger -->
+
+            <!-- Panel 3 : Véhicules -->
+            <div class="veille-panel" id="tab-vehicules">
             <!-- ===================== VEILLE 3 : VÉHICULES CONNECTÉS ===================== -->
             <div class="veille-card reveal" style="margin-top:56px;">
                 <div class="veille-card__header">
@@ -504,6 +530,8 @@
                 </div>
             </div>
 
+            </div><!-- /veille-panel vehicules -->
+
             <!-- Lab -->
             <div class="lab reveal">
                 <h3 class="lab__title">Laboratoire personnel</h3>
@@ -533,6 +561,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=26"></script>
+    <script src="main.js?v=27"></script>
 </body>
 </html>
