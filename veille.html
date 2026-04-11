@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=25">
+    <link rel="stylesheet" href="style.css?v=26">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@
     <section class="section" id="veille">
         <div class="container">
             <h2 class="section__title">Veille technologique</h2>
-            <p class="section__subtitle">Sujet : Microsoft PowerToys</p>
+            <p class="section__subtitle">3 sujets : Microsoft PowerToys · Ledger &amp; Hardware Wallets · Cybersécurité des véhicules connectés</p>
 
             <div class="veille-card reveal">
                 <div class="veille-card__header">
@@ -223,6 +223,291 @@
                 </div>
             </div>
 
+            <!-- ===================== VEILLE 2 : LEDGER ===================== -->
+            <div class="veille-card reveal" style="margin-top:56px;">
+                <div class="veille-card__header">
+                    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                        <div style="width:56px;height:56px;border-radius:12px;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-microchip" style="color:#fff;font-size:1.6rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="veille-card__title" style="margin:0;">Ledger &amp; Hardware Wallets</h3>
+                            <span class="veille-card__badge">Sécurité matérielle appliquée aux actifs numériques</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="veille-card__desc">
+                    Les hardware wallets sont des dispositifs physiques dédiés à la sécurisation des clés privées cryptographiques.
+                    Ledger, entreprise française fondée en 2014, est le leader mondial du secteur avec plus de 6 millions d'appareils vendus.
+                    Ces dispositifs constituent un cas d'étude concret de sécurité matérielle appliquée à grande échelle,
+                    directement comparable aux HSM (Hardware Security Modules) utilisés en entreprise.
+                </p>
+
+                <div class="powertoys-grid">
+                    <div class="pt-item">
+                        <i class="fas fa-microchip"></i>
+                        <h4>Secure Element</h4>
+                        <p>Puce certifiée CC EAL5+ isolant les clés privées du système principal.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-code"></i>
+                        <h4>BOLOS OS</h4>
+                        <p>Système d'exploitation propriétaire Ledger pour l'isolation des applications.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-key"></i>
+                        <h4>Clé privée</h4>
+                        <p>Nombre cryptographique qui ne quitte jamais le Secure Element.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Side-channel</h4>
+                        <p>Attaques par analyse de consommation électrique ou rayonnement EM.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-link"></i>
+                        <h4>Supply chain attack</h4>
+                        <p>Compromission d'une dépendance logicielle en amont de la livraison.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-server"></i>
+                        <h4>HSM</h4>
+                        <p>Équivalent entreprise du hardware wallet : protège les clés PKI et CA.</p>
+                    </div>
+                </div>
+
+                <div class="veille-card__notes">
+                    <p><strong>Lien SISR :</strong> les concepts de Ledger sont identiques à ceux des HSM d'entreprise : isolation matérielle, attestation de firmware, résistance aux attaques physiques. Un administrateur systèmes gère régulièrement des PKI et des CA qui reposent sur les mêmes principes.</p>
+                    <p><strong>Modèles :</strong> Ledger Nano S Plus, Nano X (Bluetooth), Ledger Stax &amp; Flex (écran tactile, 2024)</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-search"></i> Pourquoi cette veille ?</h4>
+                    <p>En m'intéressant aux cryptomonnaies, j'ai rapidement cherché comment sécuriser des actifs numériques de manière fiable.
+                    Les wallets logiciels (MetaMask, Exodus) exposent les clés privées en mémoire RAM — un attaquant avec un accès local peut les extraire.
+                    En creusant la question, j'ai découvert l'architecture des hardware wallets et leur lien direct avec la sécurité matérielle étudiée en SISR.
+                    Je me tiens informé via le blog officiel Ledger, le dépôt GitHub Ledger, les publications de Trail of Bits et les alertes du CERT-FR.</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-triangle-exclamation"></i> Incidents réels</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Déc. 2023 — Supply chain</span>
+                            <p>Le <strong>Ledger Connect Kit</strong> (bibliothèque npm utilisée par des dizaines de dApps) est compromis via un compte npm d'un ancien employé. Du code malveillant redirige les transactions vers un wallet attaquant. Environ <strong>600 000 $</strong> volés en quelques heures avant que le package soit retiré.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Juil. 2020 — Data breach</span>
+                            <p>La base de données e-commerce Ledger est exfiltrée : <strong>1 million d'adresses email</strong> et <strong>272 000 dossiers complets</strong> (nom, adresse postale, téléphone) publiés sur des forums. La faille n'était pas dans l'appareil mais dans l'API marketing — illustration que la surface d'attaque dépasse le produit lui-même.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Mai 2023 — Ledger Recover</span>
+                            <p>Ledger annonce <strong>Ledger Recover</strong> : service de sauvegarde de la seed phrase via trois tiers de confiance. Très controversé car il implique de fragmenter et transmettre la seed (chiffrée) vers des serveurs externes. Révèle que le firmware peut techniquement extraire la seed — remettant en cause le modèle de confiance du Secure Element.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-code-branch"></i> Évolutions récentes</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">2024 — Ledger Flex &amp; Stax</span>
+                            <p>Nouveaux modèles avec écran tactile E Ink et confirmation visuelle des transactions directement sur l'écran sécurisé — réduisant le risque d'attaque "blind signing" où l'utilisateur signe sans voir ce qu'il approuve.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">2023 — Clear signing initiative</span>
+                            <p>Ledger pousse l'adoption du <strong>clear signing</strong> : affichage lisible des détails de chaque transaction sur l'écran de l'appareil, plutôt qu'un hash hexadécimal incompréhensible. Effort de standardisation avec les principaux protocoles DeFi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-scale-balanced"></i> Hardware wallet vs alternatives</h4>
+                    <p>Face aux wallets logiciels (MetaMask, Exodus), le hardware wallet ajoute une couche d'isolation physique irremplaçable.
+                    Face aux wallets papier (seed phrase écrite), il offre la facilité d'usage et la résistance aux keyloggers.
+                    Son équivalent en entreprise est le <strong>HSM</strong> (Thales, Utimaco, YubiHSM) qui protège les clés PKI et les autorités de certification.
+                    La limite principale reste la confiance accordée au fabricant — comme le montre l'affaire Ledger Recover.</p>
+                </div>
+            </div>
+
+            <!-- Sources Ledger -->
+            <div class="sources reveal">
+                <h3 class="sources__title">Sources — Ledger &amp; Hardware Wallets</h3>
+                <div class="sources__grid">
+                    <a href="https://www.ledger.com/academy" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <strong>Ledger Academy</strong>
+                            <span>Documentation officielle et guides sécurité</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/LedgerHQ" target="_blank" rel="noopener" class="source-link">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub LedgerHQ</strong>
+                            <span>Firmware open source et rapports de sécurité</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <strong>CERT-FR</strong>
+                            <span>Alertes CVE et incidents sécurité</span>
+                        </div>
+                    </a>
+                    <a href="https://www.trailofbits.com/research" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-flask"></i>
+                        <div>
+                            <strong>Trail of Bits</strong>
+                            <span>Audits de sécurité hardware &amp; blockchain</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===================== VEILLE 3 : VÉHICULES CONNECTÉS ===================== -->
+            <div class="veille-card reveal" style="margin-top:56px;">
+                <div class="veille-card__header">
+                    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                        <div style="width:56px;height:56px;border-radius:12px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-motorcycle" style="color:#fff;font-size:1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 class="veille-card__title" style="margin:0;">Cybersécurité des Véhicules Connectés</h3>
+                            <span class="veille-card__badge">Quand l'informatique embarquée devient une surface d'attaque</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="veille-card__desc">
+                    Les véhicules modernes — motos incluses — embarquent des dizaines d'ECU (Electronic Control Units) interconnectés
+                    via des protocoles réseau internes. Avec l'ajout du Bluetooth, du WiFi, de la 4G et des accès sans clé,
+                    la surface d'attaque devient comparable à un réseau d'entreprise : de multiples points d'entrée,
+                    des protocoles anciens sans authentification, et des conséquences physiques en cas de compromission.
+                </p>
+
+                <div class="powertoys-grid">
+                    <div class="pt-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>CAN Bus</h4>
+                        <p>Réseau interne reliant tous les calculateurs, sans authentification native.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-microchip"></i>
+                        <h4>ECU</h4>
+                        <p>Electronic Control Unit : calculateurs gérant chaque fonction du véhicule.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-plug"></i>
+                        <h4>OBD-II</h4>
+                        <p>Port de diagnostic standardisé — point d'entrée privilégié des attaques physiques.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-signal"></i>
+                        <h4>Relay attack</h4>
+                        <p>Amplification du signal de la clé sans contact pour déverrouiller à distance.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h4>V2X</h4>
+                        <p>Vehicle to Everything : communication entre véhicules et infrastructure routière.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-file-shield"></i>
+                        <h4>UNECE WP.29</h4>
+                        <p>Réglementation européenne cybersécurité obligatoire pour tous les véhicules neufs depuis 2022.</p>
+                    </div>
+                </div>
+
+                <div class="veille-card__notes">
+                    <p><strong>Lien SISR :</strong> le CAN bus est un réseau embarqué avec ses propres protocoles, topologies et vulnérabilités — comme un LAN d'entreprise. Les principes de segmentation, détection d'intrusion et durcissement s'appliquent directement. Des IDS spécifiques aux véhicules émergent (Argus Cyber Security, Upstream Security).</p>
+                    <p><strong>Standard de référence :</strong> ISO/SAE 21434 — cybersécurité du cycle de vie des véhicules routiers (2021)</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-search"></i> Pourquoi cette veille ?</h4>
+                    <p>Passionné de moto, j'ai commencé à m'interroger sur la sécurité réelle des systèmes connectés présents sur les modèles récents.
+                    Les motos modernes (Honda Goldwing, BMW R1250GS, Ducati Multistrada V4) embarquent Bluetooth, GPS, et des systèmes de clé sans contact.
+                    En cherchant des informations sur les relay attacks — méthode couramment utilisée pour voler des motos à clé sans contact —
+                    j'ai découvert l'étendue des vulnérabilités dans les protocoles embarqués et leur lien direct avec la sécurité réseau étudiée en SISR.
+                    Je me tiens informé via les publications de l'ENISA, les conférences Black Hat et DEF CON, et les rapports d'IOActive.</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-triangle-exclamation"></i> Incidents et recherches réels</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">2015 — Jeep Cherokee</span>
+                            <p>Charlie Miller et Chris Valasek prennent le <strong>contrôle total d'une Jeep Cherokee en marche</strong> via le système Uconnect (3G), sans accès physique : accélération, freinage, direction, essuie-glaces. Publication à DEF CON. Résultat : rappel de <strong>1,4 million de véhicules</strong> par Chrysler-FCA.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">2016 — Tesla Model S</span>
+                            <p>Des chercheurs de Keen Security Lab démontrent un <strong>accès root au CAN bus à distance</strong> sur une Tesla Model S, permettant d'activer les freins en marche. Tesla corrige la faille via une mise à jour OTA (Over The Air) en 10 jours — illustrant l'avantage des mises à jour distantes.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">En cours — Relay attacks motos</span>
+                            <p>Les <strong>relay attacks sur motos à clé sans contact</strong> sont devenues une méthode de vol courante en Europe. Deux attaquants amplifient le signal de la clé (dans la maison) vers la moto (dans la rue) pour la déverrouiller et la démarrer sans effraction. Aucun bruit, aucune trace — détection quasi impossible sans cage de Faraday pour la clé.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">2022 — UNECE WP.29</span>
+                            <p>Entrée en vigueur en Europe de la réglementation <strong>UNECE WP.29</strong> imposant aux constructeurs un CSMS (Cybersecurity Management System) pour tous les nouveaux types de véhicules. Premier cadre réglementaire contraignant de l'industrie automobile en matière de cybersécurité.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-code-branch"></i> Évolutions et contre-mesures</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Automobile IDPS</span>
+                            <p>Émergence d'<strong>IDS/IPS embarqués</strong> (Intrusion Detection/Prevention Systems) spécifiques aux véhicules. Des entreprises comme Argus Cyber Security (rachetée par Continental) ou Upstream Security analysent le trafic CAN bus en temps réel pour détecter des comportements anormaux.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Secure OBD dongles</span>
+                            <p>Développement de <strong>dongles OBD-II sécurisés</strong> filtrant les commandes injectées via le port de diagnostic. Contremesure aux attaques physiques via OBD, particulièrement visées par les voleurs professionnels sur les véhicules haut de gamme.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">UWB vs relay attacks</span>
+                            <p>Le <strong>Ultra Wideband (UWB)</strong> remplace progressivement le Bluetooth et le RFID pour les clés sans contact. Sa précision de localisation (±10 cm) permet de vérifier que la clé est physiquement à l'intérieur du véhicule — rendant les relay attacks inefficaces. Déployé sur BMW, Apple CarKey, certains modèles Honda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sources Véhicules connectés -->
+            <div class="sources reveal">
+                <h3 class="sources__title">Sources — Cybersécurité des véhicules connectés</h3>
+                <div class="sources__grid">
+                    <a href="https://www.enisa.europa.eu/topics/iot-and-smart-infrastructures/vehicles" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <strong>ENISA</strong>
+                            <span>Rapports cybersécurité véhicules connectés</span>
+                        </div>
+                    </a>
+                    <a href="https://www.blackhat.com" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-hat-cowboy"></i>
+                        <div>
+                            <strong>Black Hat / DEF CON</strong>
+                            <span>Conférences et publications de recherche offensive</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <strong>CERT-FR</strong>
+                            <span>Alertes et bulletins de sécurité</span>
+                        </div>
+                    </a>
+                    <a href="https://ioactive.com/research/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-bug"></i>
+                        <div>
+                            <strong>IOActive Research</strong>
+                            <span>Recherches offensives sur systèmes embarqués</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <!-- Lab -->
             <div class="lab reveal">
                 <h3 class="lab__title">Laboratoire personnel</h3>
@@ -252,6 +537,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=25"></script>
+    <script src="main.js?v=26"></script>
 </body>
 </html>
