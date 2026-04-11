@@ -467,4 +467,13 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMissions();
     }
 
+    /* ---------- CONTACT FORM — SUCCESS BANNER ---------- */
+    const formSuccess = document.getElementById('formSuccess');
+    const contactForm = document.getElementById('contactForm');
+    if (formSuccess && new URLSearchParams(window.location.search).get('success') === '1') {
+        formSuccess.style.display = 'flex';
+        if (contactForm) contactForm.style.display = 'none';
+        window.history.replaceState({}, '', window.location.pathname);
+    }
+
 });
