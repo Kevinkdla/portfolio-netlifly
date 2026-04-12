@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updatePersoVisibility() {
             if (!persoProjects) return;
-            const show = currentTag === 'all' || currentTag === 'perso';
+            const show = currentTag === 'all' || currentTag === 'perso' || currentTag === 'ecole';
             persoProjects.style.display = show ? '' : 'none';
         }
 
