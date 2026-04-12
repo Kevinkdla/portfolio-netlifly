@@ -11,6 +11,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* ---------- NAV ACTIVE LINK ---------- */
+    const navPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav__link[href]').forEach(link => {
+        if (link.getAttribute('href').split('/').pop() === navPage) {
+            link.classList.add('active');
+        }
+    });
+
     /* ---------- DARK MODE TOGGLE ---------- */
     const themeToggle    = document.getElementById('themeToggle');
     const themeToggleTop = document.getElementById('themeToggleTop');
@@ -198,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightboxPdf = document.getElementById('lightboxPdf');
         if (cvPreview && lightboxPdf) {
             cvPreview.addEventListener('click', () => {
-                lightboxPdf.src = 'docs/kevin-kindiela-cv.pdf';
+                lightboxPdf.src = 'docs/kevin-granday-cv.pdf';
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
