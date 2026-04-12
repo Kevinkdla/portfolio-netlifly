@@ -2307,6 +2307,11 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     flex-shrink: 0;
 }
 
+.veille-tab__icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
 .veille-panel {
     display: none;
 }

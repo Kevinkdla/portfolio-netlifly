@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=30">
+    <link rel="stylesheet" href="style.css?v=31">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
             <div class="section-header-row">
                 <div>
                     <h2 class="section__title">Veille technologique</h2>
-                    <p class="section__subtitle">3 sujets de veille — cliquez pour naviguer</p>
+                    <p class="section__subtitle">4 sujets de veille — cliquez pour naviguer</p>
                 </div>
                 <button class="flip-btn flip-to-lab">
                     <i class="fas fa-flask"></i> Laboratoire
@@ -89,6 +89,10 @@
                 <button class="veille-tab" data-tab="vehicules">
                     <img src="images/logo-bmw-motorrad.png" alt="" class="veille-tab__logo" aria-hidden="true">
                     Véhicules connectés
+                </button>
+                <button class="veille-tab" data-tab="navigateurs">
+                    <i class="fas fa-shield-halved veille-tab__icon" aria-hidden="true"></i>
+                    Navigateurs
                 </button>
             </div>
 
@@ -540,6 +544,168 @@
 
             </div><!-- /veille-panel vehicules -->
 
+            <!-- Panel 4 : Navigateurs -->
+            <div class="veille-panel" id="tab-navigateurs">
+            <div class="veille-card reveal" style="margin-top:56px;">
+                <div class="veille-card__header">
+                    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+                        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:var(--accent);border-radius:12px;flex-shrink:0;">
+                            <i class="fas fa-shield-halved" style="font-size:1.6rem;color:#fff;"></i>
+                        </div>
+                        <div>
+                            <h3 class="veille-card__title" style="margin:0;">Confidentialité &amp; Durcissement des Navigateurs</h3>
+                            <span class="veille-card__badge">Quels choix pour l'entreprise et l'utilisateur averti ?</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="veille-card__desc">
+                    Le navigateur est aujourd'hui la principale surface d'attaque du poste utilisateur.
+                    Cookies tiers, fingerprinting, fuites WebRTC, trackers publicitaires — chaque session expose des données.
+                    En entreprise, le choix et le durcissement du navigateur relèvent directement de la politique de sécurité du SI :
+                    un navigateur mal configuré devient un vecteur d'exfiltration ou de phishing difficile à détecter.
+                </p>
+
+                <div class="powertoys-grid">
+                    <div class="pt-item">
+                        <i class="fas fa-fingerprint"></i>
+                        <h4>Fingerprinting</h4>
+                        <p>Identification unique via combinaison de paramètres (résolution, polices, GPU, OS) sans cookie.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-cookie-bite"></i>
+                        <h4>Cookies tiers</h4>
+                        <p>Trackers inter-sites permettant de suivre l'utilisateur sur l'ensemble du web.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-tower-broadcast"></i>
+                        <h4>WebRTC leak</h4>
+                        <p>Fuite de l'IP locale et publique via WebRTC, même derrière un VPN.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-lock"></i>
+                        <h4>DNS over HTTPS</h4>
+                        <p>Chiffrement des requêtes DNS pour éviter l'interception par le FAI ou un attaquant réseau.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-box"></i>
+                        <h4>Container Tabs</h4>
+                        <p>Isolation de sessions par onglet — empêche le tracking entre sites.</p>
+                    </div>
+                    <div class="pt-item">
+                        <i class="fas fa-sliders"></i>
+                        <h4>about:config</h4>
+                        <p>Paramètres avancés Firefox permettant de durcir le navigateur au-delà des réglages standards.</p>
+                    </div>
+                </div>
+
+                <div class="veille-card__notes">
+                    <p><strong>Lien SISR :</strong> la gestion des navigateurs en entreprise est une mission concrète : déploiement via GPO, configuration centralisée (Chrome Enterprise, Firefox ESR), blocage des extensions non autorisées, et supervision des fuites de données via le proxy.</p>
+                    <p><strong>Référence :</strong> CNIL — Recommandation sur les cookies et traceurs (2020) &amp; ANSSI — Guide de sécurisation des postes utilisateurs</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-search"></i> Pourquoi cette veille ?</h4>
+                    <p>En configurant mes propres VMs et en testant des outils comme Wireshark, j'ai réalisé la quantité de données transmises par un navigateur standard sans configuration particulière.
+                    En cherchant à réduire ma surface d'exposition personnelle, j'ai découvert les techniques de tracking avancées (canvas fingerprinting, audio fingerprinting, WebRTC leak)
+                    et les contre-mesures disponibles. Ce sujet rejoint directement les enjeux SISR : gestion du poste utilisateur, politique de sécurité, conformité RGPD.</p>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-scale-balanced"></i> Comparatif navigateurs</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Chrome — Google</span>
+                            <p>Navigateur dominant (65 % de parts de marché). Performances élevées, intégration Google. Fin des cookies tiers repoussée — remplacée par la <strong>Privacy Sandbox</strong>, solution encore controversée car le tracking reste centralisé chez Google. Recommandé en entreprise via <strong>Chrome Enterprise</strong> pour le déploiement GPO.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Firefox — Mozilla</span>
+                            <p>Seul navigateur majeur indépendant des GAFAM. Blocage des trackers activé par défaut (Enhanced Tracking Protection), <strong>about:config</strong> exposant des centaines de paramètres avancés, Container Tabs pour l'isolation de sessions. Version <strong>Firefox ESR</strong> recommandée pour les déploiements d'entreprise.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Brave</span>
+                            <p>Basé sur Chromium, bloqueur natif de pubs et trackers sans extension tierce. Intègre la protection anti-fingerprinting par défaut (randomisation des paramètres), le blocage WebRTC et le DNS over HTTPS. Mode Tor intégré pour la navigation la plus sensible.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Zen Browser</span>
+                            <p>Fork Firefox récent (2024) orienté vie privée et ergonomie. Combine les protections de Firefox avec une interface repensée (barre latérale, split view). Encore en développement actif — à surveiller pour un usage personnel avancé.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-flask"></i> Tests &amp; benchmark vie privée</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Cover Your Tracks — EFF</span>
+                            <p>Test de l'EFF (Electronic Frontier Foundation) évaluant la résistance au fingerprinting et l'efficacité du blocage des trackers. Un navigateur bien configuré doit afficher "strong protection against Web tracking".</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">BrowserLeaks</span>
+                            <p>Suite de tests révélant les fuites d'informations : IP via WebRTC, résolution d'écran, polices installées, fuseau horaire, canvas fingerprint, données WebGL. Utile pour mesurer l'efficacité des contre-mesures appliquées.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">AmIUnique</span>
+                            <p>Projet de recherche académique calculant l'unicité de votre navigateur parmi des millions de profils collectés. Montre concrètement à quel point une combinaison de paramètres techniques est identifiable — même sans cookie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-screwdriver-wrench"></i> Contre-mesures clés</h4>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">uBlock Origin</span>
+                            <p>Extension open source de blocage réseau. Filtre les requêtes vers les domaines trackers avant même leur chargement. Bien plus efficace que les bloqueurs de pubs classiques car il agit au niveau réseau, pas DOM. Indispensable sur Firefox et Chrome.</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Firefox about:config — durcissement</span>
+                            <p>Paramètres clés : <code>privacy.resistFingerprinting = true</code> (anti-fingerprinting), <code>media.peerconnection.enabled = false</code> (désactive WebRTC), <code>network.trr.mode = 2</code> (DNS over HTTPS), <code>browser.send_pings = false</code> (désactive les ping de navigation).</p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">Container Tabs (Firefox)</span>
+                            <p>Permet d'isoler chaque site dans un conteneur distinct — les cookies et sessions du conteneur "Travail" ne se mélangent pas avec ceux du conteneur "Personnel". Efficace contre le tracking inter-sites des régies publicitaires.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sources Navigateurs -->
+            <div class="sources reveal">
+                <h3 class="sources__title">Sources — Confidentialité des navigateurs</h3>
+                <div class="sources__grid">
+                    <a href="https://coveryourtracks.eff.org/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <strong>Cover Your Tracks — EFF</strong>
+                            <span>Test officiel fingerprinting &amp; trackers</span>
+                        </div>
+                    </a>
+                    <a href="https://browserleaks.com/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-magnifying-glass"></i>
+                        <div>
+                            <strong>BrowserLeaks</strong>
+                            <span>Suite de tests de fuites navigateur</span>
+                        </div>
+                    </a>
+                    <a href="https://amiunique.org/" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-fingerprint"></i>
+                        <div>
+                            <strong>AmIUnique</strong>
+                            <span>Unicité du fingerprint navigateur</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cnil.fr/fr/cookies-et-traceurs-que-dit-la-loi" target="_blank" rel="noopener" class="source-link">
+                        <i class="fas fa-gavel"></i>
+                        <div>
+                            <strong>CNIL — Cookies &amp; traceurs</strong>
+                            <span>Cadre légal RGPD français</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            </div><!-- /veille-panel navigateurs -->
+
 
         </div>
     </section>
@@ -584,6 +750,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=30"></script>
+    <script src="main.js?v=31"></script>
 </body>
 </html>
