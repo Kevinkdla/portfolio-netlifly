@@ -5,14 +5,14 @@
     <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille &amp; Lab — Kevin Granday</title>
-    <meta name="description" content="Veille technologique et laboratoire personnel de Kevin Granday, BTS SIO SISR.">
+    <meta name="description" content="Veille technologique de Kevin Granday : Microsoft PowerToys, Ledger & hardware wallets, cybersécurité des véhicules connectés, confidentialité des navigateurs. Laboratoire VirtualBox personnel.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:title" content="Veille &amp; Lab — Kevin Granday">
-    <meta property="og:description" content="Veille technologique sur Microsoft PowerToys et laboratoire VirtualBox de Kevin Granday, BTS SIO SISR.">
+    <meta property="og:description" content="Veille technologique de Kevin Granday : Microsoft PowerToys, Ledger & hardware wallets, cybersécurité des véhicules connectés, confidentialité des navigateurs. Laboratoire VirtualBox personnel.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kevin-granday-portfolio.netlify.app/veille.html">
     <meta property="og:image" content="https://kevin-granday-portfolio.netlify.app/images/photo-kevin.jpg">
-    <link rel="stylesheet" href="style.css?v=33">
+    <link rel="stylesheet" href="style.css?v=34">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
     <!-- ===================== LIGHTBOX LAB ===================== -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">&times;</button>
-        <img src="images/lab.png" alt="Laboratoire VirtualBox" class="lightbox__img" id="lightboxImg">
+        <img src="images/lab.png" alt="Laboratoire VirtualBox" class="lightbox__img" id="lightboxImg" loading="lazy">
     </div>
 
     <!-- ===================== NAVBAR ===================== -->
@@ -79,15 +79,15 @@
             <!-- Onglets -->
             <div class="veille-tabs">
                 <button class="veille-tab active" data-tab="powertoys">
-                    <img src="images/logo-powertoys.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    <img src="images/logo-powertoys.png" alt="" class="veille-tab__logo" aria-hidden="true" loading="eager">
                     PowerToys
                 </button>
                 <button class="veille-tab" data-tab="ledger">
-                    <img src="images/logo-ledger.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    <img src="images/logo-ledger.png" alt="" class="veille-tab__logo" aria-hidden="true" loading="eager">
                     Ledger
                 </button>
                 <button class="veille-tab" data-tab="vehicules">
-                    <img src="images/logo-bmw-motorrad.png" alt="" class="veille-tab__logo" aria-hidden="true">
+                    <img src="images/logo-bmw-motorrad.png" alt="" class="veille-tab__logo" aria-hidden="true" loading="eager">
                     Véhicules connectés
                 </button>
                 <button class="veille-tab" data-tab="navigateurs">
@@ -757,6 +757,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=33"></script>
+    <script src="main.js?v=34"></script>
 </body>
 </html>
