@@ -12,11 +12,11 @@
 }
 
 :root {
-    /* Palette — light, tech blue accent */
+    /* Palette — light, clean, monochrome */
     --bg-primary: #fff;
     --bg-secondary: #fafafa;
     --bg-card: #fff;
-    --bg-card-hover: #f5f8ff;
+    --bg-card-hover: #fafafa;
     --border: #f0f0f0;
     --border-light: #e5e5e5;
 
@@ -24,9 +24,9 @@
     --text-secondary: #666;
     --text-muted: #999;
 
-    --accent: #2563eb;
-    --accent-soft: rgba(37, 99, 235, 0.07);
-    --accent-glow: rgba(37, 99, 235, 0.18);
+    --accent: #111;
+    --accent-soft: rgba(17, 17, 17, 0.06);
+    --accent-glow: rgba(17, 17, 17, 0.12);
     --accent-green: #15803d;
     --accent-green-soft: #f0fdf4;
 
@@ -301,10 +301,8 @@ code {
     position: absolute;
     inset: 0;
     background: #fff;
-    background-image:
-        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(37, 99, 235, 0.06) 0%, transparent 70%),
-        radial-gradient(circle, #c7d7f5 1px, transparent 1px);
-    background-size: auto, 28px 28px;
+    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-size: 28px 28px;
     -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
     pointer-events: none;
@@ -312,10 +310,8 @@ code {
 
 [data-theme="dark"] .hero__bg {
     background: #0d0d0d;
-    background-image:
-        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(96, 165, 250, 0.07) 0%, transparent 70%),
-        radial-gradient(circle, #1e3a5f 1px, transparent 1px);
-    background-size: auto, 28px 28px;
+    background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+    background-size: 28px 28px;
 }
 
 .hero__content {
@@ -435,9 +431,9 @@ code {
 }
 
 .hero__cta:hover {
-    background: #1d4ed8;
+    background: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px var(--accent-glow);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* ---------- SECTIONS ---------- */
@@ -1009,7 +1005,6 @@ code {
 .mission-card:hover {
     border-left-color: var(--accent);
     background: var(--bg-card-hover);
-    box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .mission-card__head {
@@ -1726,14 +1721,12 @@ code {
 .skill-card:hover {
     border-color: var(--accent);
     color: var(--text-primary);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px var(--accent-glow);
-    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 .skill-card:hover i {
-    transform: scale(1.15);
-    color: var(--accent);
+    transform: scale(1.1);
 }
 
 /* ---------- FOOTER ---------- */
@@ -2365,10 +2358,9 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     --text-primary: #e8e8e8;
     --text-secondary: #909090;
     --text-muted: #505050;
-    --accent: #60a5fa;
-    --accent-soft: rgba(96, 165, 250, 0.1);
-    --accent-glow: rgba(96, 165, 250, 0.18);
-    --bg-card-hover: #111827;
+    --accent: #e8e8e8;
+    --accent-soft: rgba(232, 232, 232, 0.08);
+    --accent-glow: rgba(232, 232, 232, 0.12);
     --accent-green: #4ade80;
     --accent-green-soft: #052e16;
 }
