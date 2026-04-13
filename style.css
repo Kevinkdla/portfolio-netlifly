@@ -820,6 +820,15 @@ code {
     min-height: 44px;
 }
 
+.cert-modules li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 .cert-modules li::before {
     content: '✓';
     position: absolute;
@@ -1312,10 +1321,12 @@ code {
     font-size: 0.75rem;
     color: var(--text-secondary);
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     transition: color var(--dur);
+    min-height: 44px;
+    padding: 0 4px;
 }
 
 .mission-card__github:hover {
