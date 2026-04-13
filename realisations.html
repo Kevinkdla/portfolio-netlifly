@@ -124,12 +124,24 @@
                         <span class="fp-module"><i class="fas fa-circle-dot"></i> Sauvegarde &amp; maintenance</span>
                         <span class="fp-module"><i class="fas fa-circle-dot"></i> Outils rapides (recherche, MDP, unlock)</span>
                     </div>
-                    <div class="lab__screenshot project-screenshot" data-img="images/dashboard-AD.png">
-                        <img src="images/dashboard-AD.png" alt="Aperçu du menu Toolkit AD" class="lab__img" style="width:100%;display:block;" loading="lazy">
-                        <div class="cv-card__overlay">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Cliquez pour agrandir</span>
+                    <!-- Vignette screenshot + dialog natif -->
+                    <div style="margin-top:0.75rem;">
+                        <div class="lab__screenshot project-screenshot" id="trigger-dialog-ad" style="cursor:zoom-in;">
+                            <img src="images/dashboard-AD.png" alt="Aperçu du menu Toolkit AD" class="lab__img" style="width:100%;display:block;" loading="lazy">
+                            <div class="cv-card__overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Voir l'aperçu</span>
+                            </div>
                         </div>
+                        <dialog id="dialog-ad" class="img-dialog">
+                            <button class="img-dialog__close" id="close-dialog-ad" aria-label="Fermer">&times;</button>
+                            <img src="images/dashboard-AD.png" alt="Aperçu du menu Toolkit AD" class="img-dialog__img">
+                        </dialog>
+                    </div>
+                    <!-- GIF affiché directement, pas de lien -->
+                    <div style="margin-top:0.75rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+                        <img src="deploiment-AD.gif" alt="Aperçu des fonctionnalités du Toolkit AD" style="width:100%;display:block;">
+                        <span style="display:block;font-size:0.75rem;color:var(--text-muted);padding:4px 8px;"><i class="fas fa-film"></i> Aperçu des fonctionnalités du Toolkit</span>
                     </div>
 
                     <div class="project-card__footer">

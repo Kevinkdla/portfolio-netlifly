@@ -156,9 +156,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.innerHTML = '<i class="fas fa-copy"></i>';
                     btn.classList.remove('copied');
                 }, 2000);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
             });
         });
     });
+
+    /* ---------- IMG DIALOG (aperçu projet) ---------- */
+    const dialogAd      = document.getElementById('dialog-ad');
+    const triggerAd     = document.getElementById('trigger-dialog-ad');
+    const closeDialogAd = document.getElementById('close-dialog-ad');
+    if (dialogAd && triggerAd) {
+        triggerAd.addEventListener('click', () => dialogAd.showModal());
+        closeDialogAd.addEventListener('click', (e) => { e.stopPropagation(); dialogAd.close(); });
+        dialogAd.addEventListener('click', (e) => { if (e.target === dialogAd) dialogAd.close(); });
+    }
 
     /* ---------- BACK TO TOP ---------- */
     const backToTop = document.createElement('button');
@@ -389,8 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const MISSIONS = [
             { titre: 'Portfolio en ligne', desc: 'Création et déploiement d\'un portfolio professionnel avec outils IA.', tag: 'perso', cat: 'presence', ctx: 'Personnel' },
-            { titre: 'Mise en place Active Directory et GPO', desc: 'Déploiement d\'un annuaire Active Directory, création d\'unités d\'organisation, utilisateurs et stratégies de groupe.', tag: 'e6', cat: 'service', ctx: 'Projet E6' },
-            { titre: 'Configuration DHCP / DNS', desc: 'Installation et paramétrage des services DHCP et DNS sur Windows Server. Attribution dynamique des adresses et résolution de noms.', tag: 'e6', cat: 'service', ctx: 'Projet E6' },
+            { titre: 'Mise en place Active Directory et GPO', desc: 'Déploiement d\'un annuaire Active Directory, création d\'unités d\'organisation, utilisateurs et stratégies de groupe.', tag: 'e6', cat: 'service', ctx: 'Projet E6', github: 'https://github.com/Kevinkdla/srv-ad-dns-dhcp-toolkit' },
+            { titre: 'Configuration DHCP / DNS', desc: 'Installation et paramétrage des services DHCP et DNS sur Windows Server. Attribution dynamique des adresses et résolution de noms.', tag: 'e6', cat: 'service', ctx: 'Projet E6', github: 'https://github.com/Kevinkdla/srv-ad-dns-dhcp-toolkit' },
             { titre: 'Déploiement supervision Centreon', desc: 'Installation de Centreon, ajout des hôtes, configuration des sondes SNMP et création de tableaux de bord de monitoring.', tag: 'e6', cat: 'service', ctx: 'Projet E6' },
             { titre: 'Configuration pare-feu pfSense', desc: 'Mise en place de pfSense comme pare-feu et routeur. Règles de filtrage, NAT et segmentation réseau par VLAN.', tag: 'e6', cat: 'patrimoine', ctx: 'Projet E6' },
             { titre: 'Travaux pratiques réseaux', desc: 'Configuration de switchs, routeurs et VLAN en environnement de travaux pratiques. Adressage IPv4 et routage inter-VLAN.', tag: 'ecole', cat: 'service', ctx: 'TP IPSSI' },
@@ -416,7 +429,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="mission-card__tag mission-card__tag--${m.tag}">${m.tag}</span>
                         </div>
                         <p class="mission-card__desc">${m.desc}</p>
-                        <p class="mission-card__meta">${CATS_LABELS[m.cat]} — ${m.ctx}</p>
+                        <div class="mission-card__footer">
+                            <p class="mission-card__meta">${CATS_LABELS[m.cat]} — ${m.ctx}</p>
+                            ${m.github ? `<a href="${m.github}" target="_blank" rel="noopener" class="mission-card__github"><i class="fab fa-github"></i> Voir le projet</a>` : ''}
+                        </div>
                     </div>`;
             });
 
