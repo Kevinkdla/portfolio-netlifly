@@ -186,8 +186,8 @@ code {
 
 .lightbox__close {
     position: absolute;
-    top: 20px;
-    right: 28px;
+    top: 12px;
+    right: 16px;
     font-size: 2.4rem;
     color: var(--text-primary);
     background: none;
@@ -195,6 +195,11 @@ code {
     cursor: pointer;
     transition: color var(--dur);
     line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lightbox__close:hover {
@@ -812,6 +817,7 @@ code {
     color: var(--text-secondary);
     padding-left: 14px;
     position: relative;
+    min-height: 44px;
 }
 
 .cert-modules li::before {
@@ -1089,13 +1095,14 @@ code {
     gap: 7px;
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 6px 14px;
+    padding: 10px 14px;
     border-radius: 50px;
     border: 1px solid var(--border);
     color: var(--text-muted);
     transition: all var(--dur);
     text-decoration: none;
     white-space: nowrap;
+    min-height: 44px;
 }
 
 .featured-project__github:hover {
@@ -2006,6 +2013,11 @@ code {
     color: var(--text-muted);
     font-size: 1.05rem;
     transition: color var(--dur);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer__links a:hover {
@@ -2399,13 +2411,14 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     cursor: pointer;
     color: var(--text-muted);
     font-size: 0.82rem;
-    padding: 6px 10px;
+    padding: 10px 12px;
     border-radius: var(--radius-sm);
     transition: color var(--dur), background var(--dur), border-color var(--dur);
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 5px;
+    min-height: 44px;
 }
 
 .copy-btn:hover {
@@ -2445,6 +2458,9 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     cursor: pointer;
     text-decoration: none;
     z-index: 2;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
 }
 
 .hero__scroll i {
