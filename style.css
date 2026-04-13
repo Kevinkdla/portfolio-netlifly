@@ -115,7 +115,11 @@ code {
     max-width: min(780px, 88vw);
     width: 100%;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 .img-dialog::backdrop {
