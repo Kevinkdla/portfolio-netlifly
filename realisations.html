@@ -72,58 +72,40 @@
             <h2 class="section__title">Réalisations pro</h2>
             <p class="section__subtitle">Missions classées par compétence et contexte.</p>
 
-            <!-- Filtres contexte -->
-            <div class="filters reveal">
-                <div class="filters__group">
-                    <button class="filter-btn active" data-filter="all">tous</button>
-                    <button class="filter-btn" data-filter="ecole">école</button>
-                    <button class="filter-btn" data-filter="e6">e6</button>
-                    <button class="filter-btn" data-filter="perso">perso</button>
-                </div>
-            </div>
-
-            <!-- Filtres catégories -->
-            <div class="categories reveal">
-                <div class="categories__header">
-                    <span class="categories__label">Catégorie</span>
-                </div>
-                <div class="categories__list">
-                    <label class="cat-check">
-                        <input type="checkbox" value="patrimoine">
-                        <span class="cat-check__box"></span>
-                        Patrimoine
-                    </label>
-                    <label class="cat-check">
-                        <input type="checkbox" value="incidents">
-                        <span class="cat-check__box"></span>
-                        Incidents
-                    </label>
-                    <label class="cat-check">
-                        <input type="checkbox" value="presence">
-                        <span class="cat-check__box"></span>
-                        Présence en ligne
-                    </label>
-                    <label class="cat-check">
-                        <input type="checkbox" value="projet">
-                        <span class="cat-check__box"></span>
-                        Mode projet
-                    </label>
-                    <label class="cat-check">
-                        <input type="checkbox" value="service">
-                        <span class="cat-check__box"></span>
-                        Services
-                    </label>
-                </div>
-            </div>
-
-            <!-- Missions -->
-            <div class="missions-grid" id="missionsGrid">
-                <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
-            </div>
-
-            <!-- Projets personnels -->
+            <!-- Projets personnels — character select -->
             <div class="perso-projects" id="persoProjects">
-<div class="mission-card project-card">
+
+                <!-- Portraits (sélecteur) -->
+                <div class="char-select">
+                    <button class="char-select__portrait active" data-idx="0" aria-label="SRV-AD-DNS-DHCP Toolkit">
+                        <img src="images/dashboard-AD.png" alt="Toolkit AD" class="char-select__thumb" loading="lazy">
+                        <div class="char-select__info">
+                            <span class="char-select__name">SRV-AD-DNS-DHCP</span>
+                            <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                        </div>
+                    </button>
+                    <button class="char-select__portrait" data-idx="1" aria-label="PentestFR">
+                        <img src="images/projet-pentest.png" alt="PentestFR" class="char-select__thumb" loading="lazy">
+                        <div class="char-select__info">
+                            <span class="char-select__name">PentestFR</span>
+                            <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                        </div>
+                    </button>
+                    <button class="char-select__portrait" data-idx="2" aria-label="DeskShop">
+                        <img src="images/entreprise-deskshop.png" alt="DeskShop" class="char-select__thumb" loading="lazy">
+                        <div class="char-select__info">
+                            <span class="char-select__name">DeskShop</span>
+                            <span class="mission-card__tag mission-card__tag--ecole">école</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Panneau de détail -->
+                <div class="char-detail">
+
+                    <!-- Panel 0 -->
+                    <div class="char-panel active">
+                        <div class="mission-card project-card">
                     <div class="mission-card__head">
                         <h4 class="mission-card__title">SRV-AD-DNS-DHCP Toolkit</h4>
                         <span class="mission-card__tag mission-card__tag--perso">perso</span>
@@ -165,91 +147,100 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="mission-card project-card">
-                    <div class="mission-card__head">
-                        <h4 class="mission-card__title">PentestFR — Framework de pentest</h4>
-                        <span class="mission-card__tag mission-card__tag--perso">perso</span>
-                    </div>
-                    <p class="mission-card__desc">
-                        Framework Python modulaire pilotant un pentest complet en environnement
-                        VirtualBox : reconnaissance réseau, exploitation par brute-force,
-                        post-exploitation KeePass, phishing MITM avec certificats HTTPS,
-                        dashboard de logs et nettoyage automatique des artefacts.
-                    </p>
-
-                    <div class="lab__screenshot project-screenshot" data-img="images/projet-pentest.png">
-                        <img src="images/projet-pentest.png" alt="Aperçu du framework pentest" class="lab__img" style="width:100%;display:block;" loading="lazy">
-                        <div class="cv-card__overlay">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Cliquez pour agrandir</span>
                         </div>
-                    </div>
+                    </div><!-- /.char-panel 0 -->
 
-                    <div class="project-card__modules">
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Reconnaissance nmap / Shodan / ARP</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Brute-force SSH/FTP/HTTP (hydra + cupp)</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Post-exploitation KeePass (keepass2john + hashcat)</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> MITM &amp; phishing (bettercap + zphisher)</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> PKI OpenSSL + Apache HTTPS</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Dashboard logs PHP + cleanup automatique</span>
-                    </div>
-                    <div class="project-card__footer">
-                        <p class="mission-card__meta">Mettre à disposition un service informatique — Personnel</p>
-                        <div class="project-card__actions">
-                            <div class="project-card__stack">
-                                <span class="fp-tag">Python</span>
-                                <span class="fp-tag">Kali Linux</span>
-                                <span class="fp-tag">nmap / hydra</span>
-                                <span class="fp-tag">bettercap</span>
-                                <span class="fp-tag">hashcat</span>
+                    <!-- Panel 1 : PentestFR -->
+                    <div class="char-panel">
+                        <div class="mission-card project-card">
+                            <div class="mission-card__head">
+                                <h4 class="mission-card__title">PentestFR — Framework de pentest</h4>
+                                <span class="mission-card__tag mission-card__tag--perso">perso</span>
                             </div>
-                            <a href="https://github.com/Kevinkdla/pentestfr" target="_blank" rel="noopener" class="featured-project__github">
-                                <i class="fab fa-github"></i> Voir sur GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mission-card project-card">
-                    <div class="mission-card__head">
-                        <h4 class="mission-card__title">DeskShop — Site e-commerce B2B</h4>
-                        <span class="mission-card__tag mission-card__tag--ecole">école</span>
-                    </div>
-                    <p class="mission-card__desc">
-                        Projet de groupe réalisé à 4 étudiants : site vitrine et e-commerce pour une entreprise
-                        fictive de solutions informatiques professionnelles. Catalogue produits, filtres par catégorie,
-                        formulaire de contact et animations au scroll — entièrement en HTML/CSS/JS natif.
-                    </p>
-                    <div class="lab__screenshot project-screenshot" data-img="images/entreprise-deskshop.png">
-                        <img src="images/entreprise-deskshop.png" alt="Aperçu du site DeskShop" class="lab__img" style="width:100%;display:block;" loading="lazy">
-                        <div class="cv-card__overlay">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Cliquez pour agrandir</span>
-                        </div>
-                    </div>
-                    <div class="project-card__modules">
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Catalogue produits avec filtres</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Animations scroll (Intersection Observer)</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Formulaire de contact</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Design responsive mobile</span>
-                        <span class="fp-module"><i class="fas fa-circle-dot"></i> Responsable juridique (soutenance)</span>
-                    </div>
-                    <div class="project-card__footer">
-                        <p class="mission-card__meta">Développer la présence en ligne — Projet école (groupe de 4)</p>
-                        <div class="project-card__actions">
-                            <div class="project-card__stack">
-                                <span class="fp-tag">HTML</span>
-                                <span class="fp-tag">CSS</span>
-                                <span class="fp-tag">JavaScript</span>
-                                <span class="fp-tag">Netlify</span>
+                            <p class="mission-card__desc">Framework Python modulaire pilotant un pentest complet en environnement VirtualBox : reconnaissance réseau, exploitation par brute-force, post-exploitation KeePass, phishing MITM avec certificats HTTPS, dashboard de logs et nettoyage automatique des artefacts.</p>
+                            <div class="lab__screenshot project-screenshot" data-img="images/projet-pentest.png">
+                                <img src="images/projet-pentest.png" alt="Aperçu du framework pentest" class="lab__img" style="width:100%;display:block;" loading="lazy">
+                                <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Cliquez pour agrandir</span></div>
                             </div>
-                            <a href="https://deskshop.netlify.app/" target="_blank" rel="noopener" class="featured-project__github">
-                                <i class="fas fa-external-link-alt"></i> Voir le site
-                            </a>
+                            <div class="project-card__modules">
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Reconnaissance nmap / Shodan / ARP</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Brute-force SSH/FTP/HTTP (hydra + cupp)</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Post-exploitation KeePass (keepass2john + hashcat)</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> MITM &amp; phishing (bettercap + zphisher)</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> PKI OpenSSL + Apache HTTPS</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Dashboard logs PHP + cleanup automatique</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <p class="mission-card__meta">Mettre à disposition un service informatique — Personnel</p>
+                                <div class="project-card__actions">
+                                    <div class="project-card__stack">
+                                        <span class="fp-tag">Python</span><span class="fp-tag">Kali Linux</span><span class="fp-tag">nmap / hydra</span><span class="fp-tag">bettercap</span><span class="fp-tag">hashcat</span>
+                                    </div>
+                                    <a href="https://github.com/Kevinkdla/pentestfr" target="_blank" rel="noopener" class="featured-project__github"><i class="fab fa-github"></i> Voir sur GitHub</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div><!-- /.char-panel 1 -->
+
+                    <!-- Panel 2 : DeskShop -->
+                    <div class="char-panel">
+                        <div class="mission-card project-card">
+                            <div class="mission-card__head">
+                                <h4 class="mission-card__title">DeskShop — Site e-commerce B2B</h4>
+                                <span class="mission-card__tag mission-card__tag--ecole">école</span>
+                            </div>
+                            <p class="mission-card__desc">Projet de groupe réalisé à 4 étudiants : site vitrine et e-commerce pour une entreprise fictive de solutions informatiques professionnelles. Catalogue produits, filtres par catégorie, formulaire de contact et animations au scroll — entièrement en HTML/CSS/JS natif.</p>
+                            <div class="lab__screenshot project-screenshot" data-img="images/entreprise-deskshop.png">
+                                <img src="images/entreprise-deskshop.png" alt="Aperçu du site DeskShop" class="lab__img" style="width:100%;display:block;" loading="lazy">
+                                <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Cliquez pour agrandir</span></div>
+                            </div>
+                            <div class="project-card__modules">
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Catalogue produits avec filtres</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Animations scroll (Intersection Observer)</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Formulaire de contact</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Design responsive mobile</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Responsable juridique (soutenance)</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <p class="mission-card__meta">Développer la présence en ligne — Projet école (groupe de 4)</p>
+                                <div class="project-card__actions">
+                                    <div class="project-card__stack">
+                                        <span class="fp-tag">HTML</span><span class="fp-tag">CSS</span><span class="fp-tag">JavaScript</span><span class="fp-tag">Netlify</span>
+                                    </div>
+                                    <a href="https://deskshop.netlify.app/" target="_blank" rel="noopener" class="featured-project__github"><i class="fas fa-external-link-alt"></i> Voir le site</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.char-panel 2 -->
+
+                </div><!-- /.char-detail -->
+            </div><!-- /.perso-projects -->
+
+            <!-- Fiches de mission -->
+            <p class="perso-projects__title" style="margin-top:52px;">Fiches de mission</p>
+
+            <div class="filters reveal">
+                <div class="filters__group">
+                    <button class="filter-btn active" data-filter="all">tous</button>
+                    <button class="filter-btn" data-filter="ecole">école</button>
+                    <button class="filter-btn" data-filter="e6">e6</button>
+                    <button class="filter-btn" data-filter="perso">perso</button>
                 </div>
+            </div>
+
+            <div class="categories reveal">
+                <div class="categories__header"><span class="categories__label">Catégorie</span></div>
+                <div class="categories__list">
+                    <label class="cat-check"><input type="checkbox" value="patrimoine"><span class="cat-check__box"></span>Patrimoine</label>
+                    <label class="cat-check"><input type="checkbox" value="incidents"><span class="cat-check__box"></span>Incidents</label>
+                    <label class="cat-check"><input type="checkbox" value="presence"><span class="cat-check__box"></span>Présence en ligne</label>
+                    <label class="cat-check"><input type="checkbox" value="projet"><span class="cat-check__box"></span>Mode projet</label>
+                    <label class="cat-check"><input type="checkbox" value="service"><span class="cat-check__box"></span>Services</label>
+                </div>
+            </div>
+
+            <div class="missions-grid" id="missionsGrid">
+                <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
             </div>
 
         </div>

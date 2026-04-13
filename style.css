@@ -740,6 +740,68 @@ code {
     font-family: var(--font-mono);
 }
 
+.cert-modules {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cert-modules li {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    padding-left: 14px;
+    position: relative;
+}
+
+.cert-modules li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-size: 0.72rem;
+}
+
+.cert-modules li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cert-code {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    background: var(--accent-soft);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+}
+
+.cert-verify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--dur);
+}
+
+.cert-verify-link:hover {
+    color: var(--accent);
+}
+
+.cert-verify-link i {
+    font-size: 0.7rem;
+}
+
 /* ---------- BUTTONS ---------- */
 .btn {
     display: inline-flex;
@@ -784,6 +846,109 @@ code {
 .perso-projects {
     margin-top: 52px;
 }
+
+/* ---- CHARACTER SELECT ---- */
+.char-select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.char-select__portrait {
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    text-align: left;
+    transition: border-color var(--dur), transform var(--dur), box-shadow var(--dur);
+}
+
+.char-select__portrait:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.char-select__portrait.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.char-select__thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+}
+
+.char-select__info {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+}
+
+.char-select__name {
+    flex: 1;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Detail panels */
+.char-detail {
+    position: relative;
+    overflow: hidden;
+}
+
+.char-panel {
+    display: none;
+}
+
+.char-panel.active {
+    display: block;
+}
+
+.char-panel.enter-right {
+    display: block;
+    animation: charRight 0.32s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.char-panel.enter-left {
+    display: block;
+    animation: charLeft 0.32s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes charRight {
+    from { transform: translateX(52px); opacity: 0; }
+    to   { transform: translateX(0);   opacity: 1; }
+}
+
+@keyframes charLeft {
+    from { transform: translateX(-52px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+
+[data-theme="dark"] .char-select__portrait.active {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.15);
+}
+
+@media (max-width: 560px) {
+    .char-select {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .char-select__name { display: none; }
+    .char-select__info { justify-content: center; padding: 8px; }
+}
+/* ---- END CHARACTER SELECT ---- */
 
 .perso-projects__title {
     font-family: var(--font-mono);

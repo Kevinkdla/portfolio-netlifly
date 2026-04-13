@@ -475,5 +475,32 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMissions();
     }
 
+    /* ---------- CHARACTER SELECT (projets) ---------- */
+    const charPortraits = document.querySelectorAll('.char-select__portrait');
+    const charPanels    = document.querySelectorAll('.char-panel');
+    if (charPortraits.length && charPanels.length) {
+        let charCurrent = 0;
+
+        charPortraits.forEach((portrait, newIdx) => {
+            portrait.addEventListener('click', () => {
+                if (newIdx === charCurrent) return;
+                const dir = newIdx > charCurrent ? 'enter-right' : 'enter-left';
+
+                // Fermer l'actuel
+                charPortraits[charCurrent].classList.remove('active');
+                charPanels[charCurrent].classList.remove('active');
+
+                // Ouvrir le nouveau avec animation directionnelle
+                charPortraits[newIdx].classList.add('active');
+                charPanels[newIdx].classList.add(dir);
+                charPanels[newIdx].addEventListener('animationend', () => {
+                    charPanels[newIdx].classList.remove(dir);
+                    charPanels[newIdx].classList.add('active');
+                }, { once: true });
+
+                charCurrent = newIdx;
+            });
+        });
+    }
 
 });
