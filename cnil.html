@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification CNIL — Kevin Granday</title>
+    <meta name="description" content="Présentation de la certification CNIL RGPD de Kevin Granday, BTS SIO SISR.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=38">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WGSE8JV6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-9WGSE8JV6F");
+    </script>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav__logo">KG</a>
+        <button class="nav__theme nav__theme--topbar" id="themeToggleTop" aria-label="Thème sombre"><i class="fas fa-moon"></i></button>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Accueil</a></li>
+        <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+        <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+        <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+        <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><button class="nav__theme" id="themeToggle" aria-label="Thème sombre"><i class="fas fa-moon"></i></button></li>
+    </ul>
+    <dialog class="nav__dialog" id="navDialog">
+        <ul class="nav__dialog-menu">
+            <li><a href="index.html" class="nav__link">Accueil</a></li>
+            <li><a href="parcours.html" class="nav__link">Parcours</a></li>
+            <li><a href="realisations.html" class="nav__link">Réalisations pro</a></li>
+            <li><a href="veille.html" class="nav__link">Veille &amp; Lab</a></li>
+            <li><a href="projet.html" class="nav__link">Projet pro</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+    </dialog>
+
+    <!-- ===================== CNIL ===================== -->
+    <section class="section" id="cnil">
+        <div class="container">
+
+            <!-- En-tête -->
+            <div class="cnil-header reveal">
+                <img src="images/logo-cnil.webp" alt="Logo CNIL" class="cnil-header__logo">
+                <div>
+                    <h2 class="section__title" style="text-align:left;margin-bottom:4px;">Certification CNIL</h2>
+                    <p class="section__subtitle" style="text-align:left;">MOOC — Règlement général sur la protection des données · 6 modules validés · 2025</p>
+                </div>
+            </div>
+
+            <!-- Retour -->
+            <div style="margin-bottom:40px;">
+                <a href="parcours.html" class="btn btn--outline" style="font-size:0.9rem;"><i class="fas fa-arrow-left"></i> Retour au parcours</a>
+            </div>
+
+            <!-- Sections -->
+            <div class="cnil-sections">
+
+                <!-- 1 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">01</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Introduction</h3>
+                        <p>Je m'appelle Kevin Granday, je suis en première année de BTS SIO option SISR. La certification que je vais vous présenter aujourd'hui est le MOOC de la CNIL — Règlement général sur la protection des données, composé de 6 modules validés.</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">02</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Mon projet professionnel</h3>
+                        <p>Mon objectif est d'évoluer vers un poste d'administrateur systèmes et réseaux, puis de me spécialiser en cybersécurité défensive. Dans ce cadre, le RGPD est directement lié à mon métier : en tant qu'administrateur, je suis amené à gérer des infrastructures qui traitent des données personnelles — annuaires Active Directory, logs système, messagerie. Connaître le cadre juridique qui encadre ces données fait partie des compétences attendues dans ce secteur.</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">03</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Analyse du besoin</h3>
+                        <p>Le besoin vient d'un constat simple : en SISR, on forme des administrateurs systèmes capables de déployer et gérer des infrastructures, mais la dimension juridique est rarement abordée. Or toute entreprise collecte et traite des données personnelles — employés, clients, partenaires — et doit être en conformité avec le RGPD depuis 2018. En tant que futur administrateur, je serai directement concerné : mise en place de politiques de mots de passe, gestion des droits d'accès, durée de conservation des logs. Ne pas connaître ces règles, c'est exposer l'entreprise à des sanctions pouvant aller jusqu'à 4% de son chiffre d'affaires mondial. Cette certification me permet de combler cette lacune et de répondre à une exigence réelle du marché.</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">04</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">État de l'offre de certification</h3>
+                        <p>La CNIL — Commission Nationale de l'Informatique et des Libertés — est l'autorité française de référence en matière de protection des données personnelles. C'est elle qui contrôle l'application du RGPD en France et qui sanctionne les entreprises non conformes. Son MOOC est donc la source la plus légitime et la plus reconnue pour se former sur ce sujet — produit directement par l'autorité de régulation, gratuit, et délivrant des attestations par module permettant de prouver concrètement chaque compétence validée.</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">05</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Ma démarche de préparation</h3>
+                        <p>Ma démarche a été entièrement en autonomie. J'ai suivi les 6 modules sur la plateforme de la CNIL, à mon rythme, en dehors des heures de cours. Chaque module se termine par un QCM de validation qui donne lieu à une attestation.</p>
+                        <p style="margin-top:12px;">Cette approche d'apprentissage en autonomie est cohérente avec ma façon de travailler en général — j'apprends en pratiquant. En parallèle de ma formation, j'ai développé deux projets personnels : un framework de pentest en Python et un toolkit PowerShell pour automatiser le déploiement Active Directory. Ces projets m'ont confronté concrètement aux enjeux du RGPD : gestion des droits d'accès, logs, données d'authentification. La certification CNIL m'a donné le cadre juridique pour comprendre les règles qui s'appliquent à ce que je construis.</p>
+                        <!-- Attestations -->
+                        <div class="cnil-modules">
+                            <span class="cnil-module__label">Attestations disponibles</span>
+                            <ul>
+                                <li><a href="docs/RGPD%20et%20CNIL/Certificat_.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 1 — Le RGPD et ses notions clés</a></li>
+                                <li><a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 2 — Les principes de la protection des données</a></li>
+                                <li><a href="docs/RGPD%20et%20CNIL/Certificat3.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 3 — Les responsabilités des acteurs</a></li>
+                                <li><a href="docs/RGPD%20et%20CNIL/Certificat4.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 4 — Le DPO et les outils de la conformité</a></li>
+                                <li><a href="docs/RGPD%20et%20CNIL/Certificat5.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 5 — Les collectivités territoriales</a></li>
+                                <li><a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi6.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 6 — Travail et données personnelles</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">06</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Résultats &amp; acquis</h3>
+                        <p>À l'issue des 6 modules, j'ai obtenu une attestation pour chacun d'eux. Sur le plan technique, j'ai acquis une compréhension claire des principes fondamentaux du RGPD : les bases légales du traitement des données, les droits des personnes, les responsabilités des acteurs — responsable de traitement, sous-traitant, DPO — et les outils de mise en conformité.</p>
+                        <p style="margin-top:12px;">Sur le plan transversal, cette certification m'a appris à lire un cadre réglementaire et à l'appliquer à des situations concrètes. C'est une compétence que je réutilise dès que je touche à une infrastructure qui traite des données personnelles.</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="cnil-block reveal">
+                    <div class="cnil-block__num">07</div>
+                    <div class="cnil-block__content">
+                        <h3 class="cnil-block__title">Conclusion &amp; perspectives</h3>
+                        <p>Cette certification m'a apporté une dimension que la formation technique seule ne couvre pas : comprendre les règles juridiques qui encadrent les systèmes que j'administre. Un administrateur qui connaît le RGPD est plus complet et plus fiable pour une entreprise.</p>
+                        <p style="margin-top:12px;">En termes de perspectives, j'ai déjà validé la certification SecNumacadémie de l'ANSSI sur la cybersécurité. La prochaine étape sera des certifications réseau et sécurité reconnues à l'international — CCNA ou CompTIA Security+ — en parallèle de mon Master à l'IPSSI.</p>
+                    </div>
+                </div>
+
+            </div><!-- /.cnil-sections -->
+
+            <!-- Retour bas de page -->
+            <div style="margin-top:48px;text-align:center;">
+                <a href="parcours.html" class="btn btn--outline"><i class="fas fa-arrow-left"></i> Retour au parcours</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>Kevin Granday — BTS SIO SISR — IPSSI SQY</p>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/kevin-granday-03425814b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kevinkdla" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js?v=38"></script>
+</body>
+</html>

@@ -1622,6 +1622,109 @@ code {
     border-radius: var(--radius);
 }
 
+/* ---------- CNIL ---------- */
+.cnil-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.cnil-header__logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cnil-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cnil-block {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: border-color var(--dur);
+}
+
+.cnil-block:hover {
+    border-color: var(--accent);
+}
+
+.cnil-block__num {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 36px;
+    line-height: 1;
+    margin-top: 4px;
+}
+
+.cnil-block__title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.cnil-block__content p {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.cnil-modules {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.cnil-module__label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.cnil-modules ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cnil-modules ul li a {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color var(--dur);
+}
+
+.cnil-modules ul li a:hover {
+    color: var(--accent);
+}
+
+.cnil-modules ul li a i {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
 /* ---------- PROJET PRO ---------- */
 
 /* Origine */
