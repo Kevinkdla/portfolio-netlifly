@@ -170,10 +170,14 @@
                                 <span class="mission-card__tag mission-card__tag--perso">perso</span>
                             </div>
                             <p class="mission-card__desc">Framework Python modulaire pilotant un pentest complet en environnement VirtualBox : reconnaissance réseau, exploitation par brute-force, post-exploitation KeePass, phishing MITM avec certificats HTTPS, dashboard de logs et nettoyage automatique des artefacts.</p>
-                            <div class="lab__screenshot project-screenshot" data-img="images/projet-pentest.webp">
+                            <div class="lab__screenshot project-screenshot" id="trigger-dialog-pentest" style="cursor:zoom-in;">
                                 <img src="images/projet-pentest.webp" alt="Aperçu du framework pentest" class="lab__img" style="width:100%;display:block;" loading="lazy">
-                                <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Cliquez pour agrandir</span></div>
+                                <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Voir l'aperçu</span></div>
                             </div>
+                            <dialog id="dialog-pentest" class="img-dialog">
+                                <button class="img-dialog__close" id="close-dialog-pentest" aria-label="Fermer">&times;</button>
+                                <img src="images/projet-pentest.webp" alt="Aperçu du framework pentest" class="img-dialog__img">
+                            </dialog>
                             <!-- GIF affiché directement, pas de lien -->
                             <div style="margin-top:0.75rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
                                 <img src="pentest.gif" alt="Aperçu des fonctionnalités du framework pentest" style="width:100%;display:block;">

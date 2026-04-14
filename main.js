@@ -173,6 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
         dialogAd.addEventListener('click', (e) => { if (e.target === dialogAd) dialogAd.close(); });
     }
 
+    const dialogPentest      = document.getElementById('dialog-pentest');
+    const triggerPentest     = document.getElementById('trigger-dialog-pentest');
+    const closeDialogPentest = document.getElementById('close-dialog-pentest');
+    if (dialogPentest && triggerPentest) {
+        triggerPentest.addEventListener('click', () => dialogPentest.showModal());
+        closeDialogPentest.addEventListener('click', (e) => { e.stopPropagation(); dialogPentest.close(); });
+        dialogPentest.addEventListener('click', (e) => { if (e.target === dialogPentest) dialogPentest.close(); });
+    }
+
     /* ---------- BACK TO TOP ---------- */
     const backToTop = document.createElement('button');
     backToTop.id = 'backToTop';
