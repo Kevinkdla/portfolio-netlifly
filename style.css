@@ -1623,6 +1623,68 @@ code {
 }
 
 /* ---------- PROJET PRO ---------- */
+
+/* Origine */
+.origine {
+    margin-bottom: 56px;
+}
+
+.origine__story {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.origine__step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: border-color var(--dur);
+}
+
+.origine__step:hover {
+    border-color: var(--accent);
+}
+
+.origine__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.origine__text h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.origine__text p {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.origine__arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 6px 0;
+}
+
 .objectifs,
 .competences,
 .plan {
