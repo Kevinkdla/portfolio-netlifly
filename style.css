@@ -14,9 +14,9 @@
 :root {
     /* Palette — light, clean, monochrome */
     --bg-primary: #f0f0ec;
-    --bg-secondary: #fafafa;
-    --bg-card: #fff;
-    --bg-card-hover: #fafafa;
+    --bg-secondary: #eeeee9;
+    --bg-card: #ebebeb;
+    --bg-card-hover: #e5e5e0;
     --border: #f0f0f0;
     --border-light: #e5e5e5;
 
