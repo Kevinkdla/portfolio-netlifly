@@ -119,6 +119,34 @@
                 </div>
             </div>
 
+            <!-- Formulaire de contact -->
+            <div class="contact-form-block reveal">
+                <h3 class="contact-form-block__title">Envoyer un message</h3>
+                <div class="contact-form__success" id="formSuccess" style="display:none;">
+                    <i class="fas fa-circle-check"></i>
+                    <div><strong>Message envoyé !</strong> Je vous répondrai sous 24 h.</div>
+                </div>
+                <form name="contact" method="POST" data-netlify="true" id="contactForm" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="contact-form__honey"><label>Ne pas remplir : <input name="bot-field"></label></p>
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label class="contact-form__label" for="cf-name">Nom</label>
+                            <input type="text" id="cf-name" name="name" class="contact-form__input" placeholder="Votre nom" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label class="contact-form__label" for="cf-email">Email</label>
+                            <input type="email" id="cf-email" name="email" class="contact-form__input" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" class="contact-form__input contact-form__textarea" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="contact-form__submit">Envoyer <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+
             <p class="contact-note reveal">
                 <i class="fas fa-file-arrow-down"></i>
                 Vous pouvez également <a href="docs/kevin-granday-cv.pdf" download>télécharger mon CV</a> directement.

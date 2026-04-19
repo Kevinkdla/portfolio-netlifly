@@ -146,6 +146,57 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 1400);
     }
 
+    /* ---------- ANIMATED COUNTERS ---------- */
+    const counters = document.querySelectorAll('.stat-item__num');
+    if (counters.length) {
+        const counterObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target, 10);
+                const duration = 1000;
+                const steps = 40;
+                const increment = target / steps;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, duration / steps);
+                counterObs.unobserve(el);
+            });
+        }, { threshold: 0.6 });
+        counters.forEach(el => counterObs.observe(el));
+    }
+
+    /* ---------- NETLIFY CONTACT FORM ---------- */
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    if (contactForm && formSuccess) {
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.contact-form__submit');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…';
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(contactForm)).toString()
+            }).then(() => {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'flex';
+            }).catch(() => {
+                btn.disabled = false;
+                btn.innerHTML = 'Envoyer <i class="fas fa-arrow-right"></i>';
+                alert('Une erreur est survenue, merci d\'envoyer un email directement.');
+            });
+        });
+    }
+
     /* ---------- COPY EMAIL ---------- */
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
