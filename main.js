@@ -182,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = contactForm.querySelector('.contact-form__submit');
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…';
-            fetch('/', {
+            fetch('https://formspree.io/f/mpqkldzk', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(contactForm)).toString()
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(contactForm)
             }).then(() => {
                 contactForm.style.display = 'none';
                 formSuccess.style.display = 'flex';
