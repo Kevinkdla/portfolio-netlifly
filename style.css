@@ -1061,6 +1061,32 @@ code {
     gap: 12px;
 }
 
+@media (max-width: 600px) {
+    .cert-pres__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-pres-card {
+        padding: 20px 16px 18px;
+    }
+
+    .cert-pres-card__badge {
+        position: static;
+        align-self: flex-start;
+        margin-bottom: -8px;
+    }
+
+    .cert-pres-card__header {
+        padding-right: 0;
+        flex-wrap: wrap;
+    }
+
+    .cert-pres-card__proofs ul li a {
+        word-break: break-word;
+        font-size: 0.75rem;
+    }
+}
+
 .cert-verify-link {
     display: inline-flex;
     align-items: center;
