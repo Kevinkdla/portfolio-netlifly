@@ -30,7 +30,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="style.css?v=38">
+    <link rel="stylesheet" href="style.css?v=40">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -77,9 +77,10 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="accueil">
         <div class="hero__bg"></div>
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
         <div class="container hero__content">
             <div class="hero__text-side">
-                <h1 class="hero__title">Kevin Granday</h1>
+                <h1 class="hero__title" data-text="Kevin Granday">Kevin Granday</h1>
                 <p class="hero__typing-line"><span id="heroTyping"></span><span class="hero__cursor"></span></p>
                 <p class="hero__text">
                     Étudiant en BTS SIO option SISR, passionné par les
@@ -166,6 +167,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=38"></script>
+    <script src="main.js?v=40"></script>
 </body>
 </html>

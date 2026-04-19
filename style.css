@@ -860,6 +860,207 @@ code {
     letter-spacing: 0.04em;
 }
 
+/* ---------- CERTIFICATION PRESENTATION CARDS ---------- */
+.cert-pres__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.cert-pres-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 28px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+}
+
+.cert-pres-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.cert-pres-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 28px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.cert-pres-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cert-pres-card__badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cert-pres-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-right: 64px;
+}
+
+.cert-pres-card__logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid var(--border-light);
+}
+
+.cert-pres-card__org {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.cert-pres-card__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 4px;
+    color: var(--text);
+}
+
+.cert-pres-card__year {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.cert-pres-card__sections {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+}
+
+.cert-pres-card__sections li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+.cert-pres-card__sections li span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-width: 26px;
+    text-align: center;
+}
+
+.cert-pres-card__proofs {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+.cert-pres-card__proofs-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.cert-pres-card__proofs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cert-pres-card__proofs ul li a {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+    transition: color 0.15s;
+}
+
+.cert-pres-card__proofs ul li a::before {
+    content: '↗';
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+.cert-pres-card__proofs ul li a:hover {
+    color: var(--accent);
+}
+
+.cert-pres-card__cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    text-decoration: none;
+    transition: gap 0.2s;
+}
+
+.cert-pres-card__cta:hover {
+    gap: 12px;
+}
+
 .cert-verify-link {
     display: inline-flex;
     align-items: center;
@@ -2928,6 +3129,81 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     background: #e8e8e8;
 }
 
+/* ================================================================
+   EFFETS VISUELS
+   ================================================================ */
+
+/* ---------- 1. CANVAS PARTICULES HERO ---------- */
+#heroCanvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+/* ---------- 2. GLITCH TITRE ---------- */
+.hero__title {
+    position: relative;
+}
+
+@keyframes glitch-shake {
+    0%   { transform: translate(0, 0)     skewX(0deg);  }
+    15%  { transform: translate(-4px, 1px)  skewX(-3deg); }
+    30%  { transform: translate(4px, -1px)  skewX(2deg);  }
+    45%  { transform: translate(-3px, 2px)  skewX(-1deg); }
+    60%  { transform: translate(3px, -2px)  skewX(1deg);  }
+    75%  { transform: translate(-2px, 1px)  skewX(-2deg); }
+    90%  { transform: translate(2px, -1px)  skewX(1deg);  }
+    100% { transform: translate(0, 0)     skewX(0deg);  }
+}
+
+.hero__title.glitch-active {
+    animation: shine 10s linear infinite, glitch-shake 0.35s steps(4) forwards;
+}
+
+/* ---------- 3. SCAN LINE SKILL CARDS ---------- */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    top: -100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(17, 17, 17, 0.04) 45%,
+        rgba(17, 17, 17, 0.09) 50%,
+        rgba(17, 17, 17, 0.04) 55%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.skill-card:hover::after {
+    animation: scan-line 0.55s ease-out forwards;
+}
+
+@keyframes scan-line {
+    0%   { top: -100%; }
+    100% { top: 100%;  }
+}
+
+[data-theme="dark"] .skill-card::after {
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 45%,
+        rgba(255, 255, 255, 0.09) 50%,
+        rgba(255, 255, 255, 0.04) 55%,
+        transparent 100%
+    );
+}
+
 [data-theme="dark"] .hero__cta {
     background: #fff;
     color: #111;
@@ -3154,5 +3430,39 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     }
     .contact-form__row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- ACCESSIBILITÉ ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------- IMPRESSION ---------- */
+@media print {
+    body, html {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    .nav, #themeToggle, .footer, .btn, .pres-nav, #fsBtn {
+        display: none !important;
+    }
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        color: #555;
+    }
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
     }
 }

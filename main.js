@@ -500,6 +500,92 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMissions();
     }
 
+    /* ---------- HERO PARTICLES CANVAS ---------- */
+    const heroCanvas = document.getElementById('heroCanvas');
+    if (heroCanvas) {
+        const ctx = heroCanvas.getContext('2d');
+        let particles = [];
+        const COUNT = 55;
+        const MAX_DIST = 130;
+
+        function isDark() {
+            return document.documentElement.getAttribute('data-theme') === 'dark';
+        }
+
+        function resizeCanvas() {
+            const hero = heroCanvas.parentElement;
+            heroCanvas.width  = hero.offsetWidth;
+            heroCanvas.height = hero.offsetHeight;
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < COUNT; i++) {
+                particles.push({
+                    x:  Math.random() * heroCanvas.width,
+                    y:  Math.random() * heroCanvas.height,
+                    vx: (Math.random() - 0.5) * 0.45,
+                    vy: (Math.random() - 0.5) * 0.45,
+                    r:  Math.random() * 1.8 + 0.8
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+            const base = isDark() ? '255,255,255' : '0,0,0';
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const d  = Math.sqrt(dx * dx + dy * dy);
+                    if (d < MAX_DIST) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(${base},${0.18 * (1 - d / MAX_DIST)})`;
+                        ctx.lineWidth   = 0.8;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${base},0.3)`;
+                ctx.fill();
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > heroCanvas.width)  p.vx *= -1;
+                if (p.y < 0 || p.y > heroCanvas.height) p.vy *= -1;
+            });
+
+            requestAnimationFrame(drawParticles);
+        }
+
+        resizeCanvas();
+        initParticles();
+        drawParticles();
+
+        window.addEventListener('resize', () => { resizeCanvas(); initParticles(); }, { passive: true });
+
+        // Redraw proprement si le thème change
+        document.documentElement.addEventListener('DOMSubtreeModified', () => {}, { once: true });
+    }
+
+    /* ---------- GLITCH TITRE ---------- */
+    const heroTitle = document.querySelector('.hero__title');
+    if (heroTitle) {
+        function triggerGlitch() {
+            heroTitle.classList.add('glitch-active');
+            setTimeout(() => heroTitle.classList.remove('glitch-active'), 380);
+            setTimeout(triggerGlitch, 6000 + Math.random() * 8000);
+        }
+        setTimeout(triggerGlitch, 3500);
+    }
+
     /* ---------- CHARACTER SELECT (projets) ---------- */
     const charPortraits = document.querySelectorAll('.char-select__portrait');
     const charPanels    = document.querySelectorAll('.char-panel');

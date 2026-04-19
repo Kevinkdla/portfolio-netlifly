@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="Parcours — Kevin Granday">
     <meta name="twitter:description" content="Parcours de Kevin Granday : BTS SIO SISR à l'IPSSI SQY, expériences professionnelles, certifications CNIL et ANSSI.">
     <link rel="canonical" href="https://kevin-granday-portfolio.netlify.app/parcours.html">
-    <link rel="stylesheet" href="style.css?v=38">
+    <link rel="stylesheet" href="style.css?v=40">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -179,16 +179,29 @@
             <!-- Certifications -->
             <div class="certs reveal">
                 <h3 class="certs__heading">Certifications</h3>
-                <div class="certs__grid">
+                <div class="cert-pres__grid">
 
-                    <div class="cert-card">
-                        <div class="cert-card__icon"><img src="images/logo-cnil.webp" alt="Logo CNIL" style="width:36px;height:36px;object-fit:contain;" loading="lazy"></div>
-                        <div class="cert-card__body">
-                            <span class="cert-card__org">CNIL</span>
-                            <h4 class="cert-card__title">MOOC — Règlement général sur la protection des données</h4>
-                            <span class="cert-card__year">2025 — 6 modules validés</span>
-                            <a href="cnil.html" class="btn btn--outline" style="display:inline-flex;margin:12px 0;font-size:0.85rem;"><i class="fas fa-presentation-screen"></i> Voir la présentation</a>
-                            <ul class="cert-modules">
+                    <div class="cert-pres-card">
+                        <div class="cert-pres-card__header">
+                            <img src="images/logo-cnil.webp" alt="Logo CNIL" class="cert-pres-card__logo" loading="lazy">
+                            <div>
+                                <span class="cert-pres-card__org">CNIL</span>
+                                <h4 class="cert-pres-card__title">MOOC — Règlement général sur la protection des données</h4>
+                                <span class="cert-pres-card__year">2025 · 6 modules validés</span>
+                            </div>
+                        </div>
+                        <ul class="cert-pres-card__sections">
+                            <li><span>01</span> Introduction</li>
+                            <li><span>02</span> Mon projet professionnel</li>
+                            <li><span>03</span> Analyse du besoin</li>
+                            <li><span>04</span> État de l'offre de certification</li>
+                            <li><span>05</span> Ma démarche de préparation</li>
+                            <li><span>06</span> Résultats &amp; acquis</li>
+                            <li><span>07</span> Conclusion &amp; perspectives</li>
+                        </ul>
+                        <div class="cert-pres-card__proofs">
+                            <span class="cert-pres-card__proofs-label"><i class="fas fa-file-pdf"></i> Attestations</span>
+                            <ul>
                                 <li><a href="docs/RGPD%20et%20CNIL/Certificat_.pdf" target="_blank" rel="noopener">Module 1 — Le RGPD et ses notions clés</a></li>
                                 <li><a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi.pdf" target="_blank" rel="noopener">Module 2 — Les principes de la protection des données</a></li>
                                 <li><a href="docs/RGPD%20et%20CNIL/Certificat3.pdf" target="_blank" rel="noopener">Module 3 — Les responsabilités des acteurs</a></li>
@@ -197,15 +210,28 @@
                                 <li><a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi6.pdf" target="_blank" rel="noopener">Module 6 — Travail et données personnelles</a></li>
                             </ul>
                         </div>
+                        <a href="cnil.html" target="_blank" rel="noopener noreferrer" class="cert-pres-card__cta">Voir la présentation <i class="fas fa-arrow-right"></i></a>
                     </div>
 
-                    <div class="cert-card">
-                        <div class="cert-card__icon"><img src="images/logo-anssi.webp" alt="Logo ANSSI" style="width:36px;height:36px;object-fit:contain;" loading="lazy"></div>
-                        <div class="cert-card__body">
-                            <span class="cert-card__org">ANSSI</span>
-                            <h4 class="cert-card__title">SecNumacadémie — Cybersécurité</h4>
-                            <span class="cert-card__year">2025</span>
+                    <div class="cert-pres-card">
+                        <div class="cert-pres-card__header">
+                            <img src="images/logo-anssi.webp" alt="Logo ANSSI" class="cert-pres-card__logo" loading="lazy">
+                            <div>
+                                <span class="cert-pres-card__org">ANSSI</span>
+                                <h4 class="cert-pres-card__title">SecNumacadémie — Cybersécurité</h4>
+                                <span class="cert-pres-card__year">2025</span>
+                            </div>
                         </div>
+                        <ul class="cert-pres-card__sections">
+                            <li><span>01</span> Introduction</li>
+                            <li><span>02</span> Mon projet professionnel</li>
+                            <li><span>03</span> Analyse du besoin</li>
+                            <li><span>04</span> État de l'offre de certification</li>
+                            <li><span>05</span> Ma démarche de préparation</li>
+                            <li><span>06</span> Résultats &amp; acquis</li>
+                            <li><span>07</span> Conclusion &amp; perspectives</li>
+                        </ul>
+                        <a href="anssi.html" target="_blank" rel="noopener noreferrer" class="cert-pres-card__cta">Voir la présentation <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                 </div>
@@ -224,6 +250,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=38"></script>
+    <script src="main.js?v=40"></script>
 </body>
 </html>

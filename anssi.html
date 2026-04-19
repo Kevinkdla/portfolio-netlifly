@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <script>var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation CNIL — Kevin Granday</title>
-    <meta name="description" content="Présentation de la certification CNIL RGPD de Kevin Granday, BTS SIO SISR.">
+    <title>Présentation ANSSI — Kevin Granday</title>
+    <meta name="description" content="Présentation de la certification SecNumacadémie ANSSI de Kevin Granday, BTS SIO SISR.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=40">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
 
         .pres-progress__fill {
             height: 100%;
-            background: #1d4ed8;
+            background: #0c4a6e;
             transition: width 0.45s cubic-bezier(.4,0,.2,1), background 0.45s;
             width: 14.28%;
         }
@@ -63,7 +63,6 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* ---- Sidebar ---- */
         .pres-slide__sidebar {
             width: 260px;
             flex-shrink: 0;
@@ -132,7 +131,6 @@
             z-index: 1;
         }
 
-        /* ---- Content ---- */
         .pres-slide__content {
             flex: 1;
             padding: 48px 56px;
@@ -148,8 +146,8 @@
         [data-theme="dark"] .pres-slide__content {
             background-color: #0b0f19;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
-                radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.07) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
                 radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
             background-size: 100% 100%, 100% 100%, 26px 26px;
         }
@@ -226,41 +224,68 @@
         }
         [data-theme="dark"] .pres-slide__highlight { color: #e0e0e0; }
 
-        .pres-attestations {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            padding: 14px 18px;
-            background: #f7f7f5;
-            border-radius: 10px;
-            border: 1px solid #eee;
-            max-width: 560px;
-        }
-        [data-theme="dark"] .pres-attestations { background: #1e1e1e; border-color: #2a2a2a; }
-
-        .pres-attestations__label {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #999;
-            margin-bottom: 6px;
-        }
-
-        .pres-attestations a {
-            font-size: 0.82rem;
-            color: #666;
-            text-decoration: none;
+        .pres-nav {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 3px 0;
-            transition: color 0.15s;
+            justify-content: space-between;
+            padding: 12px 28px;
+            background: #021a16;
+            flex-shrink: 0;
+            transition: background 0.45s ease;
         }
-        .pres-attestations a i { font-size: 0.75rem; }
-        .pres-attestations a:hover { color: #111; }
-        [data-theme="dark"] .pres-attestations a { color: #999; }
-        [data-theme="dark"] .pres-attestations a:hover { color: #f0f0f0; }
+        [data-theme="dark"] .pres-nav { background: #010c0a; }
+
+        .pres-nav__left { display: flex; align-items: center; gap: 12px; }
+        .pres-nav__back {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+        .pres-nav__back:hover { color: rgba(255,255,255,0.8); }
+
+        .pres-nav__center { display: flex; align-items: center; gap: 16px; }
+
+        .pres-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #fff;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .pres-btn:hover { background: rgba(255,255,255,0.2); }
+        .pres-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+        .pres-dots { display: flex; gap: 7px; align-items: center; }
+        .pres-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .pres-dot.active { background: #fff; transform: scale(1.4); }
+
+        .pres-counter {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.45);
+        }
+        .pres-kbd {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.62rem;
+            color: rgba(255,255,255,0.25);
+        }
 
         /* ---- Cas concret ---- */
         .pres-case {
@@ -294,13 +319,13 @@
         }
         [data-theme="dark"] .pres-case__text { color: #aaa; }
 
-        .pres-slide--1 .pres-case { border-left-color: #1d4ed8; color: #1d4ed8; }
-        .pres-slide--2 .pres-case { border-left-color: #6d28d9; color: #6d28d9; }
-        .pres-slide--3 .pres-case { border-left-color: #c2410c; color: #c2410c; }
-        .pres-slide--4 .pres-case { border-left-color: #0f766e; color: #0f766e; }
+        .pres-slide--1 .pres-case { border-left-color: #0369a1; color: #0369a1; }
+        .pres-slide--2 .pres-case { border-left-color: #0f766e; color: #0f766e; }
+        .pres-slide--3 .pres-case { border-left-color: #1d4ed8; color: #1d4ed8; }
+        .pres-slide--4 .pres-case { border-left-color: #4338ca; color: #4338ca; }
         .pres-slide--5 .pres-case { border-left-color: #15803d; color: #15803d; }
-        .pres-slide--6 .pres-case { border-left-color: #b45309; color: #b45309; }
-        .pres-slide--7 .pres-case { border-left-color: #1e3a8a; color: #1e3a8a; }
+        .pres-slide--6 .pres-case { border-left-color: #d97706; color: #d97706; }
+        .pres-slide--7 .pres-case { border-left-color: #0c4a6e; color: #0c4a6e; }
 
         /* ---- Tableau comparatif ---- */
         .pres-table-wrap { max-width: 620px; overflow: hidden; border-radius: 10px; border: 1px solid #e8e8e4; }
@@ -330,129 +355,48 @@
         .pres-table .ok { color: #15803d; font-weight: 700; }
         .pres-table .ko { color: #b91c1c; font-weight: 700; }
         .pres-table .mid { color: #b45309; font-weight: 700; }
-        .pres-slide--4 .pres-table th { background: #0f766e; }
+        .pres-slide--4 .pres-table th { background: #312e81; }
 
-        /* ---- Navigation ---- */
-        .pres-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 28px;
-            background: #12082a;
-            flex-shrink: 0;
-            transition: background 0.45s ease;
-        }
-        [data-theme="dark"] .pres-nav { background: #0a0512; }
+        /* Slide colors — ANSSI theme (bleu marine, vert, bleu roi) */
+        .pres-slide--1 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #0c4a6e, #0369a1); }
+        .pres-slide--2 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #134e4a, #0f766e); }
+        .pres-slide--3 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #1e3a8a, #1d4ed8); }
+        .pres-slide--4 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #312e81, #4338ca); }
+        .pres-slide--5 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #14532d, #15803d); }
+        .pres-slide--6 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #713f12, #d97706); }
+        .pres-slide--7 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #0c1a2e, #0c4a6e); }
 
-        .pres-nav__left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .pres-nav__back {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.45);
-            text-decoration: none;
-            letter-spacing: 0.04em;
-            transition: color 0.2s;
-        }
-        .pres-nav__back:hover { color: rgba(255,255,255,0.8); }
+        .pres-slide--1 .pres-slide__tag { background: #e0f2fe; color: #0c4a6e; }
+        .pres-slide--2 .pres-slide__tag { background: #ccfbf1; color: #134e4a; }
+        .pres-slide--3 .pres-slide__tag { background: #dbeafe; color: #1e3a8a; }
+        .pres-slide--4 .pres-slide__tag { background: #e0e7ff; color: #312e81; }
+        .pres-slide--5 .pres-slide__tag { background: #dcfce7; color: #14532d; }
+        .pres-slide--6 .pres-slide__tag { background: #fef3c7; color: #713f12; }
+        .pres-slide--7 .pres-slide__tag { background: #e0f2fe; color: #0c1a2e; }
 
-        .pres-nav__center {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .pres-btn {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.18);
-            color: #fff;
-            width: 38px; height: 38px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-        .pres-btn:hover { background: rgba(255,255,255,0.2); }
-        .pres-btn:disabled { opacity: 0.25; cursor: not-allowed; }
-
-        .pres-dots {
-            display: flex;
-            gap: 7px;
-            align-items: center;
-        }
-        .pres-dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.25);
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .pres-dot.active {
-            background: #fff;
-            transform: scale(1.4);
-        }
-
-        .pres-counter {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.45);
-        }
-
-        .pres-kbd {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.62rem;
-            color: rgba(255,255,255,0.25);
-            letter-spacing: 0.04em;
-        }
-
-        /* ---- Slide colors ---- */
-        .pres-slide--1 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #1d4ed8, #2563eb); }
-        .pres-slide--2 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #6d28d9, #7c3aed); }
-        .pres-slide--3 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #c2410c, #ea580c); }
-        .pres-slide--4 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #0f766e, #0d9488); }
-        .pres-slide--5 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #15803d, #16a34a); }
-        .pres-slide--6 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #b45309, #d97706); }
-        .pres-slide--7 .pres-slide__sidebar { background: radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px) 0 0/18px 18px, linear-gradient(145deg, #1e3a8a, #1d4ed8); }
-
-        .pres-slide--1 .pres-slide__tag { background: #dbeafe; color: #1d4ed8; }
-        .pres-slide--2 .pres-slide__tag { background: #ede9fe; color: #6d28d9; }
-        .pres-slide--3 .pres-slide__tag { background: #ffedd5; color: #c2410c; }
-        .pres-slide--4 .pres-slide__tag { background: #ccfbf1; color: #0f766e; }
-        .pres-slide--5 .pres-slide__tag { background: #dcfce7; color: #15803d; }
-        .pres-slide--6 .pres-slide__tag { background: #fef3c7; color: #b45309; }
-        .pres-slide--7 .pres-slide__tag { background: #dbeafe; color: #1e3a8a; }
-
-        .pres-slide--1 .bul-icon { background: #1d4ed8; }
-        .pres-slide--2 .bul-icon { background: #6d28d9; }
-        .pres-slide--3 .bul-icon { background: #c2410c; }
-        .pres-slide--4 .bul-icon { background: #0f766e; }
+        .pres-slide--1 .bul-icon { background: #0369a1; }
+        .pres-slide--2 .bul-icon { background: #0f766e; }
+        .pres-slide--3 .bul-icon { background: #1d4ed8; }
+        .pres-slide--4 .bul-icon { background: #4338ca; }
         .pres-slide--5 .bul-icon { background: #15803d; }
-        .pres-slide--6 .bul-icon { background: #b45309; }
-        .pres-slide--7 .bul-icon { background: #1e3a8a; }
+        .pres-slide--6 .bul-icon { background: #d97706; }
+        .pres-slide--7 .bul-icon { background: #0c4a6e; }
 
-        .pres-slide--1 .pres-slide__highlight { background: #eff6ff; border-color: #1d4ed8; }
-        .pres-slide--2 .pres-slide__highlight { background: #f5f3ff; border-color: #6d28d9; }
-        .pres-slide--3 .pres-slide__highlight { background: #fff7ed; border-color: #c2410c; }
-        .pres-slide--4 .pres-slide__highlight { background: #f0fdfa; border-color: #0f766e; }
+        .pres-slide--1 .pres-slide__highlight { background: #f0f9ff; border-color: #0369a1; }
+        .pres-slide--2 .pres-slide__highlight { background: #f0fdfa; border-color: #0f766e; }
+        .pres-slide--3 .pres-slide__highlight { background: #eff6ff; border-color: #1d4ed8; }
+        .pres-slide--4 .pres-slide__highlight { background: #eef2ff; border-color: #4338ca; }
         .pres-slide--5 .pres-slide__highlight { background: #f0fdf4; border-color: #15803d; }
-        .pres-slide--6 .pres-slide__highlight { background: #fffbeb; border-color: #b45309; }
-        .pres-slide--7 .pres-slide__highlight { background: #eff6ff; border-color: #1e3a8a; }
+        .pres-slide--6 .pres-slide__highlight { background: #fffbeb; border-color: #d97706; }
+        .pres-slide--7 .pres-slide__highlight { background: #f0f9ff; border-color: #0c4a6e; }
 
-        [data-theme="dark"] .pres-slide--1 .pres-slide__highlight { background: rgba(29,78,216,0.12); }
-        [data-theme="dark"] .pres-slide--2 .pres-slide__highlight { background: rgba(109,40,217,0.12); }
-        [data-theme="dark"] .pres-slide--3 .pres-slide__highlight { background: rgba(194,65,12,0.12); }
-        [data-theme="dark"] .pres-slide--4 .pres-slide__highlight { background: rgba(15,118,110,0.12); }
+        [data-theme="dark"] .pres-slide--1 .pres-slide__highlight { background: rgba(3,105,161,0.12); }
+        [data-theme="dark"] .pres-slide--2 .pres-slide__highlight { background: rgba(15,118,110,0.12); }
+        [data-theme="dark"] .pres-slide--3 .pres-slide__highlight { background: rgba(29,78,216,0.12); }
+        [data-theme="dark"] .pres-slide--4 .pres-slide__highlight { background: rgba(67,56,202,0.12); }
         [data-theme="dark"] .pres-slide--5 .pres-slide__highlight { background: rgba(21,128,61,0.12); }
-        [data-theme="dark"] .pres-slide--6 .pres-slide__highlight { background: rgba(180,83,9,0.12); }
-        [data-theme="dark"] .pres-slide--7 .pres-slide__highlight { background: rgba(30,58,138,0.12); }
+        [data-theme="dark"] .pres-slide--6 .pres-slide__highlight { background: rgba(217,119,6,0.12); }
+        [data-theme="dark"] .pres-slide--7 .pres-slide__highlight { background: rgba(12,74,110,0.12); }
 
         /* ---- Cover slide ---- */
         .pres-cover__logo { width: 72px; height: 72px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; position: relative; z-index: 1; }
@@ -462,7 +406,7 @@
         .pres-cover__org { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: #999; line-height: 1.6; margin: 0; }
         .pres-cover__meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .pres-cover__badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
-        .pres-cover__badge--solid { color: #fff; background: #1d4ed8; }
+        .pres-cover__badge--solid { color: #fff; background: #0369a1; }
         .pres-cover__badge--outline { color: #999; border: 1px solid #ddd; }
         [data-theme="dark"] .pres-cover__badge--outline { border-color: #333; color: #666; }
 
@@ -485,7 +429,6 @@
         .pres-nav__right { display: flex; align-items: center; gap: 8px; }
         .pres-btn--sm { width: 32px !important; height: 32px !important; font-size: 0.74rem !important; }
 
-        /* ---- Responsive ---- */
         @media (max-width: 768px) {
             .pres-slide { flex-direction: column; }
             .pres-slide__sidebar {
@@ -535,23 +478,21 @@
     <!-- PRESENTATION -->
     <div class="pres-wrapper">
 
-        <!-- Progress bar -->
         <div class="pres-progress"><div class="pres-progress__fill" id="progressFill"></div></div>
 
-        <!-- Slides -->
         <div class="pres-slides" id="slidesContainer">
 
             <!-- Slide 0 — Couverture -->
             <div class="pres-slide pres-slide--1">
                 <div class="pres-slide__sidebar">
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-cover__logo">
-                    <span class="pres-slide__sidebar-label">Certification RGPD</span>
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-cover__logo">
+                    <span class="pres-slide__sidebar-label">Certification cybersécurité</span>
                     <span class="pres-slide__num">01 / 07</span>
                 </div>
                 <div class="pres-slide__content pres-cover__content">
-                    <span class="pres-slide__tag">MOOC CNIL — RGPD</span>
-                    <h1 class="pres-cover__title">Protection des données<br>personnelles &amp; RGPD</h1>
-                    <p class="pres-cover__org">Commission Nationale de l'Informatique et des Libertés<br>6 modules · Attestation par module</p>
+                    <span class="pres-slide__tag">SecNumacadémie — ANSSI</span>
+                    <h1 class="pres-cover__title">Fondamentaux de la<br>cybersécurité nationale</h1>
+                    <p class="pres-cover__org">Agence Nationale de la Sécurité des Systèmes d'Information<br>Formation officielle · Référentiels ANSSI</p>
                     <div class="pres-cover__meta">
                         <span class="pres-cover__badge pres-cover__badge--solid">BTS SIO SISR · 2024–2025</span>
                         <span class="pres-cover__badge pres-cover__badge--outline">Kevin Granday</span>
@@ -563,25 +504,25 @@
             <div class="pres-slide pres-slide--2">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-bullseye"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">Mon parcours</span>
                     <span class="pres-slide__num">02 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">Mon projet professionnel</span>
-                    <h2 class="pres-slide__title">Administrateur systèmes<br>& cybersécurité défensive</h2>
+                    <h2 class="pres-slide__title">Administrateur systèmes<br>spécialisé cybersécurité</h2>
                     <ul class="pres-slide__bullets">
                         <li>
                             <span class="bul-icon"><i class="fas fa-server"></i></span>
-                            <span>Objectif : évoluer vers un poste d'<strong>administrateur systèmes et réseaux</strong>, puis me spécialiser en cybersécurité</span>
+                            <span>Objectif : évoluer vers un poste d'<strong>administrateur systèmes et réseaux</strong>, puis me spécialiser en cybersécurité défensive</span>
                         </li>
                         <li>
                             <span class="bul-icon"><i class="fas fa-building"></i></span>
-                            <span>Secteurs visés : <strong>collectivités territoriales, secteur de la santé, ESN spécialisée sécurité</strong> — secteurs fortement exposés au RGPD</span>
+                            <span>Secteurs visés : <strong>défense, santé, administrations publiques, OIV</strong> — secteurs où la posture de sécurité est non négociable</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-scale-balanced"></i></span>
-                            <span>Dans ces secteurs, un admin qui connaît le RGPD est une <strong>exigence, pas un bonus</strong></span>
+                            <span class="bul-icon"><i class="fas fa-arrow-trend-up"></i></span>
+                            <span>SecNumacadémie est <strong>la référence nationale</strong> pour valider ces fondamentaux avant d'aller vers Security+ ou CISSP</span>
                         </li>
                     </ul>
                 </div>
@@ -591,30 +532,30 @@
             <div class="pres-slide pres-slide--3">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-magnifying-glass-chart"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">Pourquoi cette certification ?</span>
                     <span class="pres-slide__num">03 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">Analyse du besoin</span>
-                    <h2 class="pres-slide__title">Combler une lacune<br>réelle du marché</h2>
+                    <h2 class="pres-slide__title">La cybersécurité —<br>absente du programme SISR</h2>
                     <ul class="pres-slide__bullets">
                         <li>
                             <span class="bul-icon"><i class="fas fa-triangle-exclamation"></i></span>
-                            <span>La formation SISR couvre l'infrastructure, mais <strong>la dimension juridique est absente</strong> du programme</span>
+                            <span>La formation BTS SIO SISR couvre l'admin des infrastructures, mais <strong>la cybersécurité reste transversale</strong>, sans module dédié structuré</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-database"></i></span>
-                            <span>Toute entreprise collecte des données personnelles — <strong>employés, clients, partenaires</strong> — obligation RGPD depuis 2018</span>
+                            <span class="bul-icon"><i class="fas fa-chart-line"></i></span>
+                            <span>Selon l'ANSSI, les incidents de sécurité en France ont augmenté de <strong>37% en deux ans</strong> — la menace est réelle et croissante</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-euro-sign"></i></span>
-                            <span>Sanctions pouvant atteindre <strong>4% du chiffre d'affaires mondial</strong> — ignorance de la loi n'est pas une excuse</span>
+                            <span class="bul-icon"><i class="fas fa-user-shield"></i></span>
+                            <span>En tant qu'admin, je serai en première ligne — <strong>phishing, ransomware, élévation de privilèges</strong> sont des risques quotidiens</span>
                         </li>
                     </ul>
                     <div class="pres-case">
-                        <span class="pres-case__label"><i class="fas fa-gavel"></i> Sanction réelle — CNIL vs Amazon France, 2023</span>
-                        <p class="pres-case__text">Amazon France Logistique a été condamné à <strong>32 millions d'euros</strong> par la CNIL pour surveillance excessive de ses entrepôts : badges RFID traqués à la seconde, délais entre scans analysés, temps de pause mesurés. Un administrateur qui aurait déployé ces systèmes sans connaître le RGPD <strong>aurait contribué directement à cette violation</strong>, sans s'en rendre compte.</p>
+                        <span class="pres-case__label"><i class="fas fa-hospital"></i> Incident réel — CH de Corbeil-Essonnes, août 2022</span>
+                        <p class="pres-case__text">Le Centre Hospitalier Sud-Francilien a été paralysé pendant des semaines par un ransomware. Les attaquants ont utilisé des <strong>comptes Active Directory compromis sans MFA</strong> pour se propager. Données de patients exposées, systèmes bloqués. Un administrateur formé en cybersécurité aurait pu identifier et corriger cette faille avant l'attaque.</p>
                     </div>
                 </div>
             </div>
@@ -623,40 +564,40 @@
             <div class="pres-slide pres-slide--4">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-building-columns"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">L'organisme certificateur</span>
                     <span class="pres-slide__num">04 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">État de l'offre de certification</span>
-                    <h2 class="pres-slide__title">La CNIL — autorité<br>française de référence</h2>
+                    <h2 class="pres-slide__title">L'ANSSI — autorité nationale<br>de la cybersécurité</h2>
                     <ul class="pres-slide__bullets">
                         <li>
-                            <span class="bul-icon"><i class="fas fa-gavel"></i></span>
-                            <span>La CNIL contrôle l'application du RGPD en France et <strong>sanctionne les entreprises non conformes</strong></span>
+                            <span class="bul-icon"><i class="fas fa-landmark-flag"></i></span>
+                            <span>Rattachée au <strong>Premier ministre</strong>, l'ANSSI fixe les normes et référentiels de sécurité pour la France</span>
                         </li>
                         <li>
                             <span class="bul-icon"><i class="fas fa-star"></i></span>
-                            <span>Son MOOC : <strong>la source la plus légitime</strong> — produit directement par l'autorité de régulation</span>
+                            <span>SecNumacadémie : plateforme de formation <strong>gratuite et officielle</strong>, alignée sur les référentiels ANSSI</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-gift"></i></span>
-                            <span><strong>Gratuit et accessible</strong> à tous, attestations par module comme preuve concrète</span>
+                            <span class="bul-icon"><i class="fas fa-scale-balanced"></i></span>
+                            <span>Comparé à Coursera ou LinkedIn Learning : <strong>produit par l'autorité de régulation française</strong> — légitimité maximale en contexte institutionnel</span>
                         </li>
                     </ul>
                     <div class="pres-table-wrap">
                         <table class="pres-table">
                             <thead><tr>
                                 <th>Critère</th>
-                                <th>MOOC CNIL ✓</th>
-                                <th>Coursera RGPD</th>
-                                <th>OpenClassrooms</th>
+                                <th>SecNumacadémie ✓</th>
+                                <th>Coursera Cybersec</th>
+                                <th>LinkedIn Learning</th>
                             </tr></thead>
                             <tbody>
-                                <tr><td>Source</td><td><span class="ok">Autorité officielle FR</span></td><td>Université privée</td><td>Plateforme privée</td></tr>
+                                <tr><td>Source</td><td><span class="ok">Autorité nationale FR</span></td><td>Université privée</td><td>Plateforme privée</td></tr>
                                 <tr><td>Coût</td><td><span class="ok">Gratuit</span></td><td><span class="ko">Payant</span></td><td><span class="ko">Payant</span></td></tr>
-                                <tr><td>Attestations</td><td><span class="ok">Par module (×6)</span></td><td><span class="mid">Par formation</span></td><td><span class="mid">Par formation</span></td></tr>
-                                <tr><td>Légitimité RGPD</td><td><span class="ok">Maximale</span></td><td><span class="mid">Moyenne</span></td><td><span class="ko">Faible</span></td></tr>
+                                <tr><td>Référentiel</td><td><span class="ok">Officiel ANSSI</span></td><td><span class="mid">Variable</span></td><td><span class="mid">Variable</span></td></tr>
+                                <tr><td>Légitimité France</td><td><span class="ok">Maximale</span></td><td><span class="mid">Partielle</span></td><td><span class="ko">Faible</span></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -667,36 +608,27 @@
             <div class="pres-slide pres-slide--5">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-road"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">Comment j'ai préparé</span>
                     <span class="pres-slide__num">05 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">Ma démarche de préparation</span>
-                    <h2 class="pres-slide__title">6 modules — entièrement<br>en autonomie</h2>
+                    <h2 class="pres-slide__title">Théorie + pratique —<br>deux projets en parallèle</h2>
                     <ul class="pres-slide__bullets">
                         <li>
                             <span class="bul-icon"><i class="fas fa-person-walking"></i></span>
-                            <span>Formation suivie <strong>à mon rythme, en dehors des heures de cours</strong> — approche autodidacte</span>
+                            <span>Formation suivie <strong>en autonomie, en dehors des heures de cours</strong> — sur la plateforme SecNumacadémie</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-circle-check"></i></span>
-                            <span>Chaque module validé par <strong>un QCM</strong> donnant lieu à une attestation téléchargeable</span>
+                            <span class="bul-icon"><i class="fas fa-book-open"></i></span>
+                            <span>Modules couverts : fondamentaux de la sécurité, <strong>gestion des risques EBIOS</strong>, sécurité des réseaux, cryptographie, sécurité des OS</span>
                         </li>
                         <li>
                             <span class="bul-icon"><i class="fas fa-code"></i></span>
-                            <span>En parallèle : développement d'un <strong>framework de pentest Python</strong> et d'un toolkit PowerShell Active Directory</span>
+                            <span>En parallèle : <strong>framework de pentest Python</strong> — confronter la théorie aux attaques réelles</span>
                         </li>
                     </ul>
-                    <div class="pres-attestations">
-                        <span class="pres-attestations__label"><i class="fas fa-file-pdf"></i> Attestations obtenues</span>
-                        <a href="docs/RGPD%20et%20CNIL/Certificat_.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 1 — Le RGPD et ses notions clés</a>
-                        <a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 2 — Les principes de la protection des données</a>
-                        <a href="docs/RGPD%20et%20CNIL/Certificat3.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 3 — Les responsabilités des acteurs</a>
-                        <a href="docs/RGPD%20et%20CNIL/Certificat4.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 4 — Le DPO et les outils de la conformité</a>
-                        <a href="docs/RGPD%20et%20CNIL/Certificat5.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 5 — Les collectivités territoriales</a>
-                        <a href="docs/RGPD%20et%20CNIL/Attestation_de_suivi6.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Module 6 — Travail et données personnelles</a>
-                    </div>
                 </div>
             </div>
 
@@ -704,29 +636,29 @@
             <div class="pres-slide pres-slide--6">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-trophy"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">Ce que j'ai obtenu</span>
                     <span class="pres-slide__num">06 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">Résultats &amp; acquis</span>
-                    <h2 class="pres-slide__title">6 attestations —<br>ce que je suis capable de faire</h2>
+                    <h2 class="pres-slide__title">Fondamentaux acquis —<br>ce que je suis capable de faire</h2>
                     <ul class="pres-slide__bullets">
                         <li>
-                            <span class="bul-icon"><i class="fas fa-scale-balanced"></i></span>
-                            <span>Je suis capable d'<strong>identifier la base légale applicable</strong> à un traitement de données dans une organisation</span>
+                            <span class="bul-icon"><i class="fas fa-layer-group"></i></span>
+                            <span>Je suis capable d'<strong>identifier les failles d'une infrastructure</strong> et de proposer des contre-mesures adaptées</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-people-group"></i></span>
-                            <span>Je suis capable de <strong>répondre à une demande d'exercice de droits</strong> (accès, effacement, portabilité) en tant qu'administrateur</span>
+                            <span class="bul-icon"><i class="fas fa-key"></i></span>
+                            <span>Je suis capable d'<strong>expliquer pourquoi et comment chiffrer</strong> des communications ou des données au repos</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-sitemap"></i></span>
-                            <span>Je suis capable de <strong>distinguer les rôles RGPD</strong> (responsable, sous-traitant, DPO) dans une relation contractuelle ou technique</span>
+                            <span class="bul-icon"><i class="fas fa-fire-flame-curved"></i></span>
+                            <span>Je suis capable de <strong>concevoir une architecture réseau sécurisée</strong> avec DMZ, pare-feu et segmentation VLAN</span>
                         </li>
                         <li>
-                            <span class="bul-icon"><i class="fas fa-file-lines"></i></span>
-                            <span>Je suis capable de <strong>lire un cadre réglementaire et de l'appliquer</strong> à une situation technique concrète</span>
+                            <span class="bul-icon"><i class="fas fa-brain"></i></span>
+                            <span>Je suis capable de <strong>raisonner face à un incident</strong> : identifier la menace, évaluer le risque, proposer une réponse</span>
                         </li>
                     </ul>
                 </div>
@@ -736,23 +668,23 @@
             <div class="pres-slide pres-slide--7">
                 <div class="pres-slide__sidebar">
                     <div class="pres-slide__icon-wrap"><i class="fas fa-rocket"></i></div>
-                    <img src="images/logo-cnil.webp" alt="CNIL" class="pres-slide__cert-logo">
+                    <img src="images/logo-anssi.webp" alt="ANSSI" class="pres-slide__cert-logo">
                     <span class="pres-slide__sidebar-label">La suite</span>
                     <span class="pres-slide__num">07 / 07</span>
                 </div>
                 <div class="pres-slide__content">
                     <span class="pres-slide__tag">Conclusion &amp; perspectives</span>
-                    <h2 class="pres-slide__title">La dimension juridique<br>qui complète le technique</h2>
+                    <h2 class="pres-slide__title">Sécuriser dès la conception —<br>pas après coup</h2>
                     <p class="pres-slide__text">
-                        Cette certification m'a apporté ce que la formation technique seule ne couvre pas : comprendre les règles qui encadrent les données que j'administre. Un administrateur qui connaît le RGPD est plus complet et plus fiable.
+                        SecNumacadémie m'a donné le cadre conceptuel qui manquait à ma formation technique : comprendre <em>pourquoi</em> on sécurise, pas seulement <em>comment</em>. Un administrateur qui raisonne en sécurité dès la conception est plus fiable qu'un administrateur qui ajoute la sécurité après coup.
                     </p>
                     <div class="pres-slide__highlight">
-                        Pour un employeur dans les secteurs réglementés — santé, collectivités, banque — recruter un administrateur formé au RGPD réduit le risque de non-conformité <strong>dès la conception des systèmes</strong>, sans attendre un audit ou une sanction.
+                        Pour un recruteur, cette certification garantit que je <strong>pense sécurité avant même de configurer</strong> une infrastructure — c'est la différence entre un admin qui subit les incidents et un admin qui les anticipe.
                     </div>
                     <ul class="pres-slide__bullets">
                         <li>
-                            <span class="bul-icon"><i class="fas fa-shield-halved"></i></span>
-                            <span><strong>SecNumacadémie ANSSI</strong> — cybersécurité (déjà validée)</span>
+                            <span class="bul-icon"><i class="fas fa-file-shield"></i></span>
+                            <span><strong>MOOC CNIL RGPD</strong> — dimension juridique (déjà validée)</span>
                         </li>
                         <li>
                             <span class="bul-icon"><i class="fas fa-network-wired"></i></span>
@@ -822,17 +754,17 @@
         const notesBtn = document.getElementById('notesBtn');
         const fsBtn = document.getElementById('fsBtn');
 
-        const colors = ['#1d4ed8','#6d28d9','#c2410c','#0f766e','#15803d','#b45309','#1e3a8a'];
-        const navColors = ['#12082a','#12082a','#2a0c04','#031a16','#041a08','#180d00','#060a1e'];
+        const colors = ['#0369a1','#0f766e','#1d4ed8','#4338ca','#15803d','#d97706','#0c4a6e'];
+        const navColors = ['#021a16','#021a16','#060a1e','#0a0930','#041a08','#1a0e00','#010810'];
         const sectionNames = ['Couverture','Mon projet professionnel','Analyse du besoin','État de l\'offre','Ma démarche','Résultats & acquis','Conclusion'];
         const notes = [
-            'Présenter la certification et l\'organisme. Annoncer le plan en 6 parties.',
-            'Expliquer pourquoi le RGPD est pertinent pour un futur admin systèmes dans les secteurs visés.',
-            'Insister sur l\'affaire Amazon : 32M€ pour surveillance excessive. Un admin aurait pu l\'éviter.',
-            'Souligner la légitimité de la CNIL comme source — c\'est l\'autorité qui sanctionne.',
-            'Mettre en valeur l\'autonomie et la démarche proactive — pas une certification imposée.',
-            'Reformuler chaque acquis en situation concrète de travail.',
-            'Conclure sur la valeur ajoutée pour un recruteur dans les secteurs réglementés.'
+            'Présenter la certification SecNumacadémie et l\'ANSSI. Annoncer le plan en 6 parties.',
+            'Expliquer pourquoi la cybersécurité est indispensable pour un futur admin systèmes dans les secteurs visés.',
+            'Insister sur l\'incident CH de Corbeil-Essonnes : Active Directory compromis sans MFA. Un admin formé en sécu aurait pu l\'éviter.',
+            'Souligner la légitimité de l\'ANSSI comme source — c\'est l\'autorité nationale de la cybersécurité.',
+            'Mettre en valeur l\'autonomie et la démarche proactive — pas une certification imposée. Parallèle avec le framework pentest.',
+            'Reformuler chaque acquis en situation concrète de travail : identifier failles, concevoir DMZ, raisonner face à un incident.',
+            'Conclure sur la valeur ajoutée : penser sécurité dès la conception plutôt qu\'après coup.'
         ];
         let current = 0;
 
