@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (i === currentDotIdx) return;
             const dir = i > currentDotIdx ? 'next' : 'prev';
             sessionStorage.setItem('swipeDir', dir);
-            document.body.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
+            document.querySelector('.page-content')?.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
             setTimeout(() => { window.location.href = page; }, 120);
         });
         dotsNav.appendChild(dot);
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const swipeDir = sessionStorage.getItem('swipeDir');
     if (swipeDir) {
         sessionStorage.removeItem('swipeDir');
-        document.body.classList.add(swipeDir === 'next' ? 'swipe-in-right' : 'swipe-in-left');
+        document.querySelector('.page-content')?.classList.add(swipeDir === 'next' ? 'swipe-in-right' : 'swipe-in-left');
     }
 
     // Transition fade-slide au clic sur les liens de nav
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetIdx = PAGES.indexOf(target);
             const dir = targetIdx > currentIdx ? 'next' : 'prev';
             sessionStorage.setItem('swipeDir', dir);
-            document.body.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
+            document.querySelector('.page-content')?.classList.add(dir === 'next' ? 'swipe-out-left' : 'swipe-out-right');
             setTimeout(() => { window.location.href = link.getAttribute('href'); }, 120);
         });
     });
@@ -471,11 +471,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.key === 'ArrowRight' && idx < PAGES.length - 1) {
             sessionStorage.setItem('swipeDir', 'next');
-            document.body.classList.add('swipe-out-left');
+            document.querySelector('.page-content')?.classList.add('swipe-out-left');
             setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 120);
         } else if (e.key === 'ArrowLeft' && idx > 0) {
             sessionStorage.setItem('swipeDir', 'prev');
-            document.body.classList.add('swipe-out-right');
+            document.querySelector('.page-content')?.classList.add('swipe-out-right');
             setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 120);
         }
     });
@@ -505,12 +505,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (dx < 0 && idx < PAGES.length - 1) {
             // Swipe gauche → page suivante
             sessionStorage.setItem('swipeDir', 'next');
-            document.body.classList.add('swipe-out-left');
+            document.querySelector('.page-content')?.classList.add('swipe-out-left');
             setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 120);
         } else if (dx > 0 && idx > 0) {
             // Swipe droite → page précédente
             sessionStorage.setItem('swipeDir', 'prev');
-            document.body.classList.add('swipe-out-right');
+            document.querySelector('.page-content')?.classList.add('swipe-out-right');
             setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 120);
         }
     }, { passive: true });

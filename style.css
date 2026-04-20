@@ -2739,10 +2739,10 @@ code {
     to   { transform: translateX(0);     opacity: 1; }
 }
 
-body.swipe-out-left  { animation: swipeOutLeft  0.12s var(--ease) forwards; }
-body.swipe-out-right { animation: swipeOutRight 0.12s var(--ease) forwards; }
-body.swipe-in-right  { animation: swipeInFromRight 0.15s var(--ease) both; }
-body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
+.page-content.swipe-out-left  { animation: swipeOutLeft  0.12s var(--ease) forwards; }
+.page-content.swipe-out-right { animation: swipeOutRight 0.12s var(--ease) forwards; }
+.page-content.swipe-in-right  { animation: swipeInFromRight 0.15s var(--ease) both; }
+.page-content.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
 
 /* ---------- RESPONSIVE FIXES ---------- */
 
