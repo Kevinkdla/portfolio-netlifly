@@ -173,7 +173,24 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(el => counterObs.observe(el));
     }
 
-    /* ---------- NETLIFY CONTACT FORM ---------- */
+    /* ---------- TOAST NOTIFICATION ---------- */
+    let _toastTimer = null;
+    function showToast(msg, type = '') {
+        let toast = document.getElementById('globalToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'globalToast';
+            toast.className = 'toast';
+            document.body.appendChild(toast);
+        }
+        toast.className = 'toast' + (type ? ' toast--' + type : '');
+        toast.innerHTML = `<i class="fas fa-${type === 'error' ? 'circle-exclamation' : type === 'success' ? 'circle-check' : 'info-circle'}"></i> ${msg}`;
+        requestAnimationFrame(() => toast.classList.add('toast--visible'));
+        clearTimeout(_toastTimer);
+        _toastTimer = setTimeout(() => toast.classList.remove('toast--visible'), 4000);
+    }
+
+    /* ---------- FORMSPREE CONTACT FORM ---------- */
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     if (contactForm && formSuccess) {
@@ -186,16 +203,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: new FormData(contactForm)
-            }).then(() => {
+            }).then(res => {
+                if (!res.ok) throw new Error();
                 contactForm.style.display = 'none';
                 formSuccess.style.display = 'flex';
             }).catch(() => {
                 btn.disabled = false;
                 btn.innerHTML = 'Envoyer <i class="fas fa-arrow-right"></i>';
-                alert('Une erreur est survenue, merci d\'envoyer un email directement.');
+                showToast('Erreur d\'envoi — contactez-moi directement à kgranday45@gmail.com', 'error');
             });
         });
     }
+
+    /* ---------- CV DOWNLOAD TRACKING ---------- */
+    document.querySelectorAll('a[href*="kevin-granday-cv.pdf"][download]').forEach(link => {
+        link.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'file_download', {
+                    file_name: 'kevin-granday-cv.pdf',
+                    file_extension: 'pdf',
+                    link_text: link.textContent.trim() || 'CV Download'
+                });
+            }
+        });
+    });
+
+    /* ---------- SKELETON LOADING (images) ---------- */
+    document.querySelectorAll('.char-select__thumb, .lab__img, .cert-pres-card__logo, .hero__photo img').forEach(img => {
+        if (!img.complete || img.naturalWidth === 0) {
+            img.classList.add('img-loading');
+            img.addEventListener('load',  () => img.classList.remove('img-loading'), { once: true });
+            img.addEventListener('error', () => img.classList.remove('img-loading'), { once: true });
+        }
+    });
 
     /* ---------- COPY EMAIL ---------- */
     document.querySelectorAll('.copy-btn').forEach(btn => {

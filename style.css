@@ -3499,6 +3499,71 @@ body.swipe-in-left   { animation: swipeInFromLeft  0.15s var(--ease) both; }
     }
 }
 
+/* ---------- TOAST NOTIFICATION ---------- */
+.toast {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    pointer-events: none;
+    max-width: 340px;
+}
+
+.toast.toast--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast--error {
+    background: #c62828;
+    color: #fff;
+}
+
+.toast--success {
+    background: #2e7d32;
+    color: #fff;
+}
+
+/* ---------- SKELETON LOADING ---------- */
+@keyframes skeleton-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+}
+
+.img-loading {
+    background: linear-gradient(
+        90deg,
+        var(--bg-card) 25%,
+        var(--bg-secondary) 50%,
+        var(--bg-card) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s infinite linear;
+}
+
+[data-theme="dark"] .img-loading {
+    background: linear-gradient(
+        90deg,
+        #1e1e1e 25%,
+        #2a2a2a 50%,
+        #1e1e1e 75%
+    );
+    background-size: 200% 100%;
+}
+
 /* ---------- ACCESSIBILITÉ ---------- */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
