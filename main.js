@@ -459,6 +459,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ---------- NAVIGATION CLAVIER (flèches gauche/droite) ---------- */
+    document.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        const lb = document.getElementById('lightbox');
+        if (lb && lb.classList.contains('active')) return;
+
+        const filename = window.location.pathname.split('/').pop() || 'index.html';
+        const idx = PAGES.indexOf(filename);
+        if (idx === -1) return;
+
+        if (e.key === 'ArrowRight' && idx < PAGES.length - 1) {
+            sessionStorage.setItem('swipeDir', 'next');
+            document.body.classList.add('swipe-out-left');
+            setTimeout(() => { window.location.href = PAGES[idx + 1]; }, 120);
+        } else if (e.key === 'ArrowLeft' && idx > 0) {
+            sessionStorage.setItem('swipeDir', 'prev');
+            document.body.classList.add('swipe-out-right');
+            setTimeout(() => { window.location.href = PAGES[idx - 1]; }, 120);
+        }
+    });
+
     let _txStart = 0, _tyStart = 0;
 
     document.addEventListener('touchstart', (e) => {
