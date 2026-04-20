@@ -1,0 +1,27 @@
+{
+  "name": "Kevin Granday — Portfolio BTS SIO SISR",
+  "short_name": "KG Portfolio",
+  "description": "Portfolio de Kevin Granday, étudiant BTS SIO SISR à l'IPSSI SQY. Infrastructures réseaux, administration systèmes, cybersécurité.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f0f0ec",
+  "theme_color": "#111111",
+  "lang": "fr",
+  "categories": ["education", "portfolio"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

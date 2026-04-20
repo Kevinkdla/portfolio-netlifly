@@ -2,6 +2,13 @@
    KEVIN GRANDAY PORTFOLIO — JS
    ================================================================ */
 
+/* ---------- SERVICE WORKER (PWA) ---------- */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
+
 /* ---------- DARK MODE (anti-FOUC) ---------- */
 (function () {
     var saved = localStorage.getItem('theme');
