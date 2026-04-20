@@ -470,9 +470,9 @@ code {
     align-items: center;
     gap: 8px;
     padding: 8px 18px;
-    background: var(--accent-green-soft);
-    color: var(--accent-green);
-    border: 1px solid #bbf7d0;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-glow);
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -2267,9 +2267,9 @@ code {
     align-items: center;
     gap: 8px;
     padding: 8px 18px;
-    background: var(--accent-green-soft);
-    color: var(--accent-green);
-    border: 1px solid #bbf7d0;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-glow);
     border-radius: 50px;
     font-size: 0.88rem;
     font-weight: 600;
@@ -2420,8 +2420,22 @@ code {
 .skill-card i {
     font-size: 1.6rem;
     color: var(--text-primary);
-    transition: transform var(--dur);
+    transition: transform var(--dur), color var(--dur);
 }
+
+/* Couleurs natives des marques/outils */
+.skill-card:has(> i.fa-windows)        i { color: #0078d4; }
+.skill-card:has(> i.fa-linux)          i { color: #e8a400; }
+.skill-card:has(> i.fa-terminal)       i { color: #012456; }
+.skill-card:has(> i.fa-shield-halved)  i { color: #d94f00; }
+.skill-card:has(> i.fa-network-wired)  i { color: #1ba0d7; }
+.skill-card:has(> i.fa-chart-line)     i { color: #e2251f; }
+.skill-card:has(> i.fa-git-alt)        i { color: #f05032; }
+.skill-card:has(> i.fa-cube)           i { color: #183a61; }
+.skill-card:has(> i.fa-magnifying-glass-chart) i { color: #1679a7; }
+
+[data-theme="dark"] .skill-card:has(> i.fa-terminal) i { color: #4facff; }
+[data-theme="dark"] .skill-card:has(> i.fa-cube)     i { color: #7eb8f7; }
 
 .skill-card:hover {
     border-color: var(--accent);
