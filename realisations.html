@@ -74,6 +74,8 @@
         </ul>
     </dialog>
 
+    <div class="page-content">
+
     <!-- ===================== RÉALISATIONS ===================== -->
     <section class="section" id="realisations">
         <div class="container">
@@ -99,7 +101,14 @@
                             <span class="mission-card__tag mission-card__tag--perso">perso</span>
                         </div>
                     </button>
-                    <button class="char-select__portrait" data-idx="2" aria-label="DeskShop">
+                    <button class="char-select__portrait" data-idx="2" aria-label="VForge">
+                        <img src="images/vforge-logo.png" alt="VForge" class="char-select__thumb" loading="lazy">
+                        <div class="char-select__info">
+                            <span class="char-select__name">VForge</span>
+                            <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                        </div>
+                    </button>
+                    <button class="char-select__portrait" data-idx="3" aria-label="DeskShop">
                         <img src="images/entreprise-deskshop.webp" alt="DeskShop" class="char-select__thumb" loading="lazy">
                         <div class="char-select__info">
                             <span class="char-select__name">DeskShop</span>
@@ -186,8 +195,6 @@
                                 <button class="img-dialog__close" id="close-dialog-pentest" aria-label="Fermer">&times;</button>
                                 <img src="images/projet-pentest.webp" alt="Aperçu du framework pentest" class="img-dialog__img">
                             </dialog>
-
-    <div class="page-content">
                             <!-- GIF affiché directement, pas de lien -->
                             <div style="margin-top:0.75rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
                                 <img src="images/pentest.gif" alt="Aperçu des fonctionnalités du framework pentest" style="width:100%;display:block;">
@@ -213,7 +220,38 @@
                         </div>
                     </div><!-- /.char-panel 1 -->
 
-                    <!-- Panel 2 : DeskShop -->
+                    <!-- Panel 2 : VForge -->
+                    <div class="char-panel">
+                        <div class="mission-card project-card">
+                            <div class="mission-card__head">
+                                <h4 class="mission-card__title">VForge — Infrastructure as Code</h4>
+                                <span class="mission-card__tag mission-card__tag--perso">perso</span>
+                            </div>
+                            <p class="mission-card__desc">Outil PowerShell d'Infrastructure as Code multi-hyperviseur : déploiement automatisé de VMs sur VirtualBox, VMware Workstation et Proxmox VE. Intègre Packer pour la création de templates et Terraform pour le déploiement de labs. Interface CLI, GUI WinForms et dashboard web local.</p>
+                            <div class="project-card__modules">
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Support VirtualBox / VMware / Proxmox VE</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Forgefile.ps1 — déclaration d'infrastructure</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Build de templates via Packer</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Déploiement de labs via Terraform</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> GUI WinForms + dashboard web local</span>
+                                <span class="fp-module"><i class="fas fa-circle-dot"></i> Catalogue ISO + téléchargement automatique</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <p class="mission-card__meta">Mettre à disposition un service informatique — Personnel</p>
+                                <div class="project-card__actions">
+                                    <div class="project-card__stack">
+                                        <span class="fp-tag">PowerShell</span>
+                                        <span class="fp-tag">VirtualBox</span>
+                                        <span class="fp-tag">Proxmox</span>
+                                        <span class="fp-tag">Packer</span>
+                                        <span class="fp-tag">Terraform</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.char-panel 2 -->
+
+                    <!-- Panel 3 : DeskShop -->
                     <div class="char-panel">
                         <div class="mission-card project-card">
                             <div class="mission-card__head">

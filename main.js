@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    /* ---------- REVEAL ON SCROLL ---------- */
+    /* ---------- SCROLL REVEAL ---------- */
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -305,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     /* ---------- LIGHTBOX (parcours.html + veille.html) ---------- */

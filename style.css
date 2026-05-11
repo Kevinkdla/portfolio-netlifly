@@ -2245,6 +2245,18 @@ code {
     color: var(--text-secondary);
 }
 
+.plan__logo {
+    display: block;
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-bottom: 0.75rem;
+}
+
 /* ---------- CONTACT ---------- */
 .contact-card {
     background: var(--bg-card);
@@ -3511,6 +3523,18 @@ code {
     .contact-form__row {
         grid-template-columns: 1fr;
     }
+}
+
+/* ---------- CHAR SELECT PLACEHOLDER (pas d'image) ---------- */
+.char-select__thumb--placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
+    font-size: 2rem;
+    color: var(--accent);
 }
 
 /* ---------- TOAST NOTIFICATION ---------- */
