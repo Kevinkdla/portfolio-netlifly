@@ -3,7 +3,7 @@
    Stratégie : Network-first avec fallback cache (offline support)
    ================================================================ */
 
-const CACHE_NAME = 'kg-portfolio-v2';
+const CACHE_NAME = 'kg-portfolio-v3';
 
 const PRECACHE = [
     '/',
@@ -22,6 +22,9 @@ const PRECACHE = [
     '/images/entreprise-deskshop.webp',
     '/images/vforge-logo.png',
     '/images/logo-dgfip.png',
+    '/images/vforge_cli.png',
+    '/images/vforge-creer_une_vm.png',
+    '/images/vforge-machines-virtuelles.png',
 ];
 
 /* ---- Install : pré-cache les assets critiques ---- */

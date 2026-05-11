@@ -228,6 +228,34 @@
                                 <span class="mission-card__tag mission-card__tag--perso">perso</span>
                             </div>
                             <p class="mission-card__desc">Outil PowerShell d'Infrastructure as Code multi-hyperviseur : déploiement automatisé de VMs sur VirtualBox, VMware Workstation et Proxmox VE. Intègre Packer pour la création de templates et Terraform pour le déploiement de labs. Interface CLI, GUI WinForms et dashboard web local.</p>
+                            <div class="lab__screenshot project-screenshot" id="trigger-dialog-vforge" style="cursor:zoom-in;">
+                                <img src="images/vforge_cli.png" alt="Interface CLI VForge" class="lab__img" style="width:100%;display:block;" loading="lazy">
+                                <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Voir l'aperçu</span></div>
+                            </div>
+                            <dialog id="dialog-vforge" class="img-dialog">
+                                <button class="img-dialog__close" id="close-dialog-vforge" aria-label="Fermer">&times;</button>
+                                <img src="images/vforge_cli.png" alt="Interface CLI VForge" class="img-dialog__img">
+                            </dialog>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;margin-top:0.5rem;">
+                                <div id="trigger-dialog-vforge-vm" style="position:relative;cursor:zoom-in;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+                                    <img src="images/vforge-creer_une_vm.png" alt="Création d'une VM avec VForge" style="width:100%;display:block;" loading="lazy">
+                                    <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Voir l'aperçu</span></div>
+                                    <span style="display:block;font-size:0.75rem;color:var(--text-muted);padding:4px 8px;"><i class="fas fa-plus-circle"></i> Création d'une VM</span>
+                                </div>
+                                <div id="trigger-dialog-vforge-list" style="position:relative;cursor:zoom-in;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+                                    <img src="images/vforge-machines-virtuelles.png" alt="Liste des machines virtuelles" style="width:100%;display:block;" loading="lazy">
+                                    <div class="cv-card__overlay"><i class="fas fa-search-plus"></i><span>Voir l'aperçu</span></div>
+                                    <span style="display:block;font-size:0.75rem;color:var(--text-muted);padding:4px 8px;"><i class="fas fa-list"></i> Machines virtuelles</span>
+                                </div>
+                            </div>
+                            <dialog id="dialog-vforge-vm" class="img-dialog">
+                                <button class="img-dialog__close" id="close-dialog-vforge-vm" aria-label="Fermer">&times;</button>
+                                <img src="images/vforge-creer_une_vm.png" alt="Création d'une VM avec VForge" class="img-dialog__img">
+                            </dialog>
+                            <dialog id="dialog-vforge-list" class="img-dialog">
+                                <button class="img-dialog__close" id="close-dialog-vforge-list" aria-label="Fermer">&times;</button>
+                                <img src="images/vforge-machines-virtuelles.png" alt="Liste des machines virtuelles" class="img-dialog__img">
+                            </dialog>
                             <div class="project-card__modules">
                                 <span class="fp-module"><i class="fas fa-circle-dot"></i> Support VirtualBox / VMware / Proxmox VE</span>
                                 <span class="fp-module"><i class="fas fa-circle-dot"></i> Forgefile.ps1 — déclaration d'infrastructure</span>

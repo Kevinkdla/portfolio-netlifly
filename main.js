@@ -280,6 +280,21 @@ document.addEventListener('DOMContentLoaded', () => {
         dialogPentest.addEventListener('click', (e) => { if (e.target === dialogPentest) dialogPentest.close(); });
     }
 
+    [
+        ['dialog-vforge',      'trigger-dialog-vforge',      'close-dialog-vforge'],
+        ['dialog-vforge-vm',   'trigger-dialog-vforge-vm',   'close-dialog-vforge-vm'],
+        ['dialog-vforge-list', 'trigger-dialog-vforge-list', 'close-dialog-vforge-list'],
+    ].forEach(([dId, tId, cId]) => {
+        const d = document.getElementById(dId);
+        const t = document.getElementById(tId);
+        const c = document.getElementById(cId);
+        if (d && t) {
+            t.addEventListener('click', () => d.showModal());
+            c.addEventListener('click', (e) => { e.stopPropagation(); d.close(); });
+            d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+        }
+    });
+
     /* ---------- BACK TO TOP ---------- */
     const backToTop = document.createElement('button');
     backToTop.id = 'backToTop';
