@@ -1566,6 +1566,11 @@ code {
     color: #c2410c;
 }
 
+.mission-card__tag--stage {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
 .mission-card__desc {
     font-size: 0.93rem;
     color: var(--text-secondary);
@@ -3197,6 +3202,11 @@ code {
 [data-theme="dark"] .mission-card__tag--perso {
     background: #251005;
     color: #fb923c;
+}
+
+[data-theme="dark"] .mission-card__tag--stage {
+    background: #0d1f40;
+    color: #93c5fd;
 }
 
 [data-theme="dark"] .hero__badge,
