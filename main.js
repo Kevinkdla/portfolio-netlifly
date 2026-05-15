@@ -566,7 +566,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let html = '', count = 0;
 
             MISSIONS.forEach(m => {
-                if (currentTag !== 'all' && m.tag !== currentTag) return;
+                const tagMatch = currentTag === 'all'
+                    || m.tag === currentTag
+                    || (currentTag === 'pro' && m.tag === 'stage');
+                if (!tagMatch) return;
                 if (activeCats.length > 0 && !activeCats.includes(m.cat)) return;
                 count++;
                 html += `
@@ -598,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updatePersoVisibility() {
             if (!persoProjects) return;
-            const show = currentTag === 'all' || currentTag === 'perso' || currentTag === 'ecole';
+            const show = currentTag === 'all' || currentTag === 'perso' || currentTag === 'ecole' || currentTag === 'pro';
             persoProjects.style.display = show ? '' : 'none';
         }
 
