@@ -1511,19 +1511,19 @@ code {
     border-radius: var(--radius);
     padding: 20px 26px;
     transition: all var(--dur);
-    overflow: hidden;
 }
 .mission-card__img {
-    width: calc(100% + 52px);
-    margin: -20px -26px 16px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: var(--radius) var(--radius) 0 0;
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: var(--bg);
     display: block;
+    margin-bottom: 14px;
     cursor: zoom-in;
     transition: opacity var(--dur);
 }
-.mission-card__img:hover { opacity: 0.9; }
+.mission-card__img:hover { opacity: 0.85; }
 
 .mission-lightbox {
     border: none;
