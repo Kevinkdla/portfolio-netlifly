@@ -1511,6 +1511,15 @@ code {
     border-radius: var(--radius);
     padding: 20px 26px;
     transition: all var(--dur);
+    overflow: hidden;
+}
+.mission-card__img {
+    width: calc(100% + 52px);
+    margin: -20px -26px 16px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: block;
 }
 
 .mission-card:hover {
