@@ -79,10 +79,42 @@
     <!-- ===================== RÉALISATIONS ===================== -->
     <section class="section" id="realisations">
         <div class="container">
-            <h2 class="section__title">Réalisations pro</h2>
-            <p class="section__subtitle">Missions classées par compétence et contexte.</p>
+            <!-- Fiches de mission -->
+            <div class="section-header-row">
+                <div>
+                    <h2 class="section__title">Fiches de mission</h2>
+                    <p class="section__subtitle">Missions classées par compétence et contexte.</p>
+                </div>
+            </div>
+
+            <div class="filters reveal">
+                <div class="filters__group">
+                    <button class="filter-btn active" data-filter="all">tous</button>
+                    <button class="filter-btn" data-filter="ecole">école</button>
+                    <button class="filter-btn" data-filter="e6">e6</button>
+                    <button class="filter-btn" data-filter="perso">perso</button>
+                    <button class="filter-btn" data-filter="pro">pro</button>
+                    <button class="filter-btn" data-filter="stage">stage · dgfip</button>
+                </div>
+            </div>
+
+            <div class="categories reveal">
+                <div class="categories__header"><span class="categories__label">Catégorie</span></div>
+                <div class="categories__list">
+                    <label class="cat-check"><input type="checkbox" value="patrimoine"><span class="cat-check__box"></span>Patrimoine</label>
+                    <label class="cat-check"><input type="checkbox" value="incidents"><span class="cat-check__box"></span>Incidents</label>
+                    <label class="cat-check"><input type="checkbox" value="presence"><span class="cat-check__box"></span>Présence en ligne</label>
+                    <label class="cat-check"><input type="checkbox" value="projet"><span class="cat-check__box"></span>Mode projet</label>
+                    <label class="cat-check"><input type="checkbox" value="service"><span class="cat-check__box"></span>Services</label>
+                </div>
+            </div>
+
+            <div class="missions-grid" id="missionsGrid">
+                <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
+            </div>
 
             <!-- Projets personnels — character select -->
+            <p class="perso-projects__title" style="margin-top:64px;">Projets personnels</p>
             <div class="perso-projects" id="persoProjects">
 
                 <!-- Portraits (sélecteur) -->
@@ -312,35 +344,6 @@
 
                 </div><!-- /.char-detail -->
             </div><!-- /.perso-projects -->
-
-            <!-- Fiches de mission -->
-            <p class="perso-projects__title" style="margin-top:52px;">Fiches de mission</p>
-
-            <div class="filters reveal">
-                <div class="filters__group">
-                    <button class="filter-btn active" data-filter="all">tous</button>
-                    <button class="filter-btn" data-filter="ecole">école</button>
-                    <button class="filter-btn" data-filter="e6">e6</button>
-                    <button class="filter-btn" data-filter="perso">perso</button>
-                    <button class="filter-btn" data-filter="pro">pro</button>
-                    <button class="filter-btn" data-filter="stage">stage · dgfip</button>
-                </div>
-            </div>
-
-            <div class="categories reveal">
-                <div class="categories__header"><span class="categories__label">Catégorie</span></div>
-                <div class="categories__list">
-                    <label class="cat-check"><input type="checkbox" value="patrimoine"><span class="cat-check__box"></span>Patrimoine</label>
-                    <label class="cat-check"><input type="checkbox" value="incidents"><span class="cat-check__box"></span>Incidents</label>
-                    <label class="cat-check"><input type="checkbox" value="presence"><span class="cat-check__box"></span>Présence en ligne</label>
-                    <label class="cat-check"><input type="checkbox" value="projet"><span class="cat-check__box"></span>Mode projet</label>
-                    <label class="cat-check"><input type="checkbox" value="service"><span class="cat-check__box"></span>Services</label>
-                </div>
-            </div>
-
-            <div class="missions-grid" id="missionsGrid">
-                <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
-            </div>
 
         </div>
     </section>
