@@ -615,14 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
         }
 
-        // Projets personnels : visibilité selon filtre
-        const persoProjects = document.getElementById('persoProjects');
-
-        function updatePersoVisibility() {
-            if (!persoProjects) return;
-            const show = currentTag === 'all' || currentTag === 'perso' || currentTag === 'ecole' || currentTag === 'pro';
-            persoProjects.style.display = show ? '' : 'none';
-        }
+        function updatePersoVisibility() {} // projets perso sur face arrière flip — toujours visible
 
         // Filtres contexte
         const filterBtns = document.querySelectorAll('.filter-btn');

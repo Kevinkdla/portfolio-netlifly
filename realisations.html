@@ -76,15 +76,18 @@
 
     <div class="page-content">
 
-    <!-- ===================== RÉALISATIONS ===================== -->
-    <section class="section" id="realisations">
+    <!-- ===================== FACE AVANT : FICHES DE MISSION ===================== -->
+    <section class="section flip-face flip-face--front" id="realisations">
         <div class="container">
-            <!-- Fiches de mission -->
             <div class="section-header-row">
                 <div>
                     <h2 class="section__title">Fiches de mission</h2>
                     <p class="section__subtitle">Missions classées par compétence et contexte.</p>
                 </div>
+                <button class="flip-btn flip-to-lab">
+                    <i class="fas fa-folder-open"></i> Projets perso
+                    <i class="fas fa-rotate"></i>
+                </button>
             </div>
 
             <div class="filters reveal">
@@ -113,8 +116,21 @@
                 <p class="missions-grid__empty reveal">Les fiches de missions seront ajoutées ici prochainement.</p>
             </div>
 
-            <!-- Projets personnels — character select -->
-            <p class="perso-projects__title" style="margin-top:64px;">Projets personnels</p>
+        </div>
+    </section>
+
+    <!-- ===================== FACE ARRIÈRE : PROJETS PERSONNELS ===================== -->
+    <section class="section section--alt flip-face flip-face--back" id="projets-perso">
+        <div class="container">
+            <div class="section-header-row">
+                <div>
+                    <h2 class="section__title">Projets personnels</h2>
+                    <p class="section__subtitle">Projets réalisés en autonomie et en formation.</p>
+                </div>
+                <button class="flip-btn flip-to-veille">
+                    <i class="fas fa-rotate"></i> Fiches mission
+                </button>
+            </div>
             <div class="perso-projects" id="persoProjects">
 
                 <!-- Portraits (sélecteur) -->
