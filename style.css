@@ -1671,6 +1671,26 @@ code {
     color: var(--accent);
 }
 
+.mission-card__techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.mission-card__tech {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    color: var(--accent);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
 /* Missions grid empty state */
 .missions-grid__empty {
     text-align: center;
