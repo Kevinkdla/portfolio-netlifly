@@ -555,8 +555,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { titre: 'Gestion de tickets IT — Omega', desc: 'Traitement des demandes d\'intervention via l\'outil de ticketing Omega. Réception, analyse et priorisation des tickets selon leur périmètre (matériel, logiciel, fiabilisation). Suivi des interventions et retour aux agents sur les sites des Yvelines gérés par la CID.', tag: 'stage', cat: 'incidents', ctx: 'Stage DGFIP — CID Versailles V12' },
             { titre: 'Campagnes de fiabilisation & interventions postes', desc: 'Participation aux campagnes de fiabilisation du parc : vérification BitLocker (manage-bde), contrôle SecureBoot UEFI, extraction d\'inventaire logiciel. Les postes tournent sous Windows 11 socle, image OS durcie selon les recommandations ANSSI : télémétrie désactivée, configuration sécurisée pour garantir la souveraineté numérique.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DGFIP — CID Versailles V12' },
             { titre: 'Inventaire du parc — Sigma / GLPI', desc: 'Utilisation du robot d\'inventaire Sigma (basé sur GLPI) pour recenser et mettre à jour les informations des postes agents (numéro, état, date d\'inventaire physique). Gestion des comptes associés dans l\'Active Directory et suivi de la pluralité des profils utilisateurs.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DGFIP — CID Versailles V12' },
-            { titre: 'Architecture réseau — RIE & infrastructure site', img: 'images/IMG_4188.jpeg', desc: 'Découverte de l\'infrastructure réseau DGFIP : RIE (Réseau Interministériel de l\'État) réseau privé commun à tous les ministères, accès internet via la PFAI (plateforme proxy centralisée) — le VPN est réservé au télétravail. Identification des LTI (Local Technique Immeuble) et LTE (Local Technique d\'Étage) gérés par le service SYL, câblage VD/DP, baies de brassage et adressage IP par switch.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DGFIP — CID Versailles V12' },
+            { titre: 'Architecture réseau — RIE & infrastructure site', img: 'images/IMG_4188.jpeg', desc: 'Découverte de l\'infrastructure réseau DGFIP : RIE (Réseau Interministériel de l\'État) réseau privé commun à tous les ministères, accès internet via la PFAI (plateforme proxy centralisée) — le VPN est réservé au télétravail. Identification des LTI (Local Technique Immeuble) et LTE (Local Technique d\'Étage) gérés par le service SYL, câblage VD/DP, baies de brassage et adressage IP par switch.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DDFIP — Baie de brassage V12' },
             { titre: 'Installation et mise en service des postes agents', img: 'images/IMG_4191.jpeg', desc: 'Installation complète du matériel (dock, câble Thunderbolt, écrans via HDMI/VGA) et déploiement du socle Windows 11 DGFIP via clé de soclage (Lite Touch Installation). Configuration BIOS Secure Boot, choix du département et du numéro d\'inventaire, activation du mode itinérance. Post-soclage : BitLocker, certificats VPN Cisco, imprimantes, macros LibreOffice.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DGFIP — CID Versailles V12' },
+            { titre: 'Intervention sur site — Serveur DDFIP', img: 'images/IMG_4192.jpeg', desc: 'Déplacement sur le site de Saint-Germain-en-Laye dans le cadre des interventions terrain du CID. Les agents du CID sont itinérants et disposent d\'un bureau sur chaque site. Découverte du serveur local de la DDFIP 78 hébergeant les services locaux du site.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DDFIP — Site Saint-Germain-en-Laye' },
             { titre: 'Préparation des accès agents — AD, GPO & OU', desc: 'Mise en place des comptes utilisateurs dans l\'Active Directory en vue de l\'arrivée de nouveaux agents. Affectation au GPO correspondant au site de travail (ex : GPO Rambouillet) pour l\'application des politiques de groupe adaptées. Placement dans l\'OU du service métier concerné (ex : Trésorerie Hospitalière) pour l\'attribution des droits d\'accès appropriés.', tag: 'stage', cat: 'patrimoine', ctx: 'Stage DGFIP — CID Versailles V12' },
         ];
 
@@ -596,6 +597,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             missionsGrid.innerHTML = html;
+        }
+
+        // Lightbox images missions
+        const lightbox = document.getElementById('mission-lightbox');
+        const lightboxImg = document.getElementById('mission-lightbox-img');
+        const lightboxClose = document.getElementById('mission-lightbox-close');
+        if (lightbox && lightboxImg && lightboxClose) {
+            missionsGrid.addEventListener('click', e => {
+                const img = e.target.closest('.mission-card__img');
+                if (!img) return;
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.showModal();
+            });
+            lightboxClose.addEventListener('click', () => lightbox.close());
+            lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
         }
 
         // Projets personnels : visibilité selon filtre
