@@ -1681,14 +1681,15 @@ code {
 }
 
 .mission-card__tech {
-    font-size: 0.68rem;
-    padding: 2px 8px;
-    border-radius: 99px;
-    background: color-mix(in srgb, var(--accent) 10%, transparent);
-    color: var(--accent);
+    font-size: 0.67rem;
+    padding: 2px 9px;
+    border-radius: 4px;
+    background: #151b22;
+    color: #4ade80;
     font-family: var(--font-mono, 'Courier New', monospace);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
     white-space: nowrap;
+    border: 1px solid rgba(74, 222, 128, 0.22);
 }
 
 /* Missions grid empty state */
