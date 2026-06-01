@@ -3432,6 +3432,58 @@ code {
     }
 }
 
+/* ---------- APRÈS LE BTS (index.html) ---------- */
+.objectifs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+    border-left: 2px solid var(--border);
+    padding-left: 28px;
+}
+
+.objectif {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 36px;
+    position: relative;
+}
+
+.objectif::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+}
+
+.objectif__date {
+    font-size: 0.72rem;
+    font-family: var(--font-mono, monospace);
+    color: var(--accent);
+    white-space: nowrap;
+    min-width: 90px;
+    padding-top: 3px;
+}
+
+.objectif__titre {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+    color: var(--text);
+}
+
+.objectif__desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* ---------- CTA SECTION (index.html) ---------- */
 .cta-section {
     background: var(--bg-secondary);
