@@ -731,17 +731,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.addEventListener('DOMSubtreeModified', () => {}, { once: true });
     }
 
-    /* ---------- GLITCH TITRE ---------- */
-    const heroTitle = document.querySelector('.hero__title');
-    if (heroTitle) {
-        function triggerGlitch() {
-            heroTitle.classList.add('glitch-active');
-            setTimeout(() => heroTitle.classList.remove('glitch-active'), 380);
-            setTimeout(triggerGlitch, 6000 + Math.random() * 8000);
-        }
-        setTimeout(triggerGlitch, 3500);
-    }
-
     /* ---------- CHARACTER SELECT (projets) ---------- */
     const charPortraits = document.querySelectorAll('.char-select__portrait');
     const charPanels    = document.querySelectorAll('.char-panel');
