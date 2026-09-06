@@ -3,7 +3,7 @@
    Stratégie : Network-first avec fallback cache (offline support)
    ================================================================ */
 
-const CACHE_NAME = 'kg-portfolio-v4';
+const CACHE_NAME = 'kg-portfolio-v5';
 
 const PRECACHE = [
     '/',
