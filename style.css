@@ -708,9 +708,9 @@ code {
 }
 
 .timeline__logo {
-    height: 28px;
+    height: 72px;
     width: auto;
-    max-width: 80px;
+    max-width: 160px;
     border-radius: 4px;
     opacity: 0.72;
     filter: grayscale(100%);
@@ -723,8 +723,6 @@ code {
 }
 
 .ind-logo.timeline__logo {
-    height: 44px;
-    max-width: 110px;
     filter: none;
     opacity: 1;
 }
