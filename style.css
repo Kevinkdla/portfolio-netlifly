@@ -722,6 +722,13 @@ code {
     opacity: 1;
 }
 
+.ind-logo.timeline__logo {
+    height: 44px;
+    max-width: 110px;
+    filter: none;
+    opacity: 1;
+}
+
 /* ---------- CERTIFICATIONS ---------- */
 .certs {
     margin-top: 56px;
