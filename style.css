@@ -2292,7 +2292,6 @@ code {
     z-index: 1;
 }
 
-.plan__step:first-child .plan__marker,
 .plan__step--active .plan__marker {
     background: var(--accent);
     border-color: var(--accent);
@@ -3247,7 +3246,6 @@ code {
     border-color: #444;
 }
 
-[data-theme="dark"] .plan__step:first-child .plan__marker,
 [data-theme="dark"] .plan__step--active .plan__marker {
     background: var(--accent);
     border-color: var(--accent);
