@@ -2290,6 +2290,19 @@ code {
     background: #fff;
     border: 2.5px solid #ccc;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan__marker i {
+    font-size: 0.6rem;
+    color: #fff;
+}
+
+.plan__step--done .plan__marker {
+    background: var(--accent);
+    border-color: var(--accent);
 }
 
 .plan__step--active .plan__marker {
@@ -3244,6 +3257,11 @@ code {
 [data-theme="dark"] .plan__marker {
     background: #1a1a1a;
     border-color: #444;
+}
+
+[data-theme="dark"] .plan__step--done .plan__marker {
+    background: var(--accent);
+    border-color: var(--accent);
 }
 
 [data-theme="dark"] .plan__step--active .plan__marker {
