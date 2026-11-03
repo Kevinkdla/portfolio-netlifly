@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="Veille &amp; Lab — Kevin Granday">
     <meta name="twitter:description" content="Veille technologique : PowerToys, Ledger, cybersécurité véhicules connectés, confidentialité des navigateurs.">
     <link rel="canonical" href="https://kevin-granday-portfolio.netlify.app/veille.html">
-    <link rel="stylesheet" href="style.css?v=45">
+    <link rel="stylesheet" href="style.css?v=46">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -205,6 +205,92 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Ma configuration (captures) -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-desktop"></i> Ma configuration, capture par capture</h4>
+                    <p>Plutôt que de recopier la doc, voici ce que montre ma propre installation. Les captures viennent de mon poste, en version 0.99.1.</p>
+
+                    <figure class="veille-shot">
+                        <img src="images/powertoys-accueil.webp" alt="Page d'accueil des paramètres PowerToys v0.99.1 : accès rapide, raccourcis et liste des utilitaires activés" class="veille-shot__img" data-img="images/powertoys-accueil.webp" width="1917" height="1022" loading="lazy">
+                        <figcaption>L'écran d'accueil des paramètres (cliquer pour agrandir).</figcaption>
+                    </figure>
+
+                    <div class="veille-usage-grid">
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">Un menu enfin rangé</span>
+                            <img src="images/powertoys-menu.webp" alt="Les cinq catégories du menu PowerToys : Outils système, Fenêtrage et dispositions, Entrée et sortie, Gestion de fichiers, Advanced" class="veille-usage-item__shot" data-img="images/powertoys-menu.webp" width="400" height="235" loading="lazy">
+                            <p>Il y a quelques versions, tous les modules étaient empilés dans une seule liste alphabétique. Ils sont maintenant classés par usage : Outils système, Fenêtrage et dispositions, Entrée et sortie, Gestion de fichiers, Advanced. Avec une trentaine d'outils, ça change vraiment la navigation.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">Conflits de raccourcis</span>
+                            <img src="images/powertoys-conflit.webp" alt="Accueil PowerToys v0.99.1 avec l'avertissement « Conflits de raccourci : 1 conflit trouvé »" class="veille-usage-item__shot" data-img="images/powertoys-conflit.webp" width="250" height="65" loading="lazy">
+                            <p>En haut de l'accueil, PowerToys me signale « 1 conflit trouvé » : deux outils (ou un outil et une autre appli) se disputent la même combinaison de touches. Avant, le raccourci ne marchait juste pas, sans explication. C'est le genre de détail qui fait gagner du temps en dépannage.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">Mode administrateur</span>
+                            <img src="images/powertoys-admin.webp" alt="Barre de titre « Administrateur : Paramètres PowerToys »" class="veille-usage-item__shot" data-img="images/powertoys-admin.webp" width="330" height="46" loading="lazy">
+                            <p>La barre de titre indique « Administrateur ». Je lance PowerToys avec les droits élevés, sinon ses raccourcis ne fonctionnent pas quand la fenêtre active est elle-même en admin (une console PowerShell élevée, par exemple). Côté sécurité, c'est un choix à faire en connaissance de cause sur un poste d'entreprise.</p>
+                        </div>
+                        <div class="veille-usage-item">
+                            <span class="veille-usage-item__name">Ce que j'ai désactivé</span>
+                            <img src="images/powertoys-desactives.webp" alt="Interrupteurs désactivés pour Accent rapide, CursorWrap et Grab And Move" class="veille-usage-item__shot" data-img="images/powertoys-desactives.webp" width="496" height="177" loading="lazy">
+                            <p>Accent rapide, CursorWrap et Grab And Move sont coupés. Chaque module actif tourne en arrière-plan et réserve des raccourcis : je n'active que ce que j'utilise vraiment, ce qui limite aussi les conflits.</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:16px;">On voit aussi plusieurs badges <strong>NOUVEAU</strong> (Grab And Move, Power Display) et la <strong>Palette de commandes</strong> dans l'accès rapide : c'est le successeur de PowerToys Run, que Microsoft fait évoluer en parallèle. Je teste les deux pour voir lequel garder.</p>
+                </div>
+
+                <!-- Journal de veille : généré chaque lundi par veille-oral/auto/render.py, ne pas éditer à la main -->
+                <!-- VEILLE-AUTO:START -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-rss"></i> Journal de veille</h4>
+                    <p>Mis à jour chaque lundi à partir des notes de version GitHub et de mes alertes Google « PowerToys ». Dernière vérification : 03/11/2026.</p>
+                    <div class="veille-changelog">
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">01/11/2026</span>
+                            <p><strong>PowerToys 0.102 : les nouveautés pour Windows 11</strong> (article, Geekinfos) : L&#x27;article détaille les nouveautés de PowerToys 0.102 pour Windows 11 et explique que l&#x27;application est distincte de Windows Update, avec la procédure de mise à jour depuis ses paramètres. <a href="https://www.geekinfos.fr/2026/11/01/powertoys-0-102-nouveautes-windows-11/" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">28/10/2026</span>
+                            <p><strong>PowerToys 0.102 améliore la souris et muscle la palette de commandes de Windows 11</strong> (article, Pause Hardware) : PowerToys 0.102 renforce le contrôle de la souris avec Mouse Button Lock, qui maintient virtuellement un bouton enfoncé après une pression prolongée, et enrichit la palette de commandes sous Windows 11. <a href="https://pausehardware.com/powertoys-0102-souris-commandes-windows-11/" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">28/10/2026</span>
+                            <p><strong>Windows : PowerToys corrige le plantage de l&#x27;outil qui identifie les fichiers bloqués</strong> (article, Menow) : Le correctif PowerToys 0.102.3001 résout un plantage de File Locksmith lors d&#x27;analyses bloquées, et corrige un crash de Quick Accent lors de la saisie de caractères accentués. <a href="https://www.menow.fr/windows-powertoys-corrige-le-plantage-de-loutil-qui-identifie-les-fichiers-bloques/" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">27/10/2026</span>
+                            <p><strong>v0.102.3001</strong> (version, GitHub) : Hotfix correctif résolvant des plantages dans File Locksmith lors d&#x27;analyses bloquées, et dans Quick Accent lors d&#x27;un changement de langue ou d&#x27;une liste de caractères plus courte. <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.3001" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">24/10/2026</span>
+                            <p><strong>Les Microsoft PowerToys inaugurent deux nouvelles fonctions pour votre souris</strong> (article, 01net.com) : La mise à jour PowerToys 0.102 inaugure deux nouvelles fonctionnalités pour la souris et enrichit la collection d&#x27;utilitaires pour Windows 11. <a href="https://www.01net.com/actualites/microsoft-powertoys-deux-nouvelles-fonctions-souris.html" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">24/10/2026</span>
+                            <p><strong>PowerToys : six outils gratuits pour arrêter de perdre du temps sous Windows</strong> (article, Android MT - Ouest-France) : L&#x27;article présente six outils PowerToys pour gagner du temps sous Windows, dont FancyZones pour la gestion de fenêtres, Image Resizer et le renommage de fichiers en masse. <a href="https://android-mt.ouest-france.fr/news/powertoys-six-outils-gratuits-pour-arreter-de-perdre-du-temps-sous-windows/227248/" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">24/10/2026</span>
+                            <p><strong>PowerToys 0.102 : Microsoft simplifie le glisser-déplacer avec le verrouillage du clic</strong> (article, PC Astuces) : PowerToys 0.102 simplifie le glisser-déplacer grâce au verrouillage du clic souris, parmi plusieurs nouvelles fonctionnalités introduites dans cette mise à jour. <a href="https://actu.pcastuces.com/actu-43077-powertoys-0102-microsoft-simplifie-le-glisser-deplacer-avec-le-verrouillage-du-clic.htm" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">24/10/2026</span>
+                            <p><strong>PowerToys 0.102 ajoute des fonctionnalités pratiques pour la souris et l&#x27;automatisation sous Windows 11</strong> (article, Clickx) : PowerToys 0.102 introduit Mouse Button Lock pour maintenir un clic sans effort physique, et améliore l&#x27;utilisation de FancyZones, Image Resizer et File Locksmith depuis les scripts et terminaux. <a href="https://www.clickx.be/fr/actualites/200925/powertoys-0-102-apporte-des-fonctionnalites-pratiques-pour-la-souris-et-lautomatisation-sous-windows-11/" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">21/10/2026</span>
+                            <p><strong>v0.102.2933</strong> (version, GitHub) : PowerToys 0.102 introduit deux nouveaux utilitaires souris (Mouse Button Lock et CursorHide), un accès rapide en étagère pour la palette de commandes, et la dictée vocale dans ZoomIt. <a href="https://github.com/microsoft/PowerToys/releases/tag/v0.102.2933.0" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                        <div class="veille-changelog__item">
+                            <span class="veille-changelog__version">07/10/2026</span>
+                            <p><strong>Microsoft modernise l&#x27;écran d&#x27;accueil de PowerToys avec une nouvelle interface 3D</strong> (article, PC Astuces) : Microsoft prépare une refonte de la page d&#x27;accueil de PowerToys avec une nouvelle interface 3D, dont une démonstration a été partagée sur le dépôt GitHub officiel et sur le compte X de l&#x27;équipe. <a href="https://actu.pcastuces.com/actu-43015-microsoft-modernise-ecran-accuei-de-powertoys-avec-une-nouvelle-interface-3d.htm" target="_blank" rel="noopener">Lire</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- VEILLE-AUTO:END -->
 
                 <!-- Évolutions récentes -->
                 <div class="veille-section reveal">
