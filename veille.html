@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="Veille &amp; Lab — Kevin Granday">
     <meta name="twitter:description" content="Veille technologique : PowerToys, Ledger, cybersécurité véhicules connectés, confidentialité des navigateurs.">
     <link rel="canonical" href="https://kevin-granday-portfolio.netlify.app/veille.html">
-    <link rel="stylesheet" href="style.css?v=46">
+    <link rel="stylesheet" href="style.css?v=47">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -301,6 +301,53 @@
                         <figcaption>19 récapitulatifs reçus, capture du 03/11/2026 à 16:33 (cliquer pour agrandir).</figcaption>
                     </figure>
                 </div>
+
+                <!-- Tâche automatique + graphique : générés chaque lundi par veille-oral/auto/render.py, ne pas éditer à la main -->
+                <!-- VEILLE-STATS:START -->
+                <div class="veille-section reveal">
+                    <h4 class="veille-section__title"><i class="fas fa-gears"></i> Une tâche qui répertorie mes alertes</h4>
+                    <p>Pour ne rien laisser passer, j'ai automatisé le tri : chaque semaine, une tâche planifiée sur mon poste rassemble toutes mes alertes PowerToys et alimente le journal de veille.</p>
+                    <div class="veille-task">
+                        <div class="veille-task__step">
+                            <span class="veille-task__num">1</span>
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                            <strong>Chaque lundi à 9h</strong>
+                            <p>Le Planificateur de tâches Windows lance un script PowerShell.</p>
+                        </div>
+                        <div class="veille-task__step">
+                            <span class="veille-task__num">2</span>
+                            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                            <strong>Collecte</strong>
+                            <p>Claude Code lit les nouvelles versions sur GitHub et mes alertes Google reçues dans Gmail.</p>
+                        </div>
+                        <div class="veille-task__step">
+                            <span class="veille-task__num">3</span>
+                            <i class="fas fa-filter" aria-hidden="true"></i>
+                            <strong>Tri et résumé</strong>
+                            <p>Il garde les articles vraiment consacrés à PowerToys et les résume en une ou deux phrases.</p>
+                        </div>
+                        <div class="veille-task__step">
+                            <span class="veille-task__num">4</span>
+                            <i class="fas fa-bell" aria-hidden="true"></i>
+                            <strong>Publication et rappel</strong>
+                            <p>Le journal ci-dessus est mis à jour, puis une notification me rappelle de capturer les nouveautés.</p>
+                        </div>
+                    </div>
+                    <div class="veille-stats">
+                        <div class="veille-stats__tile"><span class="veille-stats__value">19</span><span class="veille-stats__label">alertes reçues depuis le 26/09/2026</span></div>
+                        <div class="veille-stats__tile"><span class="veille-stats__value">9</span><span class="veille-stats__label">articles retenus</span></div>
+                        <div class="veille-stats__tile"><span class="veille-stats__value">6</span><span class="veille-stats__label">versions suivies</span></div>
+                    </div>
+                    <figure class="veille-chart">
+                        <figcaption class="veille-chart__title">Alertes Google « PowerToys » reçues par semaine</figcaption>
+                        <svg class="veille-chart__svg" viewBox="0 0 640 210" role="img" aria-label="Alertes Google PowerToys reçues par semaine, de la semaine du 21/09 à celle du 02/11"><line class="veille-chart__axis" x1="8" x2="632" y1="176" y2="176"/><g class="veille-chart__col"><title>Semaine du 21/09 au 27/09 : 1 alerte</title><rect class="veille-chart__hit" x="8.0" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M30.6,176 V155.0 Q30.6,151.0 34.6,151.0 H70.6 Q74.6,151.0 74.6,155.0 V176 Z"/><text class="veille-chart__value" x="52.6" y="144.0">1</text><text class="veille-chart__label" x="52.6" y="194">21/09</text></g><g class="veille-chart__col"><title>Semaine du 28/09 au 04/10 : 3 alertes</title><rect class="veille-chart__hit" x="97.1" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M119.7,176 V105.0 Q119.7,101.0 123.7,101.0 H159.7 Q163.7,101.0 163.7,105.0 V176 Z"/><text class="veille-chart__value" x="141.7" y="94.0">3</text><text class="veille-chart__label" x="141.7" y="194">28/09</text></g><g class="veille-chart__col"><title>Semaine du 05/10 au 11/10 : 3 alertes</title><rect class="veille-chart__hit" x="186.3" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M208.9,176 V105.0 Q208.9,101.0 212.9,101.0 H248.9 Q252.9,101.0 252.9,105.0 V176 Z"/><text class="veille-chart__value" x="230.9" y="94.0">3</text><text class="veille-chart__label" x="230.9" y="194">05/10</text></g><g class="veille-chart__col"><title>Semaine du 12/10 au 18/10 : 1 alerte</title><rect class="veille-chart__hit" x="275.4" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M298.0,176 V155.0 Q298.0,151.0 302.0,151.0 H338.0 Q342.0,151.0 342.0,155.0 V176 Z"/><text class="veille-chart__value" x="320.0" y="144.0">1</text><text class="veille-chart__label" x="320.0" y="194">12/10</text></g><g class="veille-chart__col"><title>Semaine du 19/10 au 25/10 : 6 alertes</title><rect class="veille-chart__hit" x="364.6" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M387.1,176 V30.0 Q387.1,26.0 391.1,26.0 H427.1 Q431.1,26.0 431.1,30.0 V176 Z"/><text class="veille-chart__value" x="409.1" y="19.0">6</text><text class="veille-chart__label" x="409.1" y="194">19/10</text></g><g class="veille-chart__col"><title>Semaine du 26/10 au 01/11 : 3 alertes</title><rect class="veille-chart__hit" x="453.7" y="16" width="89.1" height="160"/><path class="veille-chart__bar" d="M476.3,176 V105.0 Q476.3,101.0 480.3,101.0 H516.3 Q520.3,101.0 520.3,105.0 V176 Z"/><text class="veille-chart__value" x="498.3" y="94.0">3</text><text class="veille-chart__label" x="498.3" y="194">26/10</text></g><g class="veille-chart__col"><title>Semaine du 02/11 au 08/11 : 2 alertes (semaine en cours)</title><rect class="veille-chart__hit" x="542.9" y="16" width="89.1" height="160"/><path class="veille-chart__bar veille-chart__bar--current" d="M565.4,176 V130.0 Q565.4,126.0 569.4,126.0 H605.4 Q609.4,126.0 609.4,130.0 V176 Z"/><text class="veille-chart__value" x="587.4" y="119.0">2</text><text class="veille-chart__label" x="587.4" y="194">02/11</text><text class="veille-chart__label" x="587.4" y="207">en cours</text></g></svg>
+                        <details class="veille-chart__data">
+                            <summary>Voir les données</summary>
+                            <table><thead><tr><th>Semaine du</th><th>Alertes</th></tr></thead><tbody><tr><td>21/09/2026</td><td>1</td></tr><tr><td>28/09/2026</td><td>3</td></tr><tr><td>05/10/2026</td><td>3</td></tr><tr><td>12/10/2026</td><td>1</td></tr><tr><td>19/10/2026</td><td>6</td></tr><tr><td>26/10/2026</td><td>3</td></tr><tr><td>02/11/2026</td><td>2</td></tr></tbody></table>
+                        </details>
+                    </figure>
+                </div>
+                <!-- VEILLE-STATS:END -->
 
                 <!-- Évolutions récentes -->
                 <div class="veille-section reveal">

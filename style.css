@@ -1824,6 +1824,172 @@ code {
     color: var(--text-secondary);
 }
 
+/* Tâche automatique de veille : étapes, chiffres clés, graphique (blocs générés par render.py) */
+.veille-task,
+.veille-stats,
+.veille-chart {
+    --chart-bar: #2563eb;
+}
+
+[data-theme="dark"] .veille-task,
+[data-theme="dark"] .veille-stats,
+[data-theme="dark"] .veille-chart {
+    --chart-bar: #5b8def;
+}
+
+.veille-task {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.veille-task__step {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+.veille-task__step i {
+    display: block;
+    color: var(--chart-bar);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.veille-task__step strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.veille-task__step p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.veille-task__num {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.veille-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.veille-stats__tile {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+}
+
+.veille-stats__value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.veille-stats__label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.veille-chart {
+    margin: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 16px 12px;
+}
+
+.veille-chart__title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.veille-chart__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.veille-chart__bar {
+    fill: var(--chart-bar);
+}
+
+.veille-chart__bar--current {
+    opacity: 0.5;
+}
+
+.veille-chart__hit {
+    fill: transparent;
+}
+
+.veille-chart__col:hover .veille-chart__bar {
+    opacity: 0.8;
+}
+
+.veille-chart__axis {
+    stroke: var(--border-light);
+    stroke-width: 1;
+}
+
+.veille-chart__value {
+    fill: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-anchor: middle;
+}
+
+.veille-chart__label {
+    fill: var(--text-secondary);
+    font-size: 11px;
+    text-anchor: middle;
+}
+
+.veille-chart__data {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.veille-chart__data summary {
+    cursor: pointer;
+}
+
+.veille-chart__data table {
+    margin-top: 8px;
+    border-collapse: collapse;
+}
+
+.veille-chart__data th,
+.veille-chart__data td {
+    padding: 2px 16px 2px 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .veille-task {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .veille-usage-item__shot {
     display: block;
     width: 100%;
