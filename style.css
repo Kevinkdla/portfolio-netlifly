@@ -3196,6 +3196,16 @@ code {
     flex-wrap: wrap;
 }
 
+/* Tableau de synthèse (page Réalisations) */
+.synthese-card {
+    max-width: 720px;
+    margin: 0 auto 40px;
+}
+
+.synthese-card .cv-card__preview {
+    display: block;
+}
+
 /* ---------- SCROLL ARROW HERO ---------- */
 .hero__scroll {
     position: absolute;
